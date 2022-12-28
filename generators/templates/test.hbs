@@ -1,0 +1,9 @@
+import { render } from "@testing-library/react";
+import {{pascalCase component}} from "./{{pascalCase component}}";
+
+describe("Test the {{pascalCase component}} component", () => {
+  it('Should match the snapshot', () => {
+    const { asFragment } = render(<{{pascalCase component}} />)
+    expect(asFragment()).toMatchSnapshot();
+  })
+})
