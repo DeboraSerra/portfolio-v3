@@ -1,0 +1,98 @@
+[
+  {
+    "id": 27,
+    "description": "In this project we developed an API to train how to make a CRUD using the Sequelize ORM simulating the back end to be used in a blog. With this API is possible to create users and associate blog posts to the users created and classify them using categories.",
+    "module": "Back-end",
+    "name": "Project Blogs's API",
+    "link": "https://github.com/DeboraSerra/project-blogs-api",
+    "src": "/images/back-end/blog.webp"
+  },
+  {
+    "id": 28,
+    "description": "This project was developed using Typescript and simulates a registry of a 'blacksmith'. In this API we can add users and products, and associate as orders. As a personal project and to keep applying the front end knowledge, I am currently developing User Interface to use the API.",
+    "module": "Back-end",
+    "name": "Project Trybesmith",
+    "link": "https://github.com/DeboraSerra/project-trybesmith",
+    "src": "/images/back-end/trybesmith.webp"
+  },
+  {
+    "id": 29,
+    "description": "This project was developed using Typescript and OOP to simulate a RPG game, as in Dungeons and Dragons. With the classes created in the project, we can create different kinds of people, such as humans, elves, dwarfs and more, and Dragons and make them fight with each other.",
+    "module": "Back-end",
+    "name": "Project Trybers and Dragons",
+    "link": "https://github.com/DeboraSerra/project-trybers-and-dragons",
+    "src": "/images/back-end/trybers-and-dragons.webp"
+  },
+  {
+    "id": 30,
+    "description": "In this project we followed the directions to practice using MQL (Mongo Query Language).",
+    "module": "Back-end",
+    "name": "Project Commerce",
+    "link": "https://github.com/DeboraSerra/project-commerce",
+    "src": "/images/back-end/commerce.webp"
+  },
+  {
+    "id": 31,
+    "description": "This project was developed using Typescript, MongoDB and OOP. It simulates a car shop where the user can search, create, update and delete information about cars and motorcycles.",
+    "module": "Back-end",
+    "name": "Project Car Shop",
+    "link": "https://github.com/DeboraSerra/project-car-shop",
+    "src": "/images/back-end/car-shop.webp"
+  },
+  {
+    "id": 32,
+    "description": "This project wasn't mandatory for people who were already working and marked the end of the Back-end module, so I paired with a friend to make it. It simulates a delivery application, were it is possible to log in as a user, as a seller or as an admin. It you log in as a user, you can see the products and make orders. If you are logged in as a seller, you can do everything a user can update a sale to mark the progress. And if you are logged in as an admin, you can do everything the user and seller can do and also add and delete sales and products.",
+    "module": "Back-end/Personal Project",
+    "name": "Project Delivery App",
+    "link": "https://github.com/DeboraSerra/project-delivery-app",
+    "src": "/images/back-end/delivery-app.webp"
+  },
+  {
+    "id": 33,
+    "description": "This was the first project using Python. We had to create some tests and read the information from a csv file and return it in a list of Dict and be able to filter the information extracted from the file. After that, we had a bonus requirement to make the Flask application render the specific information of a job when it is clicked.",
+    "module": "Computer Science",
+    "name": "Project Job Insights",
+    "link": "https://github.com/DeboraSerra/project-job-insights",
+    "src": "/images/cs/job-insights.webp"
+  },
+  {
+    "id": 34,
+    "description": "In this project we had to develop some functions to generate simple and full reports of a fictional inventory. The entry must be a list of products, that can come from an CSV, JSON or XML file, and the simple report returns the closest expire date, the longest production date and the name of the company with more products. The full report returns all the information from the simple one and the amount of products by company.",
+    "module": "Computer Science",
+    "name": "Project Inventory Report",
+    "link": "https://github.com/DeboraSerra/project-inventory-report",
+    "src": "/images/cs/inventory-report.webp"
+  },
+  {
+    "id": 35,
+    "description": "In this project we had to create functions to scrape data from the Trybe blog. The information extracted were stored in a mongoDB database. We also created functions to find posts using the title, date, tag and category. It is also possible to get the top 5 posts in general and by category.",
+    "module": "Computer Science",
+    "name": "Project Tech News",
+    "link": "https://github.com/DeboraSerra/project-tech-news",
+    "src": "/images/cs/tech-news.webp"
+  },
+  {
+    "id": 36,
+    "description": "In this project we were oriented to develop different types of algorithms, as in search, order and others, focusing on specific complexity levels, as well as some tests.",
+    "module": "Computer Science",
+    "name": "Project Algorithms",
+    "link": "https://github.com/DeboraSerra/project-algorithms",
+    "src": "/images/cs/algorithms.webp"
+  },
+  {
+    "id": 37,
+    "description": "The project TING (Trybe Is Not Google) was created to practice the use of data structures like Arrays, Lists, Lines and Piles. We had to implement a program that simulates the document indexing similar to the one used by Google, which means, a program that allow to add files and do searches in this files.",
+    "module": "Computer Science",
+    "name": "Project Algorithms",
+    "link": "https://github.com/DeboraSerra/project-ting",
+    "src": "/images/cs/ting.webp"
+  },
+  {
+    "id": 38,
+    "description": "This project simulates a diner that already has a sale system that saves the name of the person, the order and the day of the week that the order was made. Using this information we had to filter the data to get some publicity information to be used later and track the orders, as most ordered and never ordered, by client, and the days, as the busiest and the slowest. As a bonus, we had to implement an inventory control based on the minimum amount of ingredients allowed and the orders made.",
+    "module": "Computer Science",
+    "name": "Project Restaurant Orders",
+    "link": "https://github.com/DeboraSerra/project-restaurant-orders",
+    "src": "/images/cs/restaurant-orders.webp"
+  }
+]
