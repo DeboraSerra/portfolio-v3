@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useDarkMode, useOnClickOutside, useWindowSize } from "usehooks-ts";
-import { BiSun, BiMoon, BiChevronDown } from "react-icons/bi";
+import { BiSun, BiMoon } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 
 import * as S from "./Header.styled";
-import ProjectsMenu from "./components/ProjectsMenu/ProjectsMenu";
 import Menu from "./components/Menu/Menu";
 
 const Header = () => {
