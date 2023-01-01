@@ -1,6 +1,10 @@
+import { NextPage } from "next";
+
 import * as S from './{{pascalCase component}}.styled'
 
-const {{pascalCase component}} = () => {
+interface Props {}
+
+const {{pascalCase component}}: NextPage<Props> = () => {
   return <S.Main></S.Main>
 }
 
