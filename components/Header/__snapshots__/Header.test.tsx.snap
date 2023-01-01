@@ -6,7 +6,6 @@ exports[`Test the Header component Should match the snapshot 1`] = `
   position: relative;
   background-color: #f1b2b2;
   padding: 12px 24px;
-  margin-bottom: 12px;
   box-shadow: 0 4px 24px #45496a6f;
   height: 64px;
 }

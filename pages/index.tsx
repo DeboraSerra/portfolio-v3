@@ -1,7 +1,13 @@
-export default function Home() {
+import Head from "next/head";
+import Home from "../components/Home/Home";
+
+export default function HomePage() {
   return (
     <main>
-      <h1>Hi</h1>
+      <Head>
+        <title>Débora Serra - Portfolio</title>
+      </Head>
+      <Home />
     </main>
-  )
+  );
 }

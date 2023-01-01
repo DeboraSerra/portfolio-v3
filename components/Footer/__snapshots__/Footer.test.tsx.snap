@@ -20,6 +20,7 @@ exports[`Test the Footer component Should match the snapshot 1`] = `
   padding: 12px 24px;
   position: relative;
   bottom: 0;
+  box-shadow: 0 -12px 24px #45496a6f;
 }
 
 .c0 .footer__heading {

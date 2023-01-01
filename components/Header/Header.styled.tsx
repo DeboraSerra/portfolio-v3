@@ -4,7 +4,6 @@ export const Header = styled.header`
   position: relative;
   background-color: ${(props) => props.theme.bg.secondary};
   padding: 12px 24px;
-  margin-bottom: 12px;
   box-shadow: 0 4px 24px ${(props) => props.theme.bg.input};
   height: 64px;
 

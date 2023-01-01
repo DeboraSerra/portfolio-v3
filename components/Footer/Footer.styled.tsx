@@ -9,6 +9,7 @@ export const Footer = styled.footer`
   padding: 12px 24px;
   position: relative;
   bottom: 0;
+  box-shadow: 0 -12px 24px ${(props) => props.theme.bg.input};
 
   .footer {
     &__heading {
