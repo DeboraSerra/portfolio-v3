@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDarkMode, useOnClickOutside, useWindowSize } from "usehooks-ts";
 import { BiSun, BiMoon } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -7,12 +7,26 @@ import { RxCross2 } from "react-icons/rx";
 
 import * as S from "./Header.styled";
 import Menu from "./components/Menu/Menu";
+import { ProjectsPaths } from "../../helpers/interfaces";
+import { NextPage } from "next";
 
-const Header = () => {
+interface Props {}
+
+const Header: NextPage<Props> = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [paths, setPaths] = useState([]);
   const { isDarkMode, toggle } = useDarkMode();
   const { width } = useWindowSize();
   const header = useRef<HTMLDivElement>(null);
+
+  const getPaths = async () => {
+    const response = await fetch('/api/paths');
+    const { data } = await response.json();
+    setPaths(data);
+  }
+  useEffect(() => {
+    getPaths();
+  }, [])
 
   useOnClickOutside(header, () => setOpenMenu(false))
 
@@ -36,10 +50,10 @@ const Header = () => {
                   onClick={() => setOpenMenu(!openMenu)}
                 />
               )}
-              {openMenu && <Menu />}
+              {openMenu && <Menu paths={paths} />}
             </>
           ) : (
-            <Menu />
+            <Menu paths={paths} />
           )}
         </S.NavBar>
         <div onClick={toggle} className="header__theme-btn">

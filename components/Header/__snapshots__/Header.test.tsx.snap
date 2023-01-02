@@ -4,9 +4,9 @@ exports[`Test the Header component Should match the snapshot 1`] = `
 <DocumentFragment>
   .c0 {
   position: relative;
-  background-color: #f1b2b2;
+  background-color: #A29C97;
   padding: 12px 24px;
-  box-shadow: 0 4px 24px #45496a6f;
+  box-shadow: 0 4px 24px #4E49466f;
   height: 64px;
 }
 
@@ -28,7 +28,7 @@ exports[`Test the Header component Should match the snapshot 1`] = `
 .c0 .container .header__title {
   font-size: 32px;
   font-weight: 800;
-  color: #45496a;
+  color: #111013;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -67,19 +67,20 @@ exports[`Test the Header component Should match the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #2f3037;
   cursor: pointer;
+  color: #47301E;
+  font-size: 16px;
 }
 
 .c0 .container .header__link:hover {
-  color: #525560;
+  color: #DAD9DE;
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
 .c0 .container .header__theme-btn,
 .c0 .container .header__nav-btn {
-  color: #2f3037;
+  color: #47301E;
   cursor: pointer;
   font-size: 22px;
 }
@@ -105,8 +106,13 @@ exports[`Test the Header component Should match the snapshot 1`] = `
 }
 
 @media only screen and (max-width:576px) {
+  .c0 .container .header__title {
+    font-size: 26px;
+  }
+
   .c0 .container .header__links {
     position: absolute;
+    z-index: 100;
     top: 64px;
     left: 0;
     display: -webkit-box;
@@ -118,9 +124,9 @@ exports[`Test the Header component Should match the snapshot 1`] = `
     -ms-flex-pack: space-around;
     justify-content: space-around;
     width: 100%;
-    background-color: #f1b2b2;
+    background-color: #A29C97;
     padding: 12px 24px;
-    box-shadow: 0 12px 24px #45496a6f;
+    box-shadow: 0 12px 24px #4E49466f;
   }
 }
 
@@ -148,7 +154,7 @@ exports[`Test the Header component Should match the snapshot 1`] = `
           >
             About Me
           </a>
-          <p
+          <div
             class="header__link"
           >
             Projects 
@@ -165,7 +171,7 @@ exports[`Test the Header component Should match the snapshot 1`] = `
                 d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
               />
             </svg>
-          </p>
+          </div>
           <a
             class="header__link"
             href="/contact"

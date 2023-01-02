@@ -3,6 +3,15 @@
 exports[`Test the Footer component Should match the snapshot 1`] = `
 <DocumentFragment>
   .c0 {
+  background-color: #A29C97;
+  min-height: 64px;
+  padding: 24px 48px;
+  position: relative;
+  bottom: 0;
+  box-shadow: 0 -4px 24px #4E49466f;
+}
+
+.c0 .container {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -15,20 +24,14 @@ exports[`Test the Footer component Should match the snapshot 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-  background-color: #f1b2b2;
-  min-height: 64px;
-  padding: 12px 24px;
-  position: relative;
-  bottom: 0;
-  box-shadow: 0 -12px 24px #45496a6f;
 }
 
-.c0 .footer__heading {
+.c0 .container .footer__heading {
   font-size: 18px;
-  color: #2f3037;
+  color: #111013;
 }
 
-.c0 .footer__nav {
+.c0 .container .footer__nav {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -48,12 +51,17 @@ exports[`Test the Footer component Should match the snapshot 1`] = `
   font-size: 14px;
 }
 
-.c0 .footer__nav--item {
+.c0 .container .footer__nav--item {
   line-height: 1.5;
 }
 
-@media only screen and (max-width :576px) {
-  .c0 {
+.c0 .container .footer__nav--item:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width:576px) {
+  .c0 .container {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
@@ -64,55 +72,64 @@ exports[`Test the Footer component Should match the snapshot 1`] = `
     align-items: center;
   }
 
-  .c0 .footer__heading {
+  .c0 .container .footer__heading {
     text-align: center;
   }
 
-  .c0 .footer__nav {
+  .c0 .container .footer__nav {
     -webkit-align-items: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
     width: 100%;
   }
+
+  .c0 .container .footer__nav--item {
+    -webkit-text-decoration: underline;
+    text-decoration: underline;
+  }
 }
 
 <footer
     class="c0"
   >
-    <h2
-      class="footer__heading"
+    <div
+      class="container"
     >
-      Developed by Débora Serra
-    </h2>
-    <nav
-      class="footer__nav"
-    >
-      <a
-        class="footer__nav--item"
-        href="https://github.com/DeboraSerra"
-        rel="noreferrer"
-        target="_blank"
+      <h2
+        class="footer__heading"
       >
-        My github page
-      </a>
-      <a
-        class="footer__nav--item"
-        href="https://wa.me/+5561982311582"
-        rel="noreferrer"
-        target="_blank"
+        Developed by Débora Serra
+      </h2>
+      <nav
+        class="footer__nav"
       >
-        My what's app
-      </a>
-      <a
-        class="footer__nav--item"
-        href="https://www.linkedin.com/in/debora-r-serra/"
-        rel="noreferrer"
-        target="_blank"
-      >
-        My Linked-in
-      </a>
-    </nav>
+        <a
+          class="footer__nav--item"
+          href="https://github.com/DeboraSerra"
+          rel="noreferrer"
+          target="_blank"
+        >
+          My github page
+        </a>
+        <a
+          class="footer__nav--item"
+          href="https://wa.me/+5561982311582"
+          rel="noreferrer"
+          target="_blank"
+        >
+          My what's app
+        </a>
+        <a
+          class="footer__nav--item"
+          href="https://www.linkedin.com/in/debora-r-serra/"
+          rel="noreferrer"
+          target="_blank"
+        >
+          My Linked-in
+        </a>
+      </nav>
+    </div>
   </footer>
 </DocumentFragment>
 `;

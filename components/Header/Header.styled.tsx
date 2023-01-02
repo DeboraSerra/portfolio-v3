@@ -33,12 +33,13 @@ export const Header = styled.header`
         display: flex;
         justify-content: center;
         align-items: center;
-
-        color: ${(props) => props.theme.text.secondary};
         cursor: pointer;
 
+        color: ${(props) => props.theme.text.secondary};
+        font-size: ${(props) => props.theme.fontSizes[1]};
+
         &:hover {
-          color: ${(props) => props.theme.text.tertiary};
+          color: ${(props) => props.theme.text.quaternary};
           text-decoration: underline;
         } // &:hover
       } // &__link
@@ -51,8 +52,13 @@ export const Header = styled.header`
       } // &__theme-btn
 
       @media only screen and (max-width: 576px) {
+        &__title {
+          font-size: ${(props) => props.theme.fontSizes[4]};
+        } // &__title
+
         &__links {
           position: absolute;
+          z-index: 100;
           top: 64px;
           left: 0;
           display: flex;
