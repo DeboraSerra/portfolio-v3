@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Main = styled.div`
   position: absolute;
-  top: 64px;
+  z-index: 100;
+  top: 40px;
   display: flex;
   flex-direction: column;
   background-color: ${(props) => props.theme.bg.secondary};
@@ -24,6 +25,6 @@ export const Main = styled.div`
   } // & a
 
   @media only screen and (max-width: 576px) {
-    top: 40px;
+    top: 28px;
   } // @media only screen and (max-width : 576px)
 `;

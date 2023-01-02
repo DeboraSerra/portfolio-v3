@@ -11,7 +11,7 @@ exports[`Test the Menu component Should match the snapshot 1`] = `
     >
       About Me
     </a>
-    <p
+    <div
       class="header__link"
     >
       Projects 
@@ -28,7 +28,7 @@ exports[`Test the Menu component Should match the snapshot 1`] = `
           d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
         />
       </svg>
-    </p>
+    </div>
     <a
       class="header__link"
       href="/contact"

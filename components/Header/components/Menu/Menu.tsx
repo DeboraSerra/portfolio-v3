@@ -3,11 +3,14 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { useOnClickOutside } from "usehooks-ts";
+import { ProjectsPaths } from "../../../../helpers/interfaces";
 import ProjectsMenu from "../ProjectsMenu/ProjectsMenu";
 
-interface Props {}
+interface Props {
+  paths: ProjectsPaths[];
+}
 
-const Menu: NextPage<Props> = () => {
+const Menu: NextPage<Props> = ({ paths }) => {
   const [openProject, setOpenProject] = useState(false);
   const projects = useRef<HTMLDivElement>(null);
 
@@ -20,10 +23,10 @@ const Menu: NextPage<Props> = () => {
       <Link href="/about" className="header__link">
         About Me
       </Link>
-      <p onClick={handleOpenProject} className="header__link" ref={projects}>
+      <div onClick={handleOpenProject} className="header__link" ref={projects}>
         Projects {openProject ? <BiChevronUp /> : <BiChevronDown />}
-      </p>
-      {openProject && <ProjectsMenu />}
+        {openProject && <ProjectsMenu paths={paths} />}
+      </div>
       <Link href="/contact" className="header__link">
         Contact
       </Link>
