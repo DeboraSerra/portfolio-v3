@@ -13,6 +13,10 @@ const Projects = {
     const project = await ProjectService.getOne(id, module);
     return project;
   },
+  getPaths: async () => {
+    const modules = await ProjectService.getPaths();
+    return modules;
+  },
 };
 
 export default Projects;

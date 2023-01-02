@@ -1,24 +1,31 @@
 import conn from "./connection/connection";
-import { Modules } from "../helpers/interfaces";
+import { Modules, Project, ProjectsPaths } from "../helpers/interfaces";
+import { RowDataPacket } from "mysql2";
 
 const ProjectModel = {
   getAll: async () => {
-    const [fundaments] = await conn.execute<any>("SELECT * FROM fundaments");
-    const [frontEnd] = await conn.execute<any>("SELECT * FROM front_end");
-    const [backEnd] = await conn.execute<any>("SELECT * FROM back_end");
-    const [personal] = await conn.execute<any>("SELECT * FROM personal");
-    const [computerScience] = await conn.execute<any>(
-      "SELECT * FROM computer_science"
-    );
-    return { fundaments, frontEnd, backEnd, personal, computerScience };
+    const [modules] = await conn.execute<any>("SELECT route FROM projects");
+    const projects = await Promise.all(modules.map(async (module: { route: string }) => {
+      const { route } = module;
+      const query = `SELECT * FROM ${route}`
+      const [p] = await conn.execute<any>(query);
+      return { [route]: p };
+    }))
+    const returned = (projects).reduce((acc, p) => ({ ...acc, ...p }), {})
+    return returned;
   },
   getOne: async (
     id: number,
     module: Modules
   ) => {
-    const query = `SELECT * FROM ? WHERE id = ?`;
-    const [result] = await conn.execute(query, [module, id]);
+    console.log(id)
+    const query = `SELECT * FROM ${module} WHERE id = ${id}`;
+    const [result] = await conn.execute<RowDataPacket[]>(query);
     return result;
+  },
+  getPaths: async () => {
+    const [modules] = await conn.execute<RowDataPacket[]>("SELECT * FROM projects");
+    return modules;
   },
 };
 
