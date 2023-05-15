@@ -13,6 +13,12 @@ const ProjectService = {
     const project = await ProjectModel.getOne(id, module);
     return project;
   },
+  getByModule: async (
+    module: Modules
+  ) => {
+    const projects = await ProjectModel.getByModule(module);
+    return projects;
+  },
   getPaths: async () => {
     const modules = await ProjectModel.getPaths();
     return modules;

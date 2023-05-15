@@ -18,13 +18,19 @@ const ProjectModel = {
     id: number,
     module: Modules
   ) => {
-    console.log(id)
     const query = `SELECT * FROM ${module} WHERE id = ${id}`;
     const [result] = await conn.execute<RowDataPacket[]>(query);
     return result;
   },
+  getByModule: async (
+    module: Modules
+  ) => {
+    const query = `SELECT * FROM ${module}`;
+    const [result] = await conn.execute<RowDataPacket[]>(query);
+    return result;
+  },
   getPaths: async () => {
-    const [modules] = await conn.execute<RowDataPacket[]>("SELECT * FROM projects");
+    const [modules] = await conn.execute<any>("SELECT * FROM projects");
     return modules;
   },
 };
