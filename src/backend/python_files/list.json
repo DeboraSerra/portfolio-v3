@@ -305,7 +305,7 @@
   },
   {
     "id": 39,
-    "description": "",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was the first big solution I developed when I joined the company and was meant to replace the page already on production, updating the technology used and the design. This flow was developed using Next.js and Styled Components and consists of the routes /registro-de-dominio, /registro-de-dominio/busca and /registro-de-dominio/checkout and the user can buy a domain name with different extensions and choose to add a professional email and/or the tool for building sites.",
     "module": "UOL Host",
     "name": "Registro de Domínio",
     "link": "https://uolhost.uol.com.br/registro-de-dominio",
@@ -313,7 +313,7 @@
   },
   {
     "id": 40,
-    "description": "",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to buy and host their website.",
     "module": "UOL Host",
     "name": "Hospedagem de Sites",
     "link": "https://uolhost.uol.com.br/hospedagem-de-sites",
@@ -321,7 +321,7 @@
   },
   {
     "id": 41,
-    "description": "",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to buy and use microsoft applications, such as Word, Excel, Teams and others, to their company.",
     "module": "UOL Host",
     "name": "Microsoft Office 365",
     "link": "https://uolhost.uol.com.br/microsoft-office-365",
@@ -329,10 +329,130 @@
   },
   {
     "id": 42,
-    "description": "",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to buy and use professional e-mails to their employees personalized with the company domain.",
     "module": "UOL Host",
     "name": "E-mail Profissional",
     "link": "https://uolhost.uol.com.br/e-mail",
     "src": "/images/uol/ePro.webp"
+  },
+  {
+    "id": 43,
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can transfer their domain to a UOL Host server.",
+    "module": "UOL Host",
+    "name": "Transferência de domínio",
+    "link": "https://uolhost.uol.com.br/transferencia-de-dominio",
+    "src": "/images/uol/transferencia.webp"
+  },
+  {
+    "id": 44,
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to buy and resell the UOL hosting service, both in Linux or Windows.",
+    "module": "UOL Host",
+    "name": "Revenda de hospedagem",
+    "link": "https://uolhost.uol.com.br/revenda-de-hospedagem",
+    "src": "/images/uol/revenda_hospedagem.webp"
+  },
+  {
+    "id": 45,
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a database to buy and use in MySQL, MongoDB or PostgeSQL.",
+    "module": "UOL Host",
+    "name": "Banco de dados",
+    "link": "https://uolhost.uol.com.br/banco-de-dados",
+    "src": "/images/uol/db.webp"
+  },
+  {
+    "id": 46,
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose the available to buy and use in a MySQL database.",
+    "module": "UOL Host",
+    "name": "Banco de dados MySQL",
+    "link": "https://uolhost.uol.com.br/banco-de-dados/mysql",
+    "src": "/images/uol/db_mysql.webp"
+  },
+  {
+    "id": 47,
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose the available to buy and use in a MongoDB database.",
+    "module": "UOL Host",
+    "name": "Banco de dados MongoDB",
+    "link": "https://uolhost.uol.com.br/banco-de-dados/mongodb",
+    "src": "/images/uol/db_mongo.webp"
+  },
+  {
+    "id": 48,
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose the available to buy and use in a PostgreSQL database.",
+    "module": "UOL Host",
+    "name": "Banco de dados Postgres SQL",
+    "link": "https://uolhost.uol.com.br/banco-de-dados/postgresql",
+    "src": "/images/uol/db_postgresql.webp"
+  },
+  {
+    "id": 49,
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can buy ssl certificate to their domain, subdomain or multiple domains.",
+    "module": "UOL Host",
+    "name": "Certificado SSL",
+    "link": "https://uolhost.uol.com.br/certificado-ssl",
+    "src": "/images/uol/ssl.webp"
+  },
+  {
+    "id": 50,
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to send promotional e-mails to their clients based on how many e-mail they want to send by month.",
+    "module": "UOL Host",
+    "name": "E-mail Marketing",
+    "link": "https://uolhost.uol.com.br/e-mail-marketing",
+    "src": "/images/uol/eMkt.webp"
+  },
+  {
+    "id": 51,
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to add advertisement on big websites based on how many clicks they might/want to receive in a month.",
+    "module": "UOL Host",
+    "name": "UOL Anúncios",
+    "link": "https://uolhost.uol.com.br/uol-anuncios",
+    "src": "/images/uol/uol_ads.webp"
+  },
+  {
+    "id": 52,
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to add advertisement on Google based on how much they want to invest by month, with the option to add Call Tracking to the plan.",
+    "module": "UOL Host",
+    "name": "Google Ads",
+    "link": "https://uolhost.uol.com.br/google-ads",
+    "src": "/images/uol/google_ads.webp"
+  },
+  {
+    "id": 53,
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to add advertisement on Facebook and Instagram based on how much they want to invest by month.",
+    "module": "UOL Host",
+    "name": "Facebook Ads e Instagram Ads",
+    "link": "https://uolhost.uol.com.br/facebook-ads",
+    "src": "/images/uol/face_ads.webp"
+  },
+  {
+    "id": 54,
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to buy and use Google applications, such as Meet, Docs, Sheets, and others, to their company.",
+    "module": "UOL Host",
+    "name": "Google Workspace",
+    "link": "https://uolhost.uol.com.br/google-workspace",
+    "src": "/images/uol/workspace.webp"
+  },
+  {
+    "id": 55,
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to buy and use professional e-mail personalized with their domain hosted by Microsoft.",
+    "module": "UOL Host",
+    "name": "E-mail Microsoft Exchange",
+    "link": "https://uolhost.uol.com.br/microsoft-office-365/exchange/",
+    "src": "/images/uol/exchange.webp"
+  },
+  {
+    "id": 56,
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and is used to make partnerships with companies in specific working fields.",
+    "module": "UOL Host",
+    "name": "Parceiros UOL Host",
+    "link": "https://uolhost.uol.com.br/parceiros-uol-host",
+    "src": "/images/uol/parceiros.webp"
+  },
+  {
+    "id": 57,
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and is used so the user can add UOL Host advertisements in their websites and receive a percentage of the sale.",
+    "module": "UOL Host",
+    "name": "Afiliados UOL Host",
+    "link": "https://uolhost.uol.com.br/afiliados-uol-host",
+    "src": "/images/uol/afiliados.webp"
   }
 ]
