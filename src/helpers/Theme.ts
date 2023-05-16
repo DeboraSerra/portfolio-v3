@@ -1,50 +1,40 @@
 const light = {
   bg: {
-    primary: '#DAD9DE',
-    secondary: '#A29C97',
+    primary: '#fff',
+    secondary: '#f1f1f1',
+    tertiary: '#ececec',
+    quaternary: '#ccc',
     inset: '#4E4946',
     input: '#4E49466f',
+    contrast: [],
   },
   text: {
-    primary: '#111013',
-    secondary: '#47301E',
-    tertiary: '#C8BBAF',
-    quaternary: '#DAD9DE',
-    placeholder: 'rgba(82,85,96,0.5)',
+    primary: '#000',
+    secondary: '#010101',
+    tertiary: '#444',
+    quaternary: '#666',
+    placeholder: '#999',
     onPrimary: '#ffffff',
   },
 }
-// const light = {
-//   bg: {
-//     primary: '#e8ccc7',
-//     secondary: '#f1b2b2',
-//     inset: '#e5857b',
-//     input: '#45496a6f',
-//   },
-//   text: {
-//     primary: '#45496a',
-//     secondary: '#2f3037',
-//     tertiary: '#525560',
-//     quaternary: '#9194a1',
-//     placeholder: 'rgba(82,85,96,0.5)',
-//     onPrimary: '#ffffff',
-//   },
-// }
 
 const dark = {
   bg: {
-    primary: '#020408',
-    secondary: '#15273c',
-    inset: '#365475',
-    input: '#5981b15a',
+    primary: '#000',
+    secondary: '#010101',
+    tertiary: '#444',
+    quaternary: '#666',
+    inset: '#999',
+    input: '#9999996f',
+    contrast: [],
   },
   text: {
-    primary: '#98bae3',
-    secondary: '#e3e4e8',
-    tertiary: '#a9abb6',
-    quaternary: '#6c6f7e',
-    placeholder: 'rgba(145,148,161,0.5)',
-    onPrimary: '#050505',
+    primary: '#fff',
+    secondary: '#f1f1f1',
+    tertiary: '#ececec',
+    quaternary: '#ccc',
+    placeholder: '#a9a9a9',
+    onPrimary: '#a9a9a96f',
   },
 }
 

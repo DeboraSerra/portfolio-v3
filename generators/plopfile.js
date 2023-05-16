@@ -23,29 +23,29 @@ module.exports = function (plop) {
       if (data.nested) {
         action.push({
           type: 'add',
-          path: '../components/{{path}}/{{pascalCase component}}/{{pascalCase component}}.tsx',
+          path: '../src/components/{{path}}/{{pascalCase component}}/{{pascalCase component}}.tsx',
           templateFile: 'templates/new-comp.hbs'
         }, {
           type: 'add',
-          path: '../components/{{path}}/{{pascalCase component}}/{{pascalCase component}}.styled.tsx',
+          path: '../src/components/{{path}}/{{pascalCase component}}/{{pascalCase component}}.styled.tsx',
           templateFile: 'templates/style.hbs'
         }, {
           type: 'add',
-          path: '../components/{{path}}/{{pascalCase component}}/{{pascalCase component}}.test.tsx',
+          path: '../src/components/{{path}}/{{pascalCase component}}/{{pascalCase component}}.test.tsx',
           templateFile: 'templates/test.hbs'
         })
       } else {
         action.push({
           type: 'add',
-          path: '../components/{{pascalCase component}}/{{pascalCase component}}.tsx',
+          path: '../src/components/{{pascalCase component}}/{{pascalCase component}}.tsx',
           templateFile: 'templates/new-comp.hbs'
         }, {
           type: 'add',
-          path: '../components/{{pascalCase component}}/{{pascalCase component}}.styled.tsx',
+          path: '../src/components/{{pascalCase component}}/{{pascalCase component}}.styled.tsx',
           templateFile: 'templates/style.hbs'
         }, {
           type: 'add',
-          path: '../components/{{pascalCase component}}/{{pascalCase component}}.test.tsx',
+          path: '../src/components/{{pascalCase component}}/{{pascalCase component}}.test.tsx',
           templateFile: 'templates/test.hbs'
         })
       }
