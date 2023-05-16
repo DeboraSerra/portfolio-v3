@@ -2,10 +2,16 @@ import { ProjectsContext } from "@/helpers/Context";
 import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
 
+import * as S from "./Header.styled";
+import { useDarkMode } from "usehooks-ts";
+
 const Header = () => {
   const { routes } = useContext(ProjectsContext);
+
+  const { isDarkMode, toggle } = useDarkMode();
+
   return (
-    <nav>
+    <S.Header>
         <Link href="/">Home</Link>
         <Link href="/projects">Projects</Link>
       {routes.map(({ id, name, route }) => (
@@ -13,7 +19,8 @@ const Header = () => {
           {name}
         </Link>
       ))}
-    </nav>
+      <button onClick={toggle}>{isDarkMode ? 'light' : 'dark' }</button>
+    </S.Header>
   );
 };
 
