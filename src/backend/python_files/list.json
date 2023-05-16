@@ -302,5 +302,37 @@
     "name": "Projeto Restaurant Orders",
     "link": "https://github.com/DeboraSerra/project-restaurant-orders",
     "src": "/images/cs/restaurant-orders.webp"
+  },
+  {
+    "id": 39,
+    "description": "",
+    "module": "UOL Host",
+    "name": "Registro de Domínio",
+    "link": "https://uolhost.uol.com.br/registro-de-dominio",
+    "src": "/images/uol/dominio.webp"
+  },
+  {
+    "id": 40,
+    "description": "",
+    "module": "UOL Host",
+    "name": "Hospedagem de Sites",
+    "link": "https://uolhost.uol.com.br/hospedagem-de-sites",
+    "src": "/images/uol/hospedagem.webp"
+  },
+  {
+    "id": 41,
+    "description": "",
+    "module": "UOL Host",
+    "name": "Microsoft Office 365",
+    "link": "https://uolhost.uol.com.br/microsoft-office-365",
+    "src": "/images/uol/office.webp"
+  },
+  {
+    "id": 42,
+    "description": "",
+    "module": "UOL Host",
+    "name": "E-mail Profissional",
+    "link": "https://uolhost.uol.com.br/e-mail",
+    "src": "/images/uol/ePro.webp"
   }
 ]

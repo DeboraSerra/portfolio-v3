@@ -26,6 +26,8 @@ def get_list(path):
           text_front += f', ("{name}", "{description}", "{link}", "{src}")'
         elif 'Pers' in module:
           text_personal += f', ("{name}", "{description}", "{link}", "{src}")'
+        elif 'UOL' in module:
+          text_uol += f', ("{name}", "{description}", "{link}", "{src}")'
   with open('back_query.txt', 'w') as file:
     file.write(text_back)
   with open('cs_query.txt', 'w') as file:
@@ -36,5 +38,7 @@ def get_list(path):
     file.write(text_fund)
   with open('pers_query.txt', 'w') as file:
     file.write(text_personal)
+  with open('uol_query.txt', 'w') as file:
+    file.write(text_uol)
 
 get_list('./list.json')

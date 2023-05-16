@@ -12,7 +12,7 @@ export interface ProjectArrays {
   back_end: Project[];
   computer_science: Project[];
   personal: Project[];
-  uol?: Project[];
+  uol_host?: Project[];
 }
 
 export type Modules =
@@ -21,7 +21,7 @@ export type Modules =
   | "back_end"
   | "personal"
   | "computer_science"
-  | "uol";
+  | "uol_host";
 
 export interface Data {
   data: Project | ProjectArrays[];

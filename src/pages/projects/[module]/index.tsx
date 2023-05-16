@@ -6,6 +6,7 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 import Projects from '@/backend/projects.controller'
 import { useRouter } from 'next/router'
 import { Modules, Project } from '@/helpers/interfaces'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +16,7 @@ const titles = {
   back_end: 'Back End',
   computer_science: 'Computer Science',
   fundaments: 'Fundaments',
-  uol: 'UOL Host',
+  uol_host: 'UOL Host',
 }
 
 export default function Module({ projects }: { projects: Project[] }) {
@@ -30,6 +31,16 @@ export default function Module({ projects }: { projects: Project[] }) {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <h1>{titles[module as Modules]}</h1>
+        {projects.map((proj) => (
+          <div key={proj.id}>
+            <h2>{proj.name}</h2>
+            <div className={styles.img}>
+              <Image src={proj.image} alt={proj.name} width={100} height={50} />
+            </div>
+            <p>{proj.description}</p>
+            <Link href={proj.repository}>See more</Link>
+          </div>
+        ))}
       </main>
     </>
   )
@@ -42,7 +53,7 @@ export async function getStaticPaths() {
   }))
   return {
     paths,
-    fallback: false,
+    fallback: true,
   }
 }
 
