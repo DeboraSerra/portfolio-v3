@@ -5,7 +5,8 @@ const light = {
     tertiary: '#ececec',
     quaternary: '#ccc',
     inset: '#4E4946',
-    input: '#4E49466f',
+    input: '#4E494629',
+    shadow: '#4E494629',
     contrast: [ '#310a0d', '#581d22', '#79353b', '#a56066'],
   },
   text: {
@@ -25,7 +26,8 @@ const dark = {
     tertiary: '#444',
     quaternary: '#666',
     inset: '#999',
-    input: '#9999996f',
+    input: '#99999929',
+    shadow: '#cccccc29',
     contrast: ['#7abbb9', '#52bbb7', '#30bbb6', '#0abab5'],
   },
   text: {

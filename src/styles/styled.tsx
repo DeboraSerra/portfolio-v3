@@ -52,11 +52,11 @@ export const AnchorText = styled.a`
   &:hover {
     color: inherit;
     text-decoration: underline;
-  }// &:hover
+  } // &:hover
 
   &:active {
-    color: ${props => props.theme.bg.contrast[0]};
-  }// &:active
+    color: ${(props) => props.theme.bg.contrast[0]};
+  } // &:active
 
   &.medium {
     font-size: ${(props) => props.theme.fontSizes[2]};
@@ -73,8 +73,49 @@ export const AnchorText = styled.a`
 
 export const ButtonLink = styled.a``;
 
-export const Button = styled.button``;
+export const Button = styled.button`
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  background-image: linear-gradient(${props => props.theme.bg.contrast[3]}, ${props => props.theme.bg.contrast[0]});
 
-export const LinkStyled = styled(Link)``;
+  color: ${props => props.theme.bg.primary};
+  
+  &.no-bg {
+    background: transparent;
+    
+    color: ${props => props.theme.text.primary};
+  }// &.no-bg
+`;
+
+export const LinkStyled = styled(Link)`
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  justify-content: flex-start;
+
+  font-size: ${(props) => props.theme.fontSizes[3]};
+
+  &:hover {
+    color: inherit;
+    text-decoration: underline;
+  } // &:hover
+
+  &:active {
+    color: ${(props) => props.theme.bg.contrast[0]};
+  } // &:active
+
+  &.medium {
+    font-size: ${(props) => props.theme.fontSizes[2]};
+  } // &.medium
+
+  &.small {
+    font-size: ${(props) => props.theme.fontSizes[1]};
+  } // &.small
+
+  &.smallest {
+    font-size: ${(props) => props.theme.fontSizes[0]};
+  } // &.small
+`;
 
 export const ModalCard = styled.div``;
