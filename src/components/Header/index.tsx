@@ -1,12 +1,15 @@
 import { ProjectsContext } from "@/helpers/Context";
-import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
+import { useDarkMode } from "usehooks-ts";
 import { BsSun, BsMoonFill } from "react-icons/bs";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
+import { Button, LinkStyled, Title } from "@/styles/styled";
+
+import logo from "../../../assets/images/laptop.png";
 
 import * as S from "./Header.styled";
-import { useDarkMode } from "usehooks-ts";
-import { Button, LinkStyled, Title } from "@/styles/styled";
+import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -17,7 +20,7 @@ const Header = () => {
   return (
     <S.Header>
       <div className='container flex'>
-        <Title>Débora Serra</Title>
+        <Link href="/"><Image src={logo} alt="Débora Serra" width={50} height={50} /></Link>
         <nav className='flex center'>
           <LinkStyled className='medium' href='/'>
             Home

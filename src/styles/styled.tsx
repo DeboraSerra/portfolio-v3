@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const Title = styled.h1`
   font-size: ${(props) => props.theme.fontSizes[6]};
+  color: ${props => props.theme.text.primary};
 
   &.medium {
     font-size: ${(props) => props.theme.fontSizes[5]};
@@ -11,10 +12,15 @@ export const Title = styled.h1`
   &.small {
     font-size: ${(props) => props.theme.fontSizes[4]};
   } // &.small
+
+  &.center {
+    text-align: center;
+  }// &.center
 `;
 
 export const Subtitle = styled.h2`
   font-size: ${(props) => props.theme.fontSizes[5]};
+  color: ${props => props.theme.text.secondary};
 
   &.medium {
     font-size: ${(props) => props.theme.fontSizes[4]};
@@ -27,6 +33,7 @@ export const Subtitle = styled.h2`
 
 export const Text = styled.p`
   font-size: ${(props) => props.theme.fontSizes[3]};
+  color: ${props => props.theme.text.tertiary};
 
   &.medium {
     font-size: ${(props) => props.theme.fontSizes[2]};
@@ -46,6 +53,7 @@ export const AnchorText = styled.a`
   gap: 2px;
   align-items: center;
   justify-content: flex-start;
+  color: ${props => props.theme.text.tertiary};
 
   font-size: ${(props) => props.theme.fontSizes[3]};
 
@@ -95,6 +103,7 @@ export const LinkStyled = styled(Link)`
   justify-content: flex-start;
 
   font-size: ${(props) => props.theme.fontSizes[3]};
+  color: ${props => props.theme.text.tertiary};
 
   &:hover {
     color: inherit;

@@ -1,4 +1,4 @@
-import { darkTheme, lightTheme } from "@/helpers/Theme";
+import { darkTheme, lightTheme } from "@/styles/Theme";
 import { ReactNode, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { useDarkMode } from "usehooks-ts";
