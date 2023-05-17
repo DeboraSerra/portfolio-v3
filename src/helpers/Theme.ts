@@ -6,7 +6,7 @@ const light = {
     quaternary: '#ccc',
     inset: '#4E4946',
     input: '#4E49466f',
-    contrast: [],
+    contrast: [ '#310a0d', '#581d22', '#79353b', '#a56066'],
   },
   text: {
     primary: '#000',
@@ -26,7 +26,7 @@ const dark = {
     quaternary: '#666',
     inset: '#999',
     input: '#9999996f',
-    contrast: [],
+    contrast: ['#7abbb9', '#52bbb7', '#30bbb6', '#0abab5'],
   },
   text: {
     primary: '#fff',
