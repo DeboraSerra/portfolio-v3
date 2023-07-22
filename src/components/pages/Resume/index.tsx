@@ -169,7 +169,7 @@ const Resume = () => {
           </a>
           <a
             className='resume__btn'
-            href='/files/Resume-jun-23.pdf'
+            href='/files/Currículo-jun-23.pdf'
             download='Curriculo-Débora-Serra.pdf'
           >
             Download resume (portuguese)

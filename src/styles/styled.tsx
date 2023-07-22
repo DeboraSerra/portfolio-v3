@@ -82,7 +82,7 @@ export const Text = styled.p`
 
 export const AnchorText = styled.a`
   display: flex;
-  gap: 2px;
+  gap: 8px;
   align-items: center;
   justify-content: flex-start;
   color: ${(props) => props.theme.text.tertiary};
