@@ -1,5 +1,5 @@
 import { ProjectsContext } from "@/helpers/Context";
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { BsMoonFill, BsSun } from "react-icons/bs";
 import { useDarkMode, useOnClickOutside, useWindowSize } from "usehooks-ts";
@@ -10,6 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import * as S from "./Header.styled";
+import { useRouter } from "next/router";
 
 const Header = () => {
   const { width } = useWindowSize();
@@ -20,6 +21,11 @@ const Header = () => {
     setShowMenu(false);
   });
   const { routes } = useContext(ProjectsContext);
+  // const router = useRouter()
+
+  // useEffect(() => {
+    
+  // }, [])
 
   const { isDarkMode, toggle } = useDarkMode();
 

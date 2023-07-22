@@ -34,6 +34,10 @@ export const Subtitle = styled.h2`
   font-size: ${(props) => props.theme.fontSizes[5]};
   color: ${(props) => props.theme.text.secondary};
 
+  &.center {
+    text-align: center;
+  }// &.center
+
   &.medium {
     font-size: ${(props) => props.theme.fontSizes[4]};
   } // &.medium
@@ -42,17 +46,21 @@ export const Subtitle = styled.h2`
     font-size: ${(props) => props.theme.fontSizes[3]};
   } // &.small
 
-  @media only screen and (max-width : 768px) {
-    font-size: ${(props) => props.theme.fontSizes[4]};
-
-  &.medium {
-    font-size: ${(props) => props.theme.fontSizes[3]};
-  } // &.medium
-
-  &.small {
+  &.smaller {
     font-size: ${(props) => props.theme.fontSizes[2]};
   } // &.small
-  }// @media only screen and (max-width : 768px)
+
+  @media only screen and (max-width: 768px) {
+    font-size: ${(props) => props.theme.fontSizes[4]};
+
+    &.medium {
+      font-size: ${(props) => props.theme.fontSizes[3]};
+    } // &.medium
+
+    &.small {
+      font-size: ${(props) => props.theme.fontSizes[2]};
+    } // &.small
+  } // @media only screen and (max-width : 768px)
 `;
 
 export const Text = styled.p`
