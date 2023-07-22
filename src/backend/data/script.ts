@@ -1,4 +1,11 @@
-import { Project } from "../../helpers/interfaces";
+export interface Project {
+  id: number;
+  description: string;
+  name: string;
+  module: string;
+  link: string
+  src: string
+}
 
 const projects: Project[] = [
   {
