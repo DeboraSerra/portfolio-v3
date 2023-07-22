@@ -12,7 +12,7 @@ const Card = ({ name, image, onClick }: Props) => {
     <div className="project__card" onClick={onClick}>
       <Subtitle>{name}</Subtitle>
       <div className="project__img">
-        <Image src={image} alt={name} width={128} height={120} />
+        <Image src={image} alt={name} width={150} height={90} />
       </div>
     </div>
   );

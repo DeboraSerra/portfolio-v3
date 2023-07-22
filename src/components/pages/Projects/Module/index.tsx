@@ -2,7 +2,7 @@ import { Modules, Project } from "@/helpers";
 import { Title } from "@/styles/styled";
 import Card from "./Card/Card";
 import * as S from "./Module.styled";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Modal from "./Modal/Modal";
 
 const titles = {
@@ -26,6 +26,7 @@ const ProjectModule = ({ projects, module }: Props) => {
   const handleOpenModal = (index: number) => {
     setActive(index)
     setOpenModal(true)
+    window.scrollTo({ top: 0 })
   }
 
   return (

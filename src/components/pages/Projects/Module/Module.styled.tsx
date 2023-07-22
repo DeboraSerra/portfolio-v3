@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Main = styled.main`
   padding: 40px 0;
   background-color: ${(props) => props.theme.bg.tertiary};
+  /* position: relative; */
 
   .project {
     &__box {
@@ -47,27 +48,52 @@ export const Main = styled.main`
     } // &-img
 
     &__modal {
-      position: fixed;
+      position: absolute;
       width: 100vw;
       height: 100vh;
       top: 0;
       left: 0;
       background-color: #000000b7;
       display: flex;
+      z-index: 4;
 
       &-box {
         background-color: ${(props) => props.theme.bg.secondary};
         width: 70%;
-        height: 80vh;
+        min-height: 80vh;
         margin: auto;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        gap: 8px;
         padding: 24px 32px;
         position: relative;
         border-radius: 8px;
         box-shadow: 0 0 48px ${(props) => props.theme.text.placeholder};
+
+        & a {
+          color: ${props => props.theme.text.tertiary};
+
+          &:hover {
+            text-decoration: underline;
+          }// &:hover
+        }// & a
+
+        @media only screen and (max-width : 768px) {
+          width: 90%;
+
+          & a {
+            text-decoration: underline;
+          }// & a
+        }// @media only screen and (max-width : 768px)
+
+        @media only screen and (max-width : 350px) {
+          max-width: 100%;
+          margin: 68px auto;
+        }// @media only screen and (max-width : 350px)
+
+        
       } // &-box
 
       &-img {
@@ -81,6 +107,8 @@ export const Main = styled.main`
         & img {
           max-height: 100%;
           width: auto;
+          max-width: 100%;
+          height: auto;
           object-fit: contain;
         } // & img
       } // &-img
@@ -88,6 +116,7 @@ export const Main = styled.main`
       &-text {
         flex-grow: 1;
         text-align: center;
+        max-width: 700px;
       } // &-text
 
       &-close {
@@ -96,7 +125,7 @@ export const Main = styled.main`
         top: 4px;
         cursor: pointer;
 
-        color: ${props => props.theme.text.secondary};
+        color: ${props => props.theme.text.tertiary};
         font-size: ${(props) => props.theme.fontSizes[4]};
       } // &-close
     } // &__modal
