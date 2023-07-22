@@ -34,7 +34,7 @@ const ProjectModule = ({ projects, module }: Props) => {
       <div className='container'>
         <Title className='center'>{titles[module as Modules]}</Title>
         <div className='project__box'>
-          {projects.map((proj, index) => (
+          {projects?.map((proj, index) => (
             <Card name={proj.name} image={proj.image} key={proj.id} onClick={() => handleOpenModal(index)} />
           ))}
         </div>

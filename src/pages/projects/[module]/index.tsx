@@ -1,7 +1,7 @@
 import Projects from "@/backend/projects.controller";
 import ProjectModule from "@/components/pages/Projects/Module";
 import { Modules, Project } from "@/helpers/interfaces";
-import { GetStaticPropsContext } from "next";
+import { GetServerSidePropsContext, GetStaticPropsContext } from "next";
 import { useRouter } from "next/router";
 
 export default function Module({ projects }: { projects: Project[] }) {
