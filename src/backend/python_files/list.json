@@ -454,5 +454,21 @@
     "name": "Afiliados UOL Host",
     "link": "https://uolhost.uol.com.br/afiliados-uol-host",
     "src": "/images/uol/afiliados.webp"
+  },
+  {
+    "id": 58,
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose the available to buy and use in a PostgreSQL database.",
+    "module": "UOL Host",
+    "name": "Linguagem de Programação PHP ASP NET",
+    "link": "https://uolhost.uol.com.br/hospedagem-de-sites/linguagem-programacao/php-asp-net",
+    "src": "/images/uol/php.webp"
+  },
+  {
+    "id": 59,
+    "description": "This project was developed as part of the first Hackathon for Questrade and DevOps BootCamp. We had less than two days to develop the application to the best of our capacity. After the little more than 24 hours of project we delivered an app where the user can fully log in. At the end of this competition, I ended up in 9th place.",
+    "module": "Personal project",
+    "name": "1st Hackathon Questrade and DevOps BootCamp",
+    "link": "https://github.com/DeboraSerra/Hackathon-questrade",
+    "src": "/images/personal/questrade.webp"
   }
 ]
