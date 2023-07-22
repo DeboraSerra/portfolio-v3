@@ -25,7 +25,7 @@ const fadeRight = keyframes`
 `;
 
 export const Main = styled.div`
-  margin: 128px auto 0;
+  margin: 128px auto 64px;
   width: 900px;
   position: relative;
   display: flex;
@@ -41,17 +41,34 @@ export const Main = styled.div`
   } // .line
 
   .item {
-    max-width: 400px;
+    width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background-color: ${props => props.theme.bg.contrast[3]};
+      position: absolute;
+      border-radius: 50%;
+      border: 3px solid ${props => props.theme.bg.tertiary};
+      top: 50%;
+      transform: translateY(-50%);
+    }// &::before
 
     text-align: center;
 
     &.left {
       align-self: flex-start;
+
+      &::before {
+        right: -58px;
+      }// &::before
 
       &.active {
         animation-name: ${fadeLeft};
@@ -62,6 +79,10 @@ export const Main = styled.div`
     &.right {
       align-self: flex-end;
 
+      &::before {
+        left: -58px;
+      }// &::before
+
       &.active {
         animation-name: ${fadeRight};
         animation-duration: 0.8s;
@@ -71,6 +92,7 @@ export const Main = styled.div`
     & .image {
       width: 200px;
       height: 150px;
+      background-color: #fff;
 
       & img {
         height: 150px;
@@ -94,6 +116,24 @@ export const Main = styled.div`
 
     .item {
       max-width: 48%;
+
+      &.left, &.right {
+        &.active {
+          animation-name: none;
+        }// &.active
+      }// &.left, &.right
+
+      &.left {
+        &::before {
+          right: -22px;
+        }// &::before
+      }// &.left
+
+      &.right {
+        &::before {
+          left: -22px;
+        }// &::before
+      }// &.right
     }// .item
   }// @media only screen and (max-width : 992px)
 
@@ -106,6 +146,10 @@ export const Main = styled.div`
       &.left, &.right {
         align-self: center;
         max-width: 90%;
+
+        &::before {
+          left: -72px;
+        }// &::before
       }// &.left, &.right
     }// .item
   }// @media only screen and (max-width : 768px)
