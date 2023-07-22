@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Main = styled.main`
   padding: 40px 0;
   background-color: ${(props) => props.theme.bg.tertiary};
-  /* position: relative; */
+  min-height: 61.5vh;
 
   .project {
     &__box {
@@ -124,6 +124,8 @@ export const Main = styled.main`
         right: 4px;
         top: 4px;
         cursor: pointer;
+        background-color: transparent;
+        border: none;
 
         color: ${props => props.theme.text.tertiary};
         font-size: ${(props) => props.theme.fontSizes[4]};

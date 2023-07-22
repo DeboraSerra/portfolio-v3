@@ -13,8 +13,10 @@ const Resume = () => {
             <div className='resume__contact'>
               <Subtitle className='medium center'>Contact</Subtitle>
               <Text className='small resume__contact--info'>
-                <div><FaWhatsapp className='resume-icon' />
-                <FiPhone className='resume-icon' /></div>
+                <span>
+                  <FaWhatsapp className='resume-icon' />
+                  <FiPhone className='resume-icon' />
+                </span>
                 +55 61 98231 1582
               </Text>
               <Text className='small resume__contact--info'>
@@ -77,7 +79,9 @@ const Resume = () => {
             </div>
 
             <div className='resume__profession'>
-              <Subtitle className='medium center'>Professional history</Subtitle>
+              <Subtitle className='medium center'>
+                Professional history
+              </Subtitle>
               <div className='resume__profession--item'>
                 <Text className='small resume__profession--item-year'>
                   09/2022 - Current

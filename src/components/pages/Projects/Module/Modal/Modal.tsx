@@ -21,15 +21,17 @@ const Modal = ({
   return (
     <div className='project__modal'>
       <div className='project__modal-box' ref={modal}>
-        <GrClose
+        <button
           className='project__modal-close'
           onClick={() => setOpenModal(false)}
-        />
+        >
+          <GrClose />
+        </button>
         <Title className='center'>{name}</Title>
         <div className='project__modal-img'>
           <Image src={image} alt={name} width={600} height={360} />
         </div>
-        <Text className="project__modal-text">{description}</Text>
+        <Text className='project__modal-text'>{description}</Text>
         <Link href={repository}>See more</Link>
       </div>
     </div>
