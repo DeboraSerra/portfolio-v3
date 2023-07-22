@@ -9,6 +9,7 @@ def get_list(path):
     text_fund = ''
     text_front = ''
     text_personal = ''
+    text_uol = ''
     for item in content:
       if item['name'] not in text_back:
         module = item['module']

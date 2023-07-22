@@ -1,14 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 import Projects from '@/backend/projects.controller'
 import { useRouter } from 'next/router'
 import { Modules, Project } from '@/helpers/interfaces'
 import Link from 'next/link'
-
-const inter = Inter({ subsets: ['latin'] })
 
 const titles = {
   personal: 'Personal',
@@ -29,12 +25,12 @@ export default function Module({ projects }: { projects: Project[] }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
+      <main>
         <h1>{titles[module as Modules]}</h1>
         {projects.map((proj) => (
           <div key={proj.id}>
             <h2>{proj.name}</h2>
-            <div className={styles.img}>
+            <div>
               <Image src={proj.image} alt={proj.name} width={100} height={50} />
             </div>
             <p>{proj.description}</p>

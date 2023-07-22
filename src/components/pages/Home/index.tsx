@@ -3,6 +3,7 @@ import * as S from "./Home.styled";
 
 import profile from "../../../../assets/images/home/me.jpg";
 import Image from "next/image";
+import Timeline from "@/components/Timeline";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
             <Text>Baker | Cosmetologist</Text>
           </div>
         </div>
+        <Timeline />
       </div>
     </S.Main>
   );

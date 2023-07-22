@@ -2,8 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   compiler: {
-    styledComponents: true,
+    styledComponents: { ssr: true },
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

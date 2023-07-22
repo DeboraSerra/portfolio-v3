@@ -32,3 +32,13 @@ export interface ProjectsPaths {
   name: string;
   route: string;
 }
+
+export interface TimelineInterface {
+  img: string;
+  from: number;
+  to: number | undefined;
+  title: string;
+  content: string;
+  width: number;
+  height: number;
+}
