@@ -1,8 +1,6 @@
 import { TimelineInterface } from "@/helpers";
-import useOnScreen from "@/helpers/useOnScreen";
 import { Subtitle, Text } from "@/styles/styled";
 import Image from "next/image";
-import { useRef } from "react";
 
 interface Props extends TimelineInterface {
   index: number;
@@ -18,16 +16,8 @@ const Card = ({
   to,
   content,
 }: Props) => {
-  const card = useRef(null);
-  const isVisible = useOnScreen(card);
-
   return (
-    <div
-      ref={card}
-      className={`item ${index % 2 === 0 ? "left" : "right"} ${
-        isVisible ? "active" : ""
-      }`}
-    >
+    <div className={`item ${index % 2 === 0 ? "left" : "right"}`}>
       <div className='image'>
         <Image src={img} alt={title} width={width} height={height} />
       </div>

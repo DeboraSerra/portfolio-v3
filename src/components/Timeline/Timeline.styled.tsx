@@ -65,27 +65,27 @@ export const Main = styled.div`
 
     &.left {
       align-self: flex-start;
+      animation-name: ${fadeLeft};
+      animation-duration: 0.8s;
 
       &::before {
         right: -58px;
       }// &::before
 
       &.active {
-        animation-name: ${fadeLeft};
-        animation-duration: 0.8s;
       }// &.active
     } // &.left
 
     &.right {
       align-self: flex-end;
+      animation-name: ${fadeRight};
+      animation-duration: 0.8s;
 
       &::before {
         left: -58px;
       }// &::before
 
       &.active {
-        animation-name: ${fadeRight};
-        animation-duration: 0.8s;
       }// &.active
     } // &.right
 
