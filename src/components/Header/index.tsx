@@ -22,7 +22,14 @@ const Header = () => {
   });
   const { routes } = useContext(ProjectsContext);
   const router = useRouter()
-  
+
+  useEffect(() => {
+    const dark = localStorage.getItem('usehooks-ts-dark-mode')
+    if (!dark) {
+      localStorage.setItem('usehooks-ts-dark-mode', 'false')
+    }
+  }, [])
+
   const handleRouteChange = () => {
     setShowMenu(false);
     setShowSubMenu(false)
@@ -36,7 +43,7 @@ const Header = () => {
     };
   }, [router.events]);
 
-  const { isDarkMode, toggle } = useDarkMode();
+  const { isDarkMode, toggle } = useDarkMode(false);
 
   return (
     <S.Header ref={header}>
