@@ -1,8 +1,8 @@
 import { TimelineInterface } from "@/helpers";
+import useOnScreen from "@/helpers/useOnScreen";
 import { Subtitle, Text } from "@/styles/styled";
 import Image from "next/image";
 import { useRef } from "react";
-import { useIntersectionObserver } from "usehooks-ts";
 
 interface Props extends TimelineInterface {
   index: number;
@@ -18,12 +18,16 @@ const Card = ({
   to,
   content,
 }: Props) => {
-  const card = useRef(null)
-  const entry = useIntersectionObserver(card, {})
-  const isVisible = !!entry?.isIntersecting
+  const card = useRef(null);
+  const isVisible = useOnScreen(card);
 
   return (
-    <div ref={card} className={`item ${index % 2 === 0 ? "left" : "right"} ${isVisible ? 'active' : ''}`}>
+    <div
+      ref={card}
+      className={`item ${index % 2 === 0 ? "left" : "right"} ${
+        isVisible ? "active" : ""
+      }`}
+    >
       <div className='image'>
         <Image src={img} alt={title} width={width} height={height} />
       </div>

@@ -21,11 +21,20 @@ const Header = () => {
     setShowMenu(false);
   });
   const { routes } = useContext(ProjectsContext);
-  // const router = useRouter()
+  const router = useRouter()
+  
+  const handleRouteChange = () => {
+    setShowMenu(false);
+    setShowSubMenu(false)
+  }
 
-  // useEffect(() => {
-    
-  // }, [])
+  useEffect(() => {
+    router.events.on("routeChangeStart", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, [router.events]);
 
   const { isDarkMode, toggle } = useDarkMode();
 
