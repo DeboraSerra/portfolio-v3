@@ -2,11 +2,7 @@ import { ProjectsContext } from "@/helpers/Context";
 import { useContext, useEffect, useRef, useState } from "react";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { BsMoonFill, BsSun } from "react-icons/bs";
-import {
-  useOnClickOutside,
-  useTernaryDarkMode,
-  useWindowSize,
-} from "usehooks-ts";
+import { useOnClickOutside, useWindowSize } from "usehooks-ts";
 
 import logo from "../../../assets/images/laptop.png";
 
@@ -16,7 +12,13 @@ import { useRouter } from "next/router";
 import { GiHamburgerMenu } from "react-icons/gi";
 import * as S from "./Header.styled";
 
-const Header = () => {
+const Header = ({
+  isDarkMode,
+  toggleDarkMode,
+}: {
+  isDarkMode: boolean;
+  toggleDarkMode: () => void;
+}) => {
   const { width } = useWindowSize();
   const header = useRef(null);
   const [showSubMenu, setShowSubMenu] = useState(false);
@@ -39,15 +41,6 @@ const Header = () => {
       router.events.off("routeChangeStart", handleRouteChange);
     };
   }, [router.events]);
-
-  const { isDarkMode, setTernaryDarkMode } = useTernaryDarkMode();
-
-  useEffect(() => {
-    const dark = localStorage.getItem('usehooks-ts-ternary-dark-mode');
-    if (!dark) {
-      setTernaryDarkMode('light')
-    }
-  }, [])
 
   return (
     <S.Header ref={header}>
@@ -137,14 +130,7 @@ const Header = () => {
             </nav>
           )
         )}
-        <button
-          className='header__btn'
-          onClick={() => {
-            isDarkMode
-              ? setTernaryDarkMode("light")
-              : setTernaryDarkMode("dark");
-          }}
-        >
+        <button className='header__btn' onClick={toggleDarkMode}>
           {isDarkMode ? <BsSun /> : <BsMoonFill />}
         </button>
       </div>
