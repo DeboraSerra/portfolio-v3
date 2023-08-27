@@ -1,10 +1,10 @@
 import { darkTheme, lightTheme } from "@/styles/Theme";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
-import { useDarkMode } from "usehooks-ts";
+import { useTernaryDarkMode } from "usehooks-ts";
 
 const TProvider = ({ children }: { children: ReactNode }) => {
-  const { isDarkMode } = useDarkMode();
+  const { isDarkMode } = useTernaryDarkMode();
 
   const theme = isDarkMode ? darkTheme : lightTheme;
 

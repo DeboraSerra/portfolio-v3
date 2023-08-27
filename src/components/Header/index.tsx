@@ -2,15 +2,19 @@ import { ProjectsContext } from "@/helpers/Context";
 import { useContext, useEffect, useRef, useState } from "react";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { BsMoonFill, BsSun } from "react-icons/bs";
-import { useDarkMode, useOnClickOutside, useWindowSize } from "usehooks-ts";
+import {
+  useOnClickOutside,
+  useTernaryDarkMode,
+  useWindowSize,
+} from "usehooks-ts";
 
 import logo from "../../../assets/images/laptop.png";
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { GiHamburgerMenu } from "react-icons/gi";
 import * as S from "./Header.styled";
-import { useRouter } from "next/router";
 
 const Header = () => {
   const { width } = useWindowSize();
@@ -21,12 +25,12 @@ const Header = () => {
     setShowMenu(false);
   });
   const { routes } = useContext(ProjectsContext);
-  const router = useRouter()
+  const router = useRouter();
 
   const handleRouteChange = () => {
     setShowMenu(false);
-    setShowSubMenu(false)
-  }
+    setShowSubMenu(false);
+  };
 
   useEffect(() => {
     router.events.on("routeChangeStart", handleRouteChange);
@@ -36,13 +40,16 @@ const Header = () => {
     };
   }, [router.events]);
 
-  const { isDarkMode, toggle } = useDarkMode(false);
+  const { isDarkMode, setTernaryDarkMode } = useTernaryDarkMode();
 
   return (
     <S.Header ref={header}>
       <div className='container flex'>
         {width <= 768 && (
-          <GiHamburgerMenu onClick={() => setShowMenu(!showMenu)} className="hamburger-icon" />
+          <GiHamburgerMenu
+            onClick={() => setShowMenu(!showMenu)}
+            className='hamburger-icon'
+          />
         )}
         <Link href='/'>
           <Image src={logo} alt='Débora Serra' width={50} height={50} />
@@ -95,7 +102,11 @@ const Header = () => {
                 className='header__menu'
                 onClick={() => setShowSubMenu(!showSubMenu)}
               >
-                <Link className='header__link small' href='#!' onClick={(e) => e.preventDefault()}>
+                <Link
+                  className='header__link small'
+                  href='#!'
+                  onClick={(e) => e.preventDefault()}
+                >
                   Projects
                   {showSubMenu ? <BiChevronUp /> : <BiChevronDown />}
                 </Link>
@@ -119,7 +130,14 @@ const Header = () => {
             </nav>
           )
         )}
-        <button className='header__btn' onClick={toggle}>
+        <button
+          className='header__btn'
+          onClick={() => {
+            isDarkMode
+              ? setTernaryDarkMode("light")
+              : setTernaryDarkMode("dark");
+          }}
+        >
           {isDarkMode ? <BsSun /> : <BsMoonFill />}
         </button>
       </div>
