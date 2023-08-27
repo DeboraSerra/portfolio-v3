@@ -42,6 +42,13 @@ const Header = () => {
 
   const { isDarkMode, setTernaryDarkMode } = useTernaryDarkMode();
 
+  useEffect(() => {
+    const dark = localStorage.getItem('usehooks-ts-ternary-dark-mode');
+    if (!dark) {
+      setTernaryDarkMode('light')
+    }
+  }, [])
+
   return (
     <S.Header ref={header}>
       <div className='container flex'>

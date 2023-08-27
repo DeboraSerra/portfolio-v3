@@ -5,8 +5,16 @@ import TProvider from "@/styles/ThemeProvider";
 import "@/styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import type { AppProps } from "next/app";
+import { useEffect } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    const dark = localStorage.getItem("usehooks-ts-ternary-dark-mode");
+    if (!dark) {
+      localStorage.setItem("usehooks-ts-ternary-dark-mode", "light");
+    }
+  }, []);
+
   return (
     <TProvider>
       <ProjectsProvider>
