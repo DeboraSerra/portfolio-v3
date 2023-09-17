@@ -73,6 +73,12 @@ const Header = ({
               </Link>
               {showSubMenu ? (
                 <div className='header__menu--abs flex column'>
+                  <Link
+                      className='header__link medium'
+                      href={`/projects`}
+                    >
+                      All categories
+                    </Link>
                   {routes.map(({ id, name, route }) => (
                     <Link
                       className='header__link medium'
