@@ -12,6 +12,7 @@ export const Main = styled.main`
       margin: 32px 0;
       border-top: 1px solid ${(props) => props.theme.bg.contrast[3]};
       padding-top: 32px;
+      flex-wrap: wrap;
     } // &__box
 
     &__link {
@@ -20,13 +21,15 @@ export const Main = styled.main`
       color: ${(props) => props.theme.text.secondary};
       text-align: center;
 
+      text-decoration-color: ${(props) => props.theme.text.secondary};
+
       &:hover {
         text-decoration: underline;
-      }// &:hover
+      } // &:hover
 
-      @media only screen and (max-width : 768px) {
+      @media only screen and (max-width: 768px) {
         text-decoration: underline;
-      }// @media only screen and (max-width : 768px)
+      } // @media only screen and (max-width : 768px)
     } // &__link
 
     &__card {
@@ -42,8 +45,8 @@ export const Main = styled.main`
       text-align: center;
 
       &:hover {
-        box-shadow: 0 0 4px ${props => props.theme.bg.contrast[2]};
-      }// &:hover
+        box-shadow: 0 0 4px ${(props) => props.theme.bg.contrast[2]};
+      } // &:hover
 
       &-image {
         width: 100%;
@@ -55,8 +58,8 @@ export const Main = styled.main`
         & img {
           max-width: 100%;
           height: auto;
-        }// & img
-      }// &-imagem
-    }// &__card
+        } // & img
+      } // &-imagem
+    } // &__card
   } // .projects
 `;
