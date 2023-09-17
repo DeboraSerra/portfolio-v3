@@ -12,6 +12,18 @@ const fadeIn = keyframes`
   }
 `;
 
+const fadeLeft = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
 export const Header = styled.header`
   background-color: ${(props) => props.theme.bg.primary};
   padding: 20px 0;
@@ -30,6 +42,11 @@ export const Header = styled.header`
   } // .hamburger-icon
 
   .header {
+    &.active {
+      animation-name: ${fadeLeft};
+      animation-duration: 0.5s;
+    } // &.active
+
     &__link {
       display: flex;
       gap: 2px;
@@ -76,18 +93,18 @@ export const Header = styled.header`
       position: relative;
 
       &--abs {
+        width: 180px;
         padding: 8px 12px;
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        left: -12px;
         background-color: ${(props) => props.theme.bg.primary};
-        box-shadow: 0 8px 12px ${(props) => props.theme.bg.shadow};
+        box-shadow: 2px 4px 12px 4px ${(props) => props.theme.bg.shadow};
       } // &--abs
     } // &__menu
 
     @media only screen and (max-width: 768px) {
       position: absolute;
-      min-width: 220px;
+      min-width: 230px;
       top: 90px;
       background-color: ${(props) => props.theme.bg.primary};
       height: 100vh;

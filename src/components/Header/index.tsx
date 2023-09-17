@@ -73,12 +73,9 @@ const Header = ({
               </Link>
               {showSubMenu ? (
                 <div className='header__menu--abs flex column'>
-                  <Link
-                      className='header__link medium'
-                      href={`/projects`}
-                    >
-                      All categories
-                    </Link>
+                  <Link className='header__link medium' href={`/projects`}>
+                    All categories
+                  </Link>
                   {routes.map(({ id, name, route }) => (
                     <Link
                       className='header__link medium'
@@ -97,7 +94,7 @@ const Header = ({
           </nav>
         ) : (
           showMenu && (
-            <nav className='header'>
+            <nav className={`header ${showMenu ? "active" : ""}`}>
               <Link className='header__link small' href='/'>
                 Home
               </Link>
@@ -119,10 +116,7 @@ const Header = ({
                 {showSubMenu ? (
                   <>
                     <div className='header__menu--abs'>
-                      <Link
-                        className='header__link small'
-                        href={`/projects`}
-                      >
+                      <Link className='header__link small' href={`/projects`}>
                         All categories
                       </Link>
                       {routes.map(({ id, name, route }) => (
