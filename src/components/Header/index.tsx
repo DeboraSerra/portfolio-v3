@@ -111,17 +111,25 @@ const Header = ({
                   {showSubMenu ? <BiChevronUp /> : <BiChevronDown />}
                 </Link>
                 {showSubMenu ? (
-                  <div className='header__menu--abs'>
-                    {routes.map(({ id, name, route }) => (
+                  <>
+                    <div className='header__menu--abs'>
                       <Link
                         className='header__link small'
-                        key={id}
-                        href={`/projects/${route}`}
+                        href={`/projects`}
                       >
-                        {name}
+                        All categories
                       </Link>
-                    ))}
-                  </div>
+                      {routes.map(({ id, name, route }) => (
+                        <Link
+                          className='header__link small'
+                          key={id}
+                          href={`/projects/${route}`}
+                        >
+                          {name}
+                        </Link>
+                      ))}
+                    </div>
+                  </>
                 ) : null}
               </div>
               <Link className='header__link small' href='/contact'>

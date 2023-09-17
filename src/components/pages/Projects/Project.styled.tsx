@@ -22,11 +22,11 @@ export const Main = styled.main`
       text-align: center;
 
       text-decoration-color: ${(props) => props.theme.text.secondary};
-
+      
       &:hover {
         text-decoration: underline;
       } // &:hover
-
+      
       @media only screen and (max-width: 768px) {
         text-decoration: underline;
       } // @media only screen and (max-width : 768px)
@@ -41,8 +41,9 @@ export const Main = styled.main`
       border-radius: 8px;
       box-shadow: 0 0 24px #00000029;
       padding: 8px 12px;
-
+      
       text-align: center;
+      text-decoration-color: ${(props) => props.theme.text.secondary};
 
       &:hover {
         box-shadow: 0 0 4px ${(props) => props.theme.bg.contrast[2]};
