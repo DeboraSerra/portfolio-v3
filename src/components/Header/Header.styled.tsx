@@ -52,6 +52,7 @@ export const Header = styled.header`
       gap: 2px;
       align-items: center;
       justify-content: flex-start;
+      cursor: pointer;
 
       font-size: ${(props) => props.theme.fontSizes[3]};
       color: ${(props) => props.theme.text.tertiary};
