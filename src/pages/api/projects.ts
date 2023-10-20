@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import ProjectModel from '@/backend/projects.model'
+import ProjectModel from '@/backend/model/projects.model'
 import { ProjectArrays } from '@/helpers/interfaces';
 import type { NextApiRequest, NextApiResponse } from 'next'
 

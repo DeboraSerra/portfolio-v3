@@ -1,8 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import ProjectModel from '@/backend/projects.model'
-import { ProjectsPaths } from '@/helpers/interfaces';
-import { RowDataPacket } from 'mysql2';
-import type { NextApiRequest, NextApiResponse } from 'next'
+import ProjectModel from "@/backend/model/projects.model";
+import { ProjectsPaths } from "@/helpers/interfaces";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
   req: NextApiRequest,
@@ -10,6 +9,6 @@ export default async function handler(
 ) {
   if (req.method === "GET") {
     const routes = await ProjectModel.getPaths();
-    return res.status(200).json(routes)
+    return res.status(200).json(routes);
   }
 }
