@@ -23,8 +23,8 @@ const InvoiceTable = () => {
     setSortByDate(!sortByDate);
     setSortByValue(false);
     setSortByClient(false);
-    setInvoices(
-      invoices.sort((a: any, b: any) => {
+    setFilteredInvoices(
+      filteredInvoices.sort((a: any, b: any) => {
         if (sortByDate) {
           return (
             new Date(a.date_received).getTime() -
@@ -43,8 +43,8 @@ const InvoiceTable = () => {
     setSortByValue(!sortByValue);
     setSortByDate(false);
     setSortByClient(false);
-    setInvoices(
-      invoices.sort((a: any, b: any) => {
+    setFilteredInvoices(
+      filteredInvoices.sort((a: any, b: any) => {
         if (sortByValue) {
           return a.value_received - b.value_received;
         }
@@ -57,8 +57,8 @@ const InvoiceTable = () => {
     setSortByClient(!sortByClient);
     setSortByDate(false);
     setSortByValue(false);
-    setInvoices(
-      invoices.sort((a: any, b: any) => {
+    setFilteredInvoices(
+      filteredInvoices.sort((a: any, b: any) => {
         if (sortByClient) {
           return a.client.localeCompare(b.client);
         }
