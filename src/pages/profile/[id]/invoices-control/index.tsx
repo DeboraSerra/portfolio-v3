@@ -1,7 +1,7 @@
 import InvoiceControl from "@/components/pages/InvoiceControl";
 
 const InvoicesControlPage = () => {
-  return <InvoiceControl />
+  return <InvoiceControl />;
 };
 
 export default InvoicesControlPage;

@@ -6,6 +6,8 @@ import * as S from "./InvoiceForm.styled";
 const InvoiceForm = () => {
   const {
     user: { id },
+    setInvoices,
+    invoices,
   } = useContext(ProjectsContext);
   const [form, setForm] = useState({
     client: "",
@@ -55,6 +57,7 @@ const InvoiceForm = () => {
     };
     console.log({ info });
     const result = await axios.post("http://localhost:3000/api/invoice", info);
+    setInvoices([...invoices, result.data.invoice]);
   };
 
   return (

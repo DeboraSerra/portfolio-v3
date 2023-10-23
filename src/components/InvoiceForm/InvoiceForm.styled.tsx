@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Main = styled.form`
+  color: ${({ theme }) => theme.text.primary};
+
   .control {
     &__form {
       &--title {

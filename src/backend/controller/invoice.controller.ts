@@ -3,50 +3,56 @@ import InvoiceService from "../service/invoice.service";
 
 const InvoiceController = {
   createInvoice: async (req: NextApiRequest, res: NextApiResponse) => {
-    const addedInvoice = await InvoiceService.createInvoice(req.body);
-    if ("error" in addedInvoice) {
-      return res.status(400).json(addedInvoice);
+    const { invoice, error, message } = await InvoiceService.createInvoice(
+      req.body
+    );
+    if (error) {
+      return res.status(400).json({ error, message });
     }
-    return res.status(201).json(addedInvoice);
+    return res.status(201).json({ invoice });
   },
   getAllInvoices: async (req: NextApiRequest, res: NextApiResponse) => {
     const { user_id } = req.query;
-    const invoices = await InvoiceService.getAllInvoices(Number(user_id));
-    if ("error" in invoices) {
-      return res.status(400).json(invoices);
+    const { invoice, error, message } = await InvoiceService.getAllInvoices(
+      Number(user_id)
+    );
+    if (error) {
+      return res.status(400).json({ error, message });
     }
-    return res.status(200).json(invoices);
+    return res.status(200).json({ invoice });
   },
   getInvoiceById: async (req: NextApiRequest, res: NextApiResponse) => {
     const { user_id } = req.query;
     const { id } = req.body;
-    const invoice = await InvoiceService.getInvoiceById(
+    const { invoice, error, message } = await InvoiceService.getInvoiceById(
       Number(id),
       Number(user_id)
     );
-    if ("error" in invoice) {
-      return res.status(400).json(invoice);
+    if (error) {
+      return res.status(400).json({ error, message });
     }
-    return res.status(200).json(invoice);
+    return res.status(200).json({ invoice });
   },
   updateInvoice: async (req: NextApiRequest, res: NextApiResponse) => {
-    const updatedInvoice = await InvoiceService.updateInvoice(req.body);
-    if ("error" in updatedInvoice) {
-      return res.status(400).json(updatedInvoice);
+    const { invoice, error, message } = await InvoiceService.updateInvoice(
+      req.body
+    );
+    if (error) {
+      return res.status(400).json({ error, message });
     }
-    return res.status(200).json(updatedInvoice);
+    return res.status(200).json({ invoice });
   },
   deleteInvoice: async (req: NextApiRequest, res: NextApiResponse) => {
     const { user_id } = req.query;
     const { id } = req.body;
-    const deletedInvoice = await InvoiceService.deleteInvoice(
+    const { error, message, invoice } = await InvoiceService.deleteInvoice(
       Number(id),
       Number(user_id)
     );
-    if ("error" in deletedInvoice) {
-      return res.status(400).json(deletedInvoice);
+    if (error) {
+      return res.status(400).json({ error, message });
     }
-    return res.status(200).json(deletedInvoice);
+    return res.status(300).end();
   },
 };
 

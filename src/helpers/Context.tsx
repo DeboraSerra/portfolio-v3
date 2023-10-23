@@ -1,3 +1,4 @@
+import axios from "axios";
 import jwtDecode from "jwt-decode";
 import { NextPage } from "next";
 import { createContext, useEffect, useState } from "react";
@@ -5,9 +6,16 @@ import { createContext, useEffect, useState } from "react";
 export const ProjectsContext = createContext({
   routes: [],
   user: { login: "", name: "", avatarUrl: "", id: 0 },
-  setUser: (user: { login: string; name: string; avatarUrl: string, id: number }) => {},
+  setUser: (user: {
+    login: string;
+    name: string;
+    avatarUrl: string;
+    id: number;
+  }) => {},
   token: "",
   setToken: (token: string) => {},
+  invoices: [],
+  setInvoices: (invoices: any) => {},
 });
 
 interface Props {
@@ -17,12 +25,24 @@ interface Props {
 const ProjectsProvider: NextPage<Props> = ({ children }) => {
   const [routes, setRoutes] = useState([]);
   const [token, setToken] = useState("");
+  const [invoices, setInvoices] = useState([]);
   const [user, setUser] = useState({
     login: "",
     name: "",
     avatarUrl: "",
-    id: 0
+    id: 0,
   });
+
+  const getInvoices = async () => {
+    const { data } = await axios(`/api/invoice?user_id=${user.id}`);
+    setInvoices(
+      data.invoice.sort(
+        (a: any, b: any) =>
+          new Date(a.date_received).getTime() -
+          new Date(b.date_received).getTime()
+      )
+    );
+  };
 
   useEffect(() => {
     fetch("/api/routes")
@@ -41,6 +61,7 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
       } = jwtDecode(token);
       setUser(savedUser);
       setToken(token);
+      getInvoices();
     }
   }, [token]);
 
@@ -49,7 +70,9 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
     user,
     setUser,
     token,
-    setToken
+    setToken,
+    invoices,
+    setInvoices,
   };
 
   return (

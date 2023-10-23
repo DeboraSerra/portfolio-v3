@@ -10,3 +10,5 @@ export interface Invoice {
 }
 
 export interface InvoiceWithId extends Invoice, Id {}
+
+export interface ServiceReturn { invoice: InvoiceWithId, error: boolean, message: string }
