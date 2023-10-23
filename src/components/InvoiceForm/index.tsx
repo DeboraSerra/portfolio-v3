@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { ProjectsContext } from "@/helpers/Context";
+import axios from "axios";
+import { useContext, useState } from "react";
 import * as S from "./InvoiceForm.styled";
 
 const InvoiceForm = () => {
+  const {
+    user: { id },
+  } = useContext(ProjectsContext);
   const [form, setForm] = useState({
     client: "",
     value: 0.0,
@@ -29,7 +34,6 @@ const InvoiceForm = () => {
     let { value } = e.target;
     if (e.target.name === "value") {
       value = validateValue(value);
-      console.log({ value })
     }
     setForm({
       ...form,
@@ -37,8 +41,29 @@ const InvoiceForm = () => {
     });
   };
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const info = {
+      client,
+      value_received: value
+        .toString()
+        .replace(/\D\W\s{1,}/g, "")
+        .replace(".", "")
+        .replace(",", "."),
+      date_received: new Date(date).toISOString().split("T")[0],
+      user_id: id,
+    };
+    console.log({ info });
+    const result = await axios.post("http://localhost:3000/api/invoice", info);
+  };
+
   return (
-    <S.Main action='/api/invoice' method='post' className='control__form'>
+    <S.Main
+      action='/api/invoice'
+      method='post'
+      className='control__form'
+      onSubmit={handleSubmit}
+    >
       <legend className='control__form--title'>Add new invoice</legend>
       <div className='control__form--fields'>
         <label htmlFor='client' className='control__form--label'>
