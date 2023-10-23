@@ -16,7 +16,7 @@ const LoginController = {
       {
         params: {
           code,
-          client_id: process.env.GITHUB_CLIENT_ID,
+          client_id: process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID,
           client_secret: process.env.GITHUB_CLIENT_SECRET,
         },
         headers: {
