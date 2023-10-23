@@ -4,7 +4,7 @@ import { z } from "zod";
 import LoginService from "../service/login.service";
 
 const LoginController = {
-  getUser: async (req: NextRequest, res: NextResponse) => {
+  getUser: async (req: NextRequest) => {
     const bodySchema = z.object({
       code: z.string(),
     });

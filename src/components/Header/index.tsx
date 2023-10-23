@@ -10,9 +10,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { GiHamburgerMenu } from "react-icons/gi";
-import Login from "../Login";
 import ProfileMenu from "../ProfileMenu";
 import * as S from "./Header.styled";
+import jwtDecode from "jwt-decode";
 
 const Header = ({
   isDarkMode,
@@ -26,13 +26,14 @@ const Header = ({
   const [showSubMenu, setShowSubMenu] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const [showModal, setShowModal] = useState(false);
   useOnClickOutside(header, () => {
     setShowMenu(false);
   });
   const {
     routes,
     user: { login, avatarUrl },
+    setUser,
+    setToken
   } = useContext(ProjectsContext);
   const router = useRouter();
 
@@ -50,7 +51,21 @@ const Header = ({
     };
   }, [router.events]);
 
-  const openModal = () => setShowModal(!showModal);
+  useEffect(() => {
+    setTimeout(() => {
+      const token = document.cookie.replace(/token=/, '');
+      if (token) {
+        const savedUser: {
+          login: string;
+          name: string;
+          avatarUrl: string;
+          id: number;
+        } = jwtDecode(token);
+        setUser(savedUser);
+        setToken(token)
+      }
+    }, 200);
+  }, []);
 
   return (
     <S.Header ref={header}>
@@ -61,7 +76,7 @@ const Header = ({
             className='hamburger-icon'
           />
         )}
-        <Link href='/'>
+        <Link href='/' className="header__logo">
           <Image
             src={avatarUrl !== "" ? avatarUrl : logo}
             alt='Débora Serra'
@@ -111,8 +126,23 @@ const Header = ({
               onMouseEnter={() => login !== "" && setShowProfileMenu(true)}
               onMouseLeave={() => login !== "" && setShowProfileMenu(false)}
             >
-              <a className='header__link medium' onClick={openModal}>
+              <a
+                className='header__link medium'
+                href={
+                  login
+                    ? ""
+                    : `https://github.com/login/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID}`
+                }
+                title={!login ? "Login with Github" : ""}
+              >
                 {login !== "" ? login : "Login"}
+                {login !== "" ? (
+                  showProfileMenu ? (
+                    <BiChevronUp />
+                  ) : (
+                    <BiChevronDown />
+                  )
+                ) : null}
               </a>
               {showProfileMenu ? <ProfileMenu /> : null}
             </div>
@@ -162,10 +192,28 @@ const Header = ({
               </Link>
               <div
                 className='header__menu'
-                onClick={() => login !== "" && setShowProfileMenu(!showProfileMenu)}
+                onClick={() =>
+                  login !== "" && setShowProfileMenu(!showProfileMenu)
+                }
               >
-                <a className='header__link small' onClick={openModal}>
+                <a
+                  className='header__link small'
+                  href={
+                    login
+                      ? ""
+                      : `https://github.com/login/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID}`
+                  }
+                  onClick={(e) => login && e.preventDefault()}
+                  title={!login ? "Login with Github" : ""}
+                >
                   {login !== "" ? login : "Login"}
+                  {login !== "" ? (
+                    showProfileMenu ? (
+                      <BiChevronUp />
+                    ) : (
+                      <BiChevronDown />
+                    )
+                  ) : null}
                 </a>
                 {showProfileMenu ? <ProfileMenu /> : null}
               </div>
@@ -176,7 +224,6 @@ const Header = ({
           {isDarkMode ? <BsSun /> : <BsMoonFill />}
         </button>
       </div>
-      {showModal && <Login openModal={openModal} />}
     </S.Header>
   );
 };

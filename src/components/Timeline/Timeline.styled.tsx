@@ -96,7 +96,8 @@ export const Main = styled.div`
 
       & img {
         height: 150px;
-        /* width: auto; */
+        max-width: 150px;
+        width: auto;
         object-fit: contain;
       } // & img
     } // & .image

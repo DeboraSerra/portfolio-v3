@@ -1,12 +1,9 @@
+import { NextApiResponse } from 'next';
 import { NextRequest, NextResponse } from 'next/server'
 
 const HOME_URL = "http://localhost:3000";
 
-export async function GET(req: NextRequest) {
-
-  return NextResponse.redirect(HOME_URL, {
-    headers: {
-      'Set-Cookie': 'token=; Path=/; max-age=0;',
-    },
-  })
+export default async function GET(req: NextRequest, res: NextApiResponse) {
+  res.setHeader('Set-Cookie', 'token=; Path=/; max-age=0;')
+  return res.redirect(HOME_URL).send({ message: 'Logged out'})
 }

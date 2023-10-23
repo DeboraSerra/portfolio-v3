@@ -7,7 +7,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
 
-export default function App({ Component, pageProps }: AppProps) {
+interface Props extends AppProps {}
+
+export default function App({ Component, pageProps }: Props) {
   const [dark, setDark] = useState(false);
 
   const getMatchMedia = () => {

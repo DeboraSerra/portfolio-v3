@@ -47,6 +47,12 @@ export const Header = styled.header`
       animation-duration: 0.5s;
     } // &.active
 
+    &__logo {
+      & img {
+        border-radius: 50%;
+      }// & img
+    }// &__logo
+
     &__link {
       display: flex;
       gap: 2px;

@@ -1,11 +1,13 @@
-import decode from "jwt-decode";
+import jwtDecode from "jwt-decode";
 import { NextPage } from "next";
-import { cookies } from "next/dist/client/components/headers";
 import { createContext, useEffect, useState } from "react";
 
 export const ProjectsContext = createContext({
   routes: [],
-  user: { login: "", name: "", avatarUrl: "" },
+  user: { login: "", name: "", avatarUrl: "", id: 0 },
+  setUser: (user: { login: string; name: string; avatarUrl: string, id: number }) => {},
+  token: "",
+  setToken: (token: string) => {},
 });
 
 interface Props {
@@ -14,10 +16,12 @@ interface Props {
 
 const ProjectsProvider: NextPage<Props> = ({ children }) => {
   const [routes, setRoutes] = useState([]);
+  const [token, setToken] = useState("");
   const [user, setUser] = useState({
     login: "",
     name: "",
     avatarUrl: "",
+    id: 0
   });
 
   useEffect(() => {
@@ -26,21 +30,26 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
       .then((info) => setRoutes(info));
   }, []);
 
-  const getUser = () => {
-    const token = cookies().get("token")?.value;
+  useEffect(() => {
+    const token = document.cookie.replace(/token=/, "");
     if (token) {
       const savedUser: {
         login: string;
         name: string;
         avatarUrl: string;
-      } = decode(token);
+        id: number;
+      } = jwtDecode(token);
       setUser(savedUser);
+      setToken(token);
     }
-  };
+  }, [token]);
 
   const value = {
     routes,
     user,
+    setUser,
+    token,
+    setToken
   };
 
   return (
