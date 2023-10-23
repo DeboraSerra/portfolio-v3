@@ -1,18 +1,7 @@
-import { ProjectsContext } from "@/helpers/Context";
-import Image from "next/image";
-import { useContext } from "react";
-import * as S from './Profile.styled';
+import Profile from "@/components/pages/Profile";
 
-const Profile = () => {
-  const { user: { avatarUrl, login, name }} = useContext(ProjectsContext);
+const ProfilePage = () => {
+  return <Profile />;
+};
 
-  return (
-    <S.Main>
-      <Image src={avatarUrl} alt={login} width={300} height={300} />
-      <h1 className="profile__login">{login}</h1>
-      <h2 className="profile__name">{name}</h2>
-    </S.Main>
-  )
-}
-
-export default Profile;
+export default ProfilePage;

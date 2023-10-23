@@ -13,17 +13,17 @@ export const Main = styled.div`
     border-radius: 50%;
     margin-bottom: 40px;
     box-shadow: 0 0 12px 4px ${(props) => props.theme.bg.tertiary};
-  }// & img
+  } // & img
 
   .profile {
     &__login {
       margin-bottom: 32px;
 
       font-size: ${(props) => props.theme.fontSizes[4]};
-    }// &__login
+    } // &__login
 
     &__name {
       font-size: ${(props) => props.theme.fontSizes[6]};
-    }// &__name
-  }// .profile
-`
+    } // &__name
+  } // .profile
+`;
