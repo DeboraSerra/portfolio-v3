@@ -1,5 +1,5 @@
 import { ProjectsContext } from "@/helpers/Context";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import * as S from "./InvoiceTable.styled";
 
@@ -9,6 +9,10 @@ const InvoiceTable = () => {
   const [sortByDate, setSortByDate] = useState(false);
   const [sortByValue, setSortByValue] = useState(false);
   const [sortByClient, setSortByClient] = useState(false);
+
+  useEffect(() => {
+    setFilteredInvoices(invoices);
+  }, [invoices])
 
   const transformValue = (value: string) => {
     const valueAsNumber = parseFloat(value);
