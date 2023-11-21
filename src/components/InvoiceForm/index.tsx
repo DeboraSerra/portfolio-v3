@@ -56,7 +56,7 @@ const InvoiceForm = () => {
       user_id: id,
     };
     console.log({ info });
-    const result = await axios.post("http://localhost:3000/api/invoice", info);
+    const result = await axios.post(`${process.env.HOME_URL}/api/invoice`, info);
     setInvoices([...invoices, result.data.invoice]);
   };
 
