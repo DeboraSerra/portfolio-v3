@@ -3,6 +3,9 @@ import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FiMail, FiPhone } from "react-icons/fi";
 import * as S from "./Resume.styled";
 
+const englishFile = "/files/Resume-Debora-Serra.pdf";
+const portugueseFile = "/files/Currículo-Débora-Serra.pdf";
+
 const Resume = () => {
   return (
     <S.Main>
@@ -166,14 +169,14 @@ const Resume = () => {
         <div className='resume__btn-container'>
           <a
             className='resume__btn'
-            href='/files/Resume-jun-23.pdf'
+            href={englishFile}
             download='Resume-Débora-Serra.pdf'
           >
             Download resume (english)
           </a>
           <a
             className='resume__btn'
-            href='/files/Currículo-jun-23.pdf'
+            href={portugueseFile}
             download='Curriculo-Débora-Serra.pdf'
           >
             Download resume (portuguese)
