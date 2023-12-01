@@ -3,7 +3,7 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import * as S from "./InvoiceForm.styled";
 
-const HOME_URL = process.env.HOME_URL ?? "http://localhost:3000";
+const HOME_URL = process.env.NEXT_PUBLIC_HOME_URL ?? "http://localhost:3000";
 
 const InvoiceForm = () => {
   const {
