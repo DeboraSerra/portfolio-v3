@@ -71,11 +71,13 @@ const InvoiceTable = () => {
     );
   };
 
-  const handleFilterBtn = (period: 'year' | 'month') => {
+  const handleFilterBtn = (period: 'year' | 'month' | 'last-year') => {
     const filtered = invoices.filter((invoice: any) => {
       const date = new Date(invoice.date_received);
       if (period === 'year') {
         return date.getFullYear() === new Date().getFullYear();
+      } if (period === 'last-year') {
+        return date.getFullYear() === new Date().getFullYear() - 1;
       }
       return date.getMonth() === new Date().getMonth();
     });
@@ -86,6 +88,7 @@ const InvoiceTable = () => {
     <S.Main>
       <div className='invoice__filter'>
         <button className='invoice__filter--btn' onClick={() => handleFilterBtn('year')}>Filter current year</button>
+        <button className='invoice__filter--btn' onClick={() => handleFilterBtn('last-year')}>Filter previous year</button>
         <button className='invoice__filter--btn' onClick={() => handleFilterBtn('month')}>Filter current month</button>
         <button className='invoice__filter--btn' onClick={() => setFilteredInvoices(invoices)}>Clear filters</button>
       </div>
