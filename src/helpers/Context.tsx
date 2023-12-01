@@ -1,6 +1,7 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import { NextPage } from "next";
+import { useRouter } from "next/router";
 import { createContext, useEffect, useState } from "react";
 
 export const ProjectsContext = createContext({
@@ -32,6 +33,7 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
     avatarUrl: "",
     id: 0,
   });
+  const router = useRouter();
 
   const getInvoices = async () => {
     const { data } = await axios(`/api/invoice?user_id=${user.id}`);
@@ -51,7 +53,6 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    const token = document.cookie.replace(/token=/, "");
     if (token) {
       const savedUser: {
         login: string;
@@ -60,9 +61,15 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
         id: number;
       } = jwtDecode(token);
       setUser(savedUser);
-      setToken(token);
       getInvoices();
+    } else {
+      router.push('/')
     }
+  },[token])
+
+  useEffect(() => {
+    const token = document.cookie.replace(/token=/, "");
+    setToken(token);
   }, [token]);
 
   const value = {

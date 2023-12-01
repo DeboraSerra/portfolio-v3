@@ -57,14 +57,13 @@ const InvoiceForm = () => {
       date_received: new Date(date).toISOString().split("T")[0],
       user_id: id,
     };
-    console.log({ info });
-    const result = await axios.post(`${HOME_URL}/api/invoice`, info);
+    const result = await axios.post(`${HOME_URL}/api/invoice?user_id=${id}`, info);
     setInvoices([...invoices, result.data.invoice]);
   };
 
   return (
     <S.Main
-      action='/api/invoice'
+      action={`${HOME_URL}/api/invoice`}
       method='post'
       className='control__form'
       onSubmit={handleSubmit}
