@@ -17,6 +17,7 @@ export const ProjectsContext = createContext({
   setToken: (token: string) => {},
   invoices: [],
   setInvoices: (invoices: any) => {},
+  getInvoices: () => {},
 });
 
 interface Props {
@@ -80,6 +81,7 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
     setToken,
     invoices,
     setInvoices,
+    getInvoices,
   };
 
   return (

@@ -3,16 +3,35 @@ import { useContext, useEffect, useState } from "react";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import * as S from "./InvoiceTable.styled";
 
+enum Months {
+  January = 0,
+  February = 1,
+  March = 2,
+  April = 3,
+  May = 4,
+  June = 5,
+  July = 6,
+  August = 7,
+  September = 8,
+  October = 9,
+  November = 10,
+  December = 11,
+}
+
 const InvoiceTable = () => {
-  const { invoices, setInvoices } = useContext(ProjectsContext);
+  const { invoices, setInvoices, getInvoices } = useContext(ProjectsContext);
   const [filteredInvoices, setFilteredInvoices] = useState(invoices);
   const [sortByDate, setSortByDate] = useState(false);
   const [sortByValue, setSortByValue] = useState(false);
   const [sortByClient, setSortByClient] = useState(false);
 
   useEffect(() => {
+    getInvoices();
+  }, []);
+
+  useEffect(() => {
     setFilteredInvoices(invoices);
-  }, [invoices])
+  }, [invoices]);
 
   const transformValue = (value: string) => {
     const valueAsNumber = parseFloat(value);
@@ -71,26 +90,59 @@ const InvoiceTable = () => {
     );
   };
 
-  const handleFilterBtn = (period: 'year' | 'month' | 'last-year') => {
+  const handleFilterBtn = (
+    period: "year" | "month" | "last-year" | "last-month"
+  ) => {
     const filtered = invoices.filter((invoice: any) => {
       const date = new Date(invoice.date_received);
-      if (period === 'year') {
+      if (period === "year") {
         return date.getFullYear() === new Date().getFullYear();
-      } if (period === 'last-year') {
+      }
+      if (period === "last-year") {
         return date.getFullYear() === new Date().getFullYear() - 1;
+      }
+      if (period === "last-month") {
+        return date.getMonth() === new Date().getMonth() - 1;
       }
       return date.getMonth() === new Date().getMonth();
     });
     setFilteredInvoices(filtered);
-  }
+  };
 
   return (
     <S.Main>
+      <h2 className='subtitle'>Filters</h2>
       <div className='invoice__filter'>
-        <button className='invoice__filter--btn' onClick={() => handleFilterBtn('year')}>Filter current year</button>
-        <button className='invoice__filter--btn' onClick={() => handleFilterBtn('last-year')}>Filter previous year</button>
-        <button className='invoice__filter--btn' onClick={() => handleFilterBtn('month')}>Filter current month</button>
-        <button className='invoice__filter--btn' onClick={() => setFilteredInvoices(invoices)}>Clear filters</button>
+        <button
+          className='invoice__filter--btn'
+          onClick={() => handleFilterBtn("year")}
+        >
+          {new Date().getFullYear()}
+        </button>
+        <button
+          className='invoice__filter--btn'
+          onClick={() => handleFilterBtn("last-year")}
+        >
+          {new Date().getFullYear() - 1}
+        </button>
+        <button
+          className='invoice__filter--btn'
+          onClick={() => handleFilterBtn("month")}
+        >
+          {Months[new Date().getMonth()]}
+        </button>
+        <button
+          className='invoice__filter--btn'
+          onClick={() => handleFilterBtn("last-month")}
+        >
+          {Months[new Date().getMonth() - 1]}
+        </button>
+        <button
+          className='invoice__filter--btn'
+          onClick={() => setFilteredInvoices(invoices)}
+        >
+          Clear filters
+        </button>
       </div>
       <li className='invoice__header'>
         <h2 className='invoice__header--client' onClick={handleSortByClient}>
