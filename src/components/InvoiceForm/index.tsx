@@ -3,6 +3,8 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import * as S from "./InvoiceForm.styled";
 
+const HOME_URL = process.env.HOME_URL ?? "http://localhost:3000";
+
 const InvoiceForm = () => {
   const {
     user: { id },
@@ -56,7 +58,7 @@ const InvoiceForm = () => {
       user_id: id,
     };
     console.log({ info });
-    const result = await axios.post(`/api/invoice`, info);
+    const result = await axios.post(`${HOME_URL}/api/invoice`, info);
     setInvoices([...invoices, result.data.invoice]);
   };
 
