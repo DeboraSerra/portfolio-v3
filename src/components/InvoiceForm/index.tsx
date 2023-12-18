@@ -3,7 +3,7 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import * as S from "./InvoiceForm.styled";
 
-const HOME_URL = process.env.NEXT_PUBLIC_HOME_URL ?? "http://localhost:3000";
+// const HOME_URL = process.env.NEXT_PUBLIC_HOME_URL ?? "http://localhost:3000";
 
 const InvoiceForm = () => {
   const {
@@ -57,13 +57,13 @@ const InvoiceForm = () => {
       date_received: new Date(date).toISOString().split("T")[0],
       user_id: id,
     };
-    const result = await axios.post(`${HOME_URL}/api/invoice?user_id=${id}`, info);
+    const result = await axios.post(`${window.location.hostname}/api/invoice?user_id=${id}`, info);
     setInvoices([...invoices, result.data.invoice]);
   };
 
   return (
     <S.Main
-      action={`${HOME_URL}/api/invoice`}
+      action={`${window.location.hostname}/api/invoice`}
       method='post'
       className='control__form'
       onSubmit={handleSubmit}
