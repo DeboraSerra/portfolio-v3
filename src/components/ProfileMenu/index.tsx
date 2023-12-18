@@ -12,9 +12,18 @@ const ProfileMenu = () => {
       <Link className='header__link medium' href={`/profile/${id}`}>
         Profile
       </Link>
-      <Link className='header__link medium' href={`/profile/${id}/invoices-control`}>
+      <Link
+        className='header__link medium'
+        href={`/profile/${id}/invoices-control`}
+      >
         Invoices control
       </Link>
+      <a
+        className='header__link medium'
+        href='https://recipes-blush-psi.vercel.app/'
+      >
+        Recipes book
+      </a>
       <Link className='header__link medium' href='/api/logout'>
         Logout
       </Link>
