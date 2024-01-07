@@ -102,9 +102,9 @@ const InvoiceTable = () => {
         return date.getFullYear() === new Date().getFullYear() - 1;
       }
       if (period === "last-month") {
-        return date.getMonth() === new Date().getMonth() - 1;
+        return date.getMonth() === new Date().getMonth() - 1 && date.getFullYear() === new Date().getFullYear();
       }
-      return date.getMonth() === new Date().getMonth();
+      return date.getMonth() === new Date().getMonth() && date.getFullYear() === new Date().getFullYear();
     });
     setFilteredInvoices(filtered);
   };
@@ -131,12 +131,12 @@ const InvoiceTable = () => {
         >
           {Months[new Date().getMonth()]}
         </button>
-        <button
+        {Months[new Date().getMonth() - 1] && (<button
           className='invoice__filter--btn'
           onClick={() => handleFilterBtn("last-month")}
         >
           {Months[new Date().getMonth() - 1]}
-        </button>
+        </button>)}
         <button
           className='invoice__filter--btn'
           onClick={() => setFilteredInvoices(invoices)}
