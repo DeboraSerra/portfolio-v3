@@ -20,7 +20,7 @@ const InvoiceForm = () => {
   const { client, value, date } = form;
 
   useEffect(() => {
-    setHost(window.location.hostname);
+    setHost(window.location.origin);
   },[])
 
   const validateValue = (value: string) => {
@@ -62,7 +62,9 @@ const InvoiceForm = () => {
       date_received: new Date(date).toISOString().split("T")[0],
       user_id: id,
     };
-    const result = await axios.post(`${host}/api/invoice?user_id=${id}`, info);
+    const url = `${host}/api/invoice?user_id=${id}`
+    console.log({url})
+    const result = await axios.post(url, info);
     setInvoices([...invoices, result.data.invoice]);
   };
 

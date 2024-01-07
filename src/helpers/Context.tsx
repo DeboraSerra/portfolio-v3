@@ -69,8 +69,8 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
   },[token])
 
   useEffect(() => {
-    const token = document.cookie.replace(/token=/, "");
-    setToken(token);
+    const token = document.cookie.match(/token=/);
+    setToken(token ? token[1] : '');
   }, [token]);
 
   const value = {
