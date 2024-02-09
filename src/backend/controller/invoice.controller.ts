@@ -16,6 +16,7 @@ const InvoiceController = {
     const { invoice, error, message } = await InvoiceService.getAllInvoices(
       Number(user_id)
     );
+    console.log({ invoice, error, message })
     if (error) {
       return res.status(400).json({ error, message });
     }
