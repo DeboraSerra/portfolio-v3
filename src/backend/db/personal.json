@@ -1,0 +1,44 @@
+[
+  {
+    "id": "b171da12-3e77-4bdd-b3a9-c6059dadc007",
+    "name": "Clock",
+    "description": "It was developed as a challenge from one of Trybe's instructors. It is a dynamic clock with responsive design.",
+    "repository": "https://deboraserra.github.io/Clock/index.html",
+    "image": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/Clock.png?raw=true"
+  },
+  {
+    "id": "c52264fd-f77c-477c-8a91-100b8f32319b",
+    "name": "Projeto Stopwatch",
+    "description": "It was a developed as a challenge from one of Trybe's specialists. Since in class we needed timers to mark the interval, we were challenged to develop a timer with the following requirements: It must be developed in React, the timer must work properly, It must have something to signal that the time is over.",
+    "repository": "https://deboraserra.github.io/stopwatch/",
+    "image": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/Stopwatch.png?raw=true"
+  },
+  {
+    "id": "ecab3410-a12b-4d77-92d4-9ce8347f512b",
+    "name": "Password Generator",
+    "description": "It was developed as a challenge from one of Trybe's specialists. The goal was to create a password generator with mobile first design where the user can select the length of the password and if it must include uppercase letters, lowercase letters, numbers and/or symbols.",
+    "repository": "https://deboraserra.github.io/password-generator/",
+    "image": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/PasswordGenerator.png?raw=true"
+  },
+  {
+    "id": "7dcc6c7d-b8bc-458e-ac71-b963532f9c97",
+    "name": "Projeto Escritório do seu Zé",
+    "description": "It was developed as a challenge from one of Trybe's instructors. For this project we were given a 'database' of people and were asked to develop an API to create, read, update and delete (CRUD the data in this 'database'. After creating the API, we were asked to create a front end to use this API. Next, we were oriented to develop the unit tests to the backend and frontend. And, at last, to dockerize the application. In this application, the person must first 'login' with a valid email and a password that has at least one letter, one number and one symbol. If the person isn't registered, they can click on the button to register and then login. After that the user is free to see the people, delete, update or add new people to the database.",
+    "repository": "https://github.com/DeboraSerra/Escritorio-do-seu-ze",
+    "image": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/excritorioSeuZe.png?raw=true)"
+  },
+  {
+    "id": "6306b687-9fa9-4f0b-9bb8-a1bd00f017c1",
+    "name": "1st Hackathon Questrade and DevOps BootCamp",
+    "description": "This project was developed as part of the first Hackathon for Questrade and DevOps BootCamp. We had less than two days to develop the application to the best of our capacity. After the little more than 24 hours of project we delivered an app where the user can fully log in. At the end of this competition, I ended up in 9th place.",
+    "repository": "https://github.com/DeboraSerra/Hackathon-questrade",
+    "image": "/images/personal/questrade.webp"
+  },
+  {
+    "id": "af5d94ce-4a25-4293-9163-b0e533513e74",
+    "name": "Recipes Book",
+    "description": "This project was developed so I could store the recipes I acquired and developed through the my years as a baker so I could access them easily and from wherever I am.",
+    "repository": "https://recipes-blush-psi.vercel.app/",
+    "image": "/images/personal/recipes-book.webp"
+  }
+]

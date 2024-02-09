@@ -48,13 +48,21 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
   };
 
   useEffect(() => {
+    if (token) {
+      router.push(`/profile/${user.id}/invoices-control`);
+    } else router.push("/");
+  }, [token]);
+
+  useEffect(() => {
     fetch("/api/routes")
       .then((data) => data.json())
       .then((info) => setRoutes(info));
+    const cookieToken = document.cookie.match(/token=/);
+    setToken(cookieToken ? cookieToken[1] : "");
   }, []);
 
   useEffect(() => {
-    if (token) {
+    if (!!token) {
       const savedUser: {
         login: string;
         name: string;
@@ -64,13 +72,8 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
       setUser(savedUser);
       getInvoices();
     } else {
-      router.push('/')
+      router.push("/");
     }
-  },[token])
-
-  useEffect(() => {
-    const token = document.cookie.match(/token=/);
-    setToken(token ? token[1] : '');
   }, [token]);
 
   const value = {

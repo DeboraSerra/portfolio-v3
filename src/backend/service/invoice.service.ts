@@ -1,6 +1,7 @@
 import z from "zod";
 import { Invoice, InvoiceWithId, ServiceReturn } from "../interfaces/invoices";
 import InvoiceModel from "../model/invoice.model";
+import { randomUUID } from "crypto";
 
 const invoiceSchema = z.object({
   user_id: z.number(),
@@ -11,10 +12,6 @@ const invoiceSchema = z.object({
     .refine((date) => new Date(date).getTime() <= Date.now(), {
       message: "Date can't be in the future",
     }),
-});
-
-const idSchema = z.object({
-  id: z.number(),
 });
 
 const InvoiceService = {
@@ -34,16 +31,14 @@ const InvoiceService = {
     return invoice as ServiceReturn;
   },
   getInvoiceById: async (id: number, user_id: number) => {
-    const { id: idInvoice } = idSchema.parse({ id });
-    const invoice = await InvoiceModel.getInvoiceById(idInvoice, user_id);
+    const invoice = await InvoiceModel.getInvoiceById(id, user_id);
     return invoice as ServiceReturn;
   },
   updateInvoice: async (invoice: InvoiceWithId) => {
     const { user_id, client, value_received, date_received } =
       invoiceSchema.parse(invoice);
-    const { id } = idSchema.parse(invoice);
     const updatedInvoice = await InvoiceModel.updateInvoice({
-      id,
+      id: invoice.id,
       user_id,
       client,
       value_received,
@@ -51,10 +46,9 @@ const InvoiceService = {
     });
     return updatedInvoice as ServiceReturn;
   },
-  deleteInvoice: async (id: number, user_id: number) => {
-    const { id: idInvoice } = idSchema.parse({ id });
+  deleteInvoice: async (id: typeof randomUUID, user_id: number) => {
     const { user_id: userId } = invoiceSchema.parse({ user_id });
-    const deletedInvoice = await InvoiceModel.deleteInvoice(idInvoice, userId);
+    const deletedInvoice = await InvoiceModel.deleteInvoice(id, userId);
     return deletedInvoice as ServiceReturn;
   },
 };

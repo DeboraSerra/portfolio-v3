@@ -6,13 +6,22 @@ import { useOnClickOutside, useWindowSize } from "usehooks-ts";
 
 import logo from "../../../assets/images/laptop.png";
 
+import jwtDecode from "jwt-decode";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { GiHamburgerMenu } from "react-icons/gi";
 import ProfileMenu from "../ProfileMenu";
 import * as S from "./Header.styled";
-import jwtDecode from "jwt-decode";
+
+const names = {
+  fundaments: "Fundaments",
+  frontend: "Frontend",
+  backend: "Backend",
+  computer_science: "Computer Science",
+  personal: "Personal",
+  uol: "UOL",
+};
 
 const Header = ({
   isDarkMode,
@@ -33,7 +42,7 @@ const Header = ({
     routes,
     user: { login, avatarUrl },
     setUser,
-    setToken
+    setToken,
   } = useContext(ProjectsContext);
   const router = useRouter();
 
@@ -53,8 +62,8 @@ const Header = ({
 
   useEffect(() => {
     setTimeout(() => {
-      const token = document.cookie.replace(/token=/, '');
-      if (token) {
+      const token = document.cookie.replace(/token=/, "");
+      if (!!token) {
         const savedUser: {
           login: string;
           name: string;
@@ -62,7 +71,7 @@ const Header = ({
           id: number;
         } = jwtDecode(token);
         setUser(savedUser);
-        setToken(token)
+        setToken(token);
       }
     }, 200);
   }, []);
@@ -76,7 +85,7 @@ const Header = ({
             className='hamburger-icon'
           />
         )}
-        <Link href='/' className="header__logo">
+        <Link href='/' className='header__logo'>
           <Image
             src={avatarUrl !== "" ? avatarUrl : logo}
             alt='Débora Serra'
@@ -106,13 +115,13 @@ const Header = ({
                   <Link className='header__link medium' href={`/projects`}>
                     All categories
                   </Link>
-                  {routes.map(({ id, name, route }) => (
+                  {routes.map((route, i) => (
                     <Link
                       className='header__link medium'
-                      key={id}
+                      key={i}
                       href={`/projects/${route}`}
                     >
-                      {name}
+                      {names[route]}
                     </Link>
                   ))}
                 </div>

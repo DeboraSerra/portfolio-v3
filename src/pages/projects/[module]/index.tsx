@@ -13,7 +13,7 @@ export default function Module({ projects }: { projects: Project[] }) {
 
 export async function getStaticPaths() {
   const routes = await Projects.getPaths();
-  const paths = routes.map(({ route }) => ({
+  const paths = routes.map((route) => ({
     params: { module: route },
   }));
   return {

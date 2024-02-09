@@ -1,0 +1,72 @@
+[
+  {
+    "id": "b1694547-cfcd-4dbc-af16-a7657629a843",
+    "name": "Projeto lessons learned",
+    "description": "Esse projeto foi desenvolvido no curso de Desenvolvimento Web na Trybe. O objetivo foi aplicar os conhecimentos de HTML5 e posicionamento em CSS3 adquirido até o momento.",
+    "repository": "https://deboraserra.github.io/Project-lessons-learned/project-block3.html",
+    "image": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/lessonsLearned.png?raw=true"
+  },
+  {
+    "id": "ba1d675f-79df-45c9-a83f-c6848a7644a9",
+    "name": "Projeto Playground Functions",
+    "description": "Esse projeto foi desenvolvido no curso de Desenvolvimento Web na Trybe. Ele foi desenvolvido com o objetivo de aplicar os conhecimentos de JavaScript adquiridos até o momento, como condicionais (if/else, switch/case, loops for e operadores comuns e de comparação.",
+    "repository": "https://github.com/DeboraSerra/Trybe-exercises/tree/main/Module1_Fundaments/Block4/Project-playground-functions",
+    "image": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/playground.jpeg?raw=true)"
+  },
+  {
+    "id": "a8387149-f6fc-47d4-b1a0-594b7479f0c7",
+    "name": "Projeto Pixel Art",
+    "description": "Esse projeto foi desenvolvido no curso de Desenvolvimento Web na Trybe. Foi desenvolvido com o objetivo de aplicar os conhecimentos de manipulação do DOM adquiridos até então. Esse projeto é um quadro de pintura onde a pessoa usuária pode selecionar uma cor e clicar nos 'quadradinhos' para pintar. Ela também pode redimensionar o quadro de 5 a 50 pixels.",
+    "repository": "https://deboraserra.github.io/Project-pixel-art/index.html",
+    "image": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/pixelArt.png?raw=true"
+  },
+  {
+    "id": "bcedc9f0-2659-4a5b-8a88-19e592ee3b19",
+    "name": "Projeto To Do List",
+    "description": "It was developed as project to the Software Development course in Trybe. It was meant to apply the knowledge we had acquired so far using DOM. The project is a to do list were the user can add as many tasks as they like, can mark it as complete, change it's position, delete tasks and save to access the tasks later.",
+    "repository": "https://deboraserra.github.io/Project-to-do-list/index.html",
+    "image": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/ToDoList.png?raw=true"
+  },
+  {
+    "id": "fc6697d0-b8ef-4a19-9837-81f8b02b8c1b",
+    "name": "Projeto Mystery Letter",
+    "description": "It was developed as project to the Software Development course in Trybe. It was meant to apply the knowledge we had acquired so far using DOM. The project is a sort of game where the user can type a phrase e see it turned into a message 'clipped' from magazines and newspapers.",
+    "repository": "https://deboraserra.github.io/Project-mystery-letter/index.html",
+    "image": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/MysteryLetter.png?raw=true"
+  },
+  {
+    "id": "e7f9f9ca-e43a-45e8-820e-555b085b73eb",
+    "name": "Projeto Meme Generator",
+    "description": "It was developed as project to the Software Development course in Trybe. It was meant to apply the knowledge we had acquired so far using DOM. In this project the user can select a famous image or upload one and type a message to appear as a meme. They can also select three different type of border to decorate it.",
+    "repository": "https://deboraserra.github.io/Project-meme-generator/index.html",
+    "image": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/MemeGenerator.png?raw=true"
+  },
+  {
+    "id": "2be90304-4d1a-4843-bb14-2bb1f07002c8",
+    "name": "Projeto Color Guess",
+    "description": "It was developed as project to the Software Development course in Trybe. It was meant to apply the knowledge we had acquired so far using DOM. This project is a game where the user receive three different numbers between 0 and 255 and 6 colors. Then they have to guess which of the colors match the given numbers based in the rgb colors. For each right answer the user receives 3 points.",
+    "repository": "https://deboraserra.github.io/Project-color-guess/index.html",
+    "image": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/ColorGuess.png?raw=true"
+  },
+  {
+    "id": "b42f837a-8061-41ca-8077-79149f035bdd",
+    "name": "Projeto Trybewarts",
+    "description": "It was developed in groups of 2 people as a project to the Software Development course in Trybe and was meant to apply the knowledge we got so far regarding forms and the properties of Flex box in CSS. It simulates a registration form to the school of Trybewarts.",
+    "repository": "https://deboraserra.github.io/Project-Trybewarts/index.html",
+    "image": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/TrybeWarts.png?raw=true"
+  },
+  {
+    "id": "c0e0c2d1-4748-4978-a77d-1d36a4b7e7eb",
+    "name": "Projeto Zoo Functions",
+    "description": "It was developed as project to the Software Development course in Trybe. It was meant to apply the knowledge in Higher Order Functions, Destructuring, Spread Operator and others improvements of ES6. It simulates the systems in a zoo. The next step in this project is apply the functions developed in an 'Online Zoo' so the user can interact with the functions developed.",
+    "repository": "https://github.com/DeboraSerra/DeboraSerra.github.io/tree/main/Project-zoo-functions",
+    "image": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/zoofunctions.jpeg?raw=true"
+  },
+  {
+    "id": "d88190ae-f3f8-4f1e-bbb2-dddd4176b18c",
+    "name": "Projeto Shopping Cart",
+    "description": "It was developed as project to the Software Development course in Trybe. This project was meant to apply the use of asynchronous functions a usage of APIs. It simulates a shopping app, where the user can browse through the technology items an save them to the shopping cart or delete it from the cart. The final price is calculated automatically.",
+    "repository": "https://deboraserra.github.io/Project-shopping-cart/index.html",
+    "image": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/ShoppingCart.png?raw=true"
+  }
+]

@@ -19,15 +19,15 @@ enum Months {
 }
 
 const InvoiceTable = () => {
-  const { invoices, setInvoices, getInvoices } = useContext(ProjectsContext);
+  const { invoices, setInvoices, getInvoices, user: { id } } = useContext(ProjectsContext);
   const [filteredInvoices, setFilteredInvoices] = useState(invoices);
   const [sortByDate, setSortByDate] = useState(false);
   const [sortByValue, setSortByValue] = useState(false);
   const [sortByClient, setSortByClient] = useState(false);
 
   useEffect(() => {
-    getInvoices();
-  }, []);
+    id && getInvoices();
+  }, [id]);
 
   useEffect(() => {
     setFilteredInvoices(invoices);

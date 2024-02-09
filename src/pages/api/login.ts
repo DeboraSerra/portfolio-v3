@@ -1,9 +1,7 @@
 import LoginController from "@/backend/controller/login.controller";
+import jwtDecode from "jwt-decode";
 import { NextApiResponse } from "next";
-import { NextRequest, NextResponse } from "next/server";
-
-const PROFILE_URL = process.env.PROFILE_URL ?? "http://localhost:3000";
-const HOME_URL = process.env.NEXT_PUBLIC_HOME_URL ?? "http://localhost:3000";
+import { NextRequest } from "next/server";
 
 export default async function authRoute(
   req: NextRequest,
@@ -22,8 +20,14 @@ export default async function authRoute(
   const cookieExpiresInSec = 60 * 60 * 24 * 30; // 30 days
 
   if (error) {
-    return res.redirect(HOME_URL).send({ error, message });
+    return res.redirect("/").send({ error, message });
   }
-  res.setHeader('Set-Cookie', `token=${token}; Path=/; max-age=${cookieExpiresInSec};`)
-  return res.redirect(PROFILE_URL)
+  res.setHeader(
+    "Set-Cookie",
+    `token=${token}; Path=/; max-age=${cookieExpiresInSec};`
+  );
+  // redirect to user invoices url
+  const user_id = (jwtDecode(token as string) as any).id;
+  return res.redirect(`/profile/${user_id}/invoices-control`);
+  // return res.redirect("/");
 }
