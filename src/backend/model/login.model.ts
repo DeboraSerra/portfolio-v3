@@ -1,5 +1,7 @@
 import fs from "fs/promises";
 import { User } from "../interfaces/users";
+import { join } from "path";
+import { dbPath } from "@/helpers";
 
 // const LoginModel = {
 //   getUser: async (id: number) => {
@@ -43,7 +45,7 @@ const LoginModel = {
   getUser: async (id: number) => {
     try {
       const users = JSON.parse(
-        await fs.readFile("src/backend/db/login.json", "utf-8")
+        await fs.readFile(join(dbPath, 'login.json'), "utf-8")
       );
       let user = users.find((user: User) => user.id === id);
       if (!user) return null;
@@ -66,10 +68,10 @@ const LoginModel = {
   }) => {
     try {
       const users = JSON.parse(
-        await fs.readFile("src/backend/db/login.json", "utf-8")
+        await fs.readFile(join(dbPath, 'login.json'), "utf-8")
       );
       users.push({ id, login, name, avatar_url });
-      await fs.writeFile("src/backend/db/login.json", JSON.stringify(users));
+      await fs.writeFile(join(dbPath, 'login.json'), JSON.stringify(users));
       return { id, login, name, avatarUrl: avatar_url };
     } catch (error) {
       console.log(error);

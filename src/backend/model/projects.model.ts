@@ -1,4 +1,6 @@
+import { dbPath } from "@/helpers";
 import fs from "fs/promises";
+import { join } from "path";
 import { Modules } from "../../helpers/interfaces";
 
 // const ProjectModel = {
@@ -33,17 +35,13 @@ import { Modules } from "../../helpers/interfaces";
 
 const ProjectModel = {
   getAll: async () => {
-    const files = (await fs.readdir("src/backend/db")).filter(
-      (file) => file !== "login.json"
+    const files = (await fs.readdir(dbPath)).filter(
+      (file) => file !== "login.json" && file.endsWith(".json")
     );
-    const modules = files
-      .filter((file) => file.endsWith(".json"))
-      .map((file) => file.replace(".json", ""));
+    const modules = files.map((file) => file.replace(".json", ""));
     const projects = await Promise.all(
       files.map(async (file, i) => {
-        const data = JSON.parse(
-          await fs.readFile(`src/backend/db/${file}`, "utf-8")
-        );
+        const data = JSON.parse(await fs.readFile(join(dbPath, file), "utf-8"));
         return { [modules[i]]: data };
       })
     );
@@ -52,19 +50,19 @@ const ProjectModel = {
   },
   getOne: async (id: number, module: Modules) => {
     const data = JSON.parse(
-      await fs.readFile(`src/backend/db/${module}.json`, "utf-8")
+      await fs.readFile(join(dbPath, `${module}.json`), "utf-8")
     );
     const result = data.find((item: { id: number }) => item.id === id);
     return result;
   },
   getByModule: async (module: Modules) => {
     const data = JSON.parse(
-      await fs.readFile(`src/backend/db/${module}.json`, "utf-8")
+      await fs.readFile(join(dbPath, `${module}.json`), "utf-8")
     );
     return data;
   },
   getPaths: async () => {
-    const files = (await fs.readdir("src/backend/db"))
+    const files = (await fs.readdir(dbPath))
       .filter((file) => file !== "login.json" && file.endsWith(".json"))
       .map((file) => file.replace(".json", ""));
     return files;

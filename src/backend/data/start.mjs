@@ -1,9 +1,14 @@
 import fs from 'fs/promises'
 
 const presstart = async () => {
-  const invoicesExists = (await fs.readdir('src/backend/db')).find(file => file === 'invoices')
+  const db = (await fs.readdir('src/backend/db'))
+  const invoicesExists = db.includes('invoices')
+  const loginExists = db.includes('login.json')
   if (!invoicesExists) {
     await fs.mkdir('src/backend/db/invoices')
+  }
+  if (!loginExists) {
+    await fs.writeFile('src/backend/db/login.json', JSON.stringify([]))
   }
 }
 
