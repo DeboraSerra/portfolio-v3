@@ -157,7 +157,7 @@ const InvoiceModel = {
     const user = validateUser(user_id);
     if ("error" in user) return user;
     const exists = (
-      await fs.readdir(join(dbPath, "invoices", `${user_id}.json`))
+      await fs.readdir(join(dbPath, "invoices"))
     ).find((file) => file === `${user_id}.json`);
     if (!exists) {
       return {

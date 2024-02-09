@@ -5,12 +5,8 @@ export * from "./interfaces";
 export * from "./timeline";
 
 export const dbPath = join(
-  __dirname,
-  "..",
-  "..",
-  "..",
-  "..",
-  "src",
-  "backend",
+  process.cwd(),
+  'src',
+  'backend',
   "db"
 );
