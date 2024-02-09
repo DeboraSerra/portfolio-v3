@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate": "plop --plopfile ./generators/plopfile.js"
+    "generate": "plop --plopfile ./generators/plopfile.js",
+    "seed:db": "node ./src/backend/data/save_db.mjs"
   },
   "dependencies": {
     "@types/node": "20.1.4",

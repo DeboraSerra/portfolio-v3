@@ -5,5 +5,5 @@ const HOME_URL = process.env.NEXT_PUBLIC_HOME_URL ?? "http://localhost:3000";
 
 export default async function GET(req: NextRequest, res: NextApiResponse) {
   res.setHeader('Set-Cookie', 'token=; Path=/; max-age=0;')
-  return res.redirect(HOME_URL)
+  return res.redirect('/')
 }
