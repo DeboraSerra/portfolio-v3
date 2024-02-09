@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "generate": "plop --plopfile ./generators/plopfile.js",
-    "seed:db": "node ./src/backend/data/save_db.mjs"
+    "seed:db": "node ./src/backend/data/save_db.mjs",
+    "prestart": "node ./src/backend/data/start.mjs"
   },
   "dependencies": {
     "@types/node": "20.1.4",

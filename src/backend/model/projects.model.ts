@@ -36,7 +36,9 @@ const ProjectModel = {
     const files = (await fs.readdir("src/backend/db")).filter(
       (file) => file !== "login.json"
     );
-    const modules = files.map((file) => file.replace(".json", ""));
+    const modules = files
+      .filter((file) => file.endsWith(".json"))
+      .map((file) => file.replace(".json", ""));
     const projects = await Promise.all(
       files.map(async (file, i) => {
         const data = JSON.parse(
@@ -59,12 +61,11 @@ const ProjectModel = {
     const data = JSON.parse(
       await fs.readFile(`src/backend/db/${module}.json`, "utf-8")
     );
-    console.log({ data, module });
     return data;
   },
   getPaths: async () => {
     const files = (await fs.readdir("src/backend/db"))
-      .filter((file) => file !== "login.json")
+      .filter((file) => file !== "login.json" && file.endsWith(".json"))
       .map((file) => file.replace(".json", ""));
     return files;
   },

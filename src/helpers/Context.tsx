@@ -63,7 +63,6 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
 
   useEffect(() => {
     if (!!token) {
-      console.log({ token });
       const savedUser: {
         login: string;
         name: string;
