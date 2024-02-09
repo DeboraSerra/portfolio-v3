@@ -1,5 +1,7 @@
+import { dbPath } from "@/helpers";
 import { randomUUID } from "crypto";
 import fs from "fs/promises";
+import { join } from "path";
 import { Invoice, InvoiceWithId } from "../interfaces/invoices";
 
 const validateUser = async (user_id: number) => {
@@ -120,12 +122,12 @@ const InvoiceModel = {
     if ("error" in user) return user;
     const id = randomUUID();
     const invoice = { id, client, date_received, user_id, value_received };
-    const exists = (await fs.readdir("src/backend/db/invoices")).find(
+    const exists = (await fs.readdir(join(dbPath, "invoices"))).find(
       (file) => file === `${user_id}.json`
     );
     if (!exists) {
       await fs.writeFile(
-        `src/backend/db/invoices/${user_id}.json`,
+        join(dbPath, "invoices", `${user_id}.json`),
         JSON.stringify([invoice])
       );
       return {
@@ -135,14 +137,14 @@ const InvoiceModel = {
       };
     }
     const invoices = JSON.parse(
-      await fs.readFile(`src/backend/db/invoices/${user_id}.json`, {
+      await fs.readFile(join(dbPath, "invoices", `${user_id}.json`), {
         encoding: "utf-8",
         flag: "r",
       })
     );
     invoices.push(invoice);
     await fs.writeFile(
-      `src/backend/db/invoices/${user_id}.json`,
+      join(dbPath, "invoices", `${user_id}.json`),
       JSON.stringify(invoices)
     );
     return {
@@ -154,9 +156,9 @@ const InvoiceModel = {
   getAllInvoices: async (user_id: number) => {
     const user = validateUser(user_id);
     if ("error" in user) return user;
-    const exists = (await fs.readdir("src/backend/db/invoices")).find(
-      (file) => file === `${user_id}.json`
-    );
+    const exists = (
+      await fs.readdir(join(dbPath, "invoices"))
+    ).find((file) => file === `${user_id}.json`);
     if (!exists) {
       return {
         invoice: [],
@@ -165,7 +167,7 @@ const InvoiceModel = {
       };
     }
     const invoices = await fs.readFile(
-      `src/backend/db/invoices/${user_id}.json`,
+      join(dbPath, "invoices", `${user_id}.json`),
       { encoding: "utf-8", flag: "r" }
     );
     return {
@@ -177,7 +179,7 @@ const InvoiceModel = {
   getInvoiceById: async (id: number, user_id: number) => {
     const user = validateUser(user_id);
     if ("error" in user) return user;
-    const exists = (await fs.readdir("src/backend/db/invoices")).find(
+    const exists = (await fs.readdir(join(dbPath, "invoices"))).find(
       (file) => file === `${user_id}.json`
     );
     if (!exists) {
@@ -188,7 +190,7 @@ const InvoiceModel = {
       };
     }
     const invoices = await fs.readFile(
-      `src/backend/db/invoices/${user_id}.json`,
+      join(dbPath, "invoices", `${user_id}.json`),
       { encoding: "utf-8", flag: "r" }
     );
     const invoice = JSON.parse(invoices).find(
@@ -213,7 +215,7 @@ const InvoiceModel = {
     const user = validateUser(user_id);
     if ("error" in user) return user;
     const invoices = JSON.parse(
-      await fs.readFile(`src/backend/db/invoices/${user_id}.json`, {
+      await fs.readFile(join(dbPath, "invoices", `${user_id}.json`), {
         encoding: "utf-8",
         flag: "r",
       })
@@ -230,7 +232,7 @@ const InvoiceModel = {
     }
     invoices[index] = { id, client, date_received, user_id, value_received };
     await fs.writeFile(
-      `src/backend/db/invoices/${user_id}.json`,
+      join(dbPath, "invoices", `${user_id}.json`),
       JSON.stringify(invoices)
     );
     return { invoice: invoices[index], error: false, message: "" };
@@ -239,7 +241,7 @@ const InvoiceModel = {
     const user = validateUser(user_id);
     if ("error" in user) return user;
     const invoices = await fs.readFile(
-      `src/backend/db/invoices/${user_id}.json`,
+      join(dbPath, "invoices", `${user_id}.json`),
       { encoding: "utf-8", flag: "r" }
     );
     const parsed = JSON.parse(invoices);
@@ -257,7 +259,7 @@ const InvoiceModel = {
       (invoice: { id: typeof randomUUID }) => invoice.id !== id
     );
     await fs.writeFile(
-      `src/backend/db/invoices/${user_id}.json`,
+      join(dbPath, "invoices", `${user_id}.json`),
       JSON.stringify(filtered)
     );
     return { error: false, message: "Invoice deleted", invoice: {} };
