@@ -1,0 +1,142 @@
+[
+  {
+    "id": "28e0465e-ed20-4718-bc60-857d08bc4f0f",
+    "name": "Registro de Domínio",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was the first big solution I developed when I joined the company and was meant to replace the page already on production, updating the technology used and the design. This flow was developed using Next.js and Styled Components and consists of the routes /registro-de-dominio, /registro-de-dominio/busca and /registro-de-dominio/checkout and the user can buy a domain name with different extensions and choose to add a professional email and/or the tool for building sites.",
+    "repository": "https://uolhost.uol.com.br/registro-de-dominio",
+    "image": "/images/uol/dominio.webp"
+  },
+  {
+    "id": "23aeb799-aa32-46ce-9341-81ca231b180c",
+    "name": "Hospedagem de Sites",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to buy and host their website.",
+    "repository": "https://uolhost.uol.com.br/hospedagem-de-sites",
+    "image": "/images/uol/hospedagem.webp"
+  },
+  {
+    "id": "ea5e015f-b9c7-4688-b945-e911485dfdc1",
+    "name": "Microsoft Office 365",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to buy and use microsoft applications, such as Word, Excel, Teams and others, to their company.",
+    "repository": "https://uolhost.uol.com.br/microsoft-office-365",
+    "image": "/images/uol/office.webp"
+  },
+  {
+    "id": "e486b7e0-1681-4e55-944c-e3b525655d37",
+    "name": "E-mail Profissional",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to buy and use professional e-mails to their employees personalized with the company domain.",
+    "repository": "https://uolhost.uol.com.br/e-mail",
+    "image": "/images/uol/ePro.webp"
+  },
+  {
+    "id": "6c1baa20-18c7-4e93-9808-a83de4746a23",
+    "name": "Transferência de domínio",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can transfer their domain to a UOL Host server.",
+    "repository": "https://uolhost.uol.com.br/transferencia-de-dominio",
+    "image": "/images/uol/transferencia.png"
+  },
+  {
+    "id": "437f98c1-febc-4460-a687-86558b6b8158",
+    "name": "Revenda de hospedagem",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to buy and resell the UOL hosting service, both in Linux or Windows.",
+    "repository": "https://uolhost.uol.com.br/revenda-de-hospedagem",
+    "image": "/images/uol/revenda_hospedagem.webp"
+  },
+  {
+    "id": "74d69240-805b-4256-9800-5102f77c6414",
+    "name": "Banco de dados",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a database to buy and use in MySQL, MongoDB or PostgeSQL.",
+    "repository": "https://uolhost.uol.com.br/banco-de-dados",
+    "image": "/images/uol/db.webp"
+  },
+  {
+    "id": "cf651c57-9075-44f7-b63b-d9799a8fd5e2",
+    "name": "Banco de dados MySQL",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose the available to buy and use in a MySQL database.",
+    "repository": "https://uolhost.uol.com.br/banco-de-dados/mysql",
+    "image": "/images/uol/db_mysql.webp"
+  },
+  {
+    "id": "b1b45f3e-dce1-446a-be97-7c3f8a7b0b49",
+    "name": "Banco de dados MongoDB",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose the available to buy and use in a MongoDB database.",
+    "repository": "https://uolhost.uol.com.br/banco-de-dados/mongodb",
+    "image": "/images/uol/db_mongo.webp"
+  },
+  {
+    "id": "93ece4b2-dca1-4212-af85-85417885dd66",
+    "name": "Banco de dados Postgres SQL",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose the available to buy and use in a PostgreSQL database.",
+    "repository": "https://uolhost.uol.com.br/banco-de-dados/postgresql",
+    "image": "/images/uol/db_postgresql.webp"
+  },
+  {
+    "id": "b2b47276-1f2f-472d-98c5-c91718afb3d6",
+    "name": "Certificado SSL",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can buy ssl certificate to their domain, subdomain or multiple domains.",
+    "repository": "https://uolhost.uol.com.br/certificado-ssl",
+    "image": "/images/uol/ssl.webp"
+  },
+  {
+    "id": "edb91e69-d691-45a4-9873-f158dfe2dd35",
+    "name": "E-mail Marketing",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to send promotional e-mails to their clients based on how many e-mail they want to send by month.",
+    "repository": "https://uolhost.uol.com.br/e-mail-marketing",
+    "image": "/images/uol/eMkt.webp"
+  },
+  {
+    "id": "28417928-ec8d-462f-869a-e7565bd14c20",
+    "name": "UOL Anúncios",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to add advertisement on big websites based on how many clicks they might/want to receive in a month.",
+    "repository": "https://uolhost.uol.com.br/uol-anuncios",
+    "image": "/images/uol/uol_ads.webp"
+  },
+  {
+    "id": "cdc7b37d-ddd4-41be-bcad-c32b7c50e423",
+    "name": "Google Ads",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to add advertisement on Google based on how much they want to invest by month, with the option to add Call Tracking to the plan.",
+    "repository": "https://uolhost.uol.com.br/google-ads",
+    "image": "/images/uol/google_ads.webp"
+  },
+  {
+    "id": "f0b57bca-edc5-49d4-b580-94a0480cc91c",
+    "name": "Facebook Ads e Instagram Ads",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to add advertisement on Facebook and Instagram based on how much they want to invest by month.",
+    "repository": "https://uolhost.uol.com.br/facebook-ads",
+    "image": "/images/uol/face_ads.webp"
+  },
+  {
+    "id": "a6ba5c13-d743-4a60-8c9f-72c93b936ef4",
+    "name": "Google Workspace",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to buy and use Google applications, such as Meet, Docs, Sheets, and others, to their company.",
+    "repository": "https://uolhost.uol.com.br/google-workspace",
+    "image": "/images/uol/workspace.webp"
+  },
+  {
+    "id": "82cee3cd-fd42-413d-b02c-4c98c966f99f",
+    "name": "E-mail Microsoft Exchange",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose a plan to buy and use professional e-mail personalized with their domain hosted by Microsoft.",
+    "repository": "https://uolhost.uol.com.br/microsoft-office-365/exchange/",
+    "image": "/images/uol/exchange.webp"
+  },
+  {
+    "id": "611bab9d-0fd0-4d00-9db6-1dc71ad03009",
+    "name": "Parceiros UOL Host",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and is used to make partnerships with companies in specific working fields.",
+    "repository": "https://uolhost.uol.com.br/parceiros-uol-host",
+    "image": "/images/uol/parceiros.webp"
+  },
+  {
+    "id": "821d1d65-8d23-4260-bc29-5ae0ca7798f5",
+    "name": "Afiliados UOL Host",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and is used so the user can add UOL Host advertisements in their websites and receive a percentage of the sale.",
+    "repository": "https://uolhost.uol.com.br/afiliados-uol-host",
+    "image": "/images/uol/afiliados.webp"
+  },
+  {
+    "id": "b54e37c5-4073-44d6-9aea-24ff75729e05",
+    "name": "Linguagem de Programação PHP ASP NET",
+    "description": "This project was developed as a part of my job as Software Developer at UOL Host in collaboration with my coworkers. It was meant to replace the page already on production, updating the technology used and the design. This page was developed using Next.js and Styled Components and the user can choose the available to buy and use in a PostgreSQL database.",
+    "repository": "https://uolhost.uol.com.br/hospedagem-de-sites/linguagem-programacao/php-asp-net",
+    "image": "/images/uol/php.webp"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "fb3395a1-2f85-4db0-b931-b616140e5855",
+    "name": "Projeto Job Insights",
+    "description": "This was the first project using Python. We had to create some tests and read the information from a csv file and return it in a list of Dict and be able to filter the information extracted from the file. After that, we had a bonus requirement to make the Flask application render the specific information of a job when it is clicked.",
+    "repository": "https://github.com/DeboraSerra/project-job-insights",
+    "image": "/images/cs/job-insights.webp"
+  },
+  {
+    "id": "94563564-0b68-4f08-a056-808fb2046f29",
+    "name": "Projeto Inventory Report",
+    "description": "In this project we had to develop some functions to generate simple and full reports of a fictional inventory. The entry must be a list of products, that can come from an CSV, JSON or XML file, and the simple report returns the closest expire date, the longest production date and the name of the company with more products. The full report returns all the information from the simple one and the amount of products by company.",
+    "repository": "https://github.com/DeboraSerra/project-inventory-report",
+    "image": "/images/cs/inventory-report.webp"
+  },
+  {
+    "id": "448f138a-722c-47c8-a568-2783d15ddf70",
+    "name": "Projeto Tech News",
+    "description": "In this project we had to create functions to scrape data from the Trybe blog. The information extracted were stored in a mongoDB database. We also created functions to find posts using the title, date, tag and category. It is also possible to get the top 5 posts in general and by category.",
+    "repository": "https://github.com/DeboraSerra/project-tech-news",
+    "image": "/images/cs/tech-news.webp"
+  },
+  {
+    "id": "40cfa116-72a9-47b3-9670-0eb7a275151f",
+    "name": "Projeto Algorithms",
+    "description": "In this project we were oriented to develop different types of algorithms, as in search, order and others, focusing on specific complexity levels, as well as some tests.",
+    "repository": "https://github.com/DeboraSerra/project-algorithms",
+    "image": "/images/cs/algorithms.webp"
+  },
+  {
+    "id": "a245ce60-3cbd-43ba-b77e-95150d25a4a4",
+    "name": "Projeto Algorithms",
+    "description": "The project TING (Trybe Is Not Google was created to practice the use of data structures like Arrays, Lists, Lines and Piles. We had to implement a program that simulates the document indexing similar to the one used by Google, which means, a program that allow to add files and do searches in this files.",
+    "repository": "https://github.com/DeboraSerra/project-ting",
+    "image": "/images/cs/ting.webp)"
+  },
+  {
+    "id": "f01be826-7a95-4d87-8bdb-8ad9492a3fb6",
+    "name": "Projeto Restaurant Orders",
+    "description": "This project simulates a diner that already has a sale system that saves the name of the person, the order and the day of the week that the order was made. Using this information we had to filter the data to get some publicity information to be used later and track the orders, as most ordered and never ordered, by client, and the days, as the busiest and the slowest. As a bonus, we had to implement an inventory control based on the minimum amount of ingredients allowed and the orders made.",
+    "repository": "https://github.com/DeboraSerra/project-restaurant-orders",
+    "image": "/images/cs/restaurant-orders.webp"
+  }
+]
