@@ -64,6 +64,7 @@ const InvoiceForm = () => {
     };
     const url = `${host}/api/invoice?user_id=${id}`
     const result = await axios.post(url, info);
+    console.log({ result });
     setInvoices([...invoices, result.data.invoice]);
   };
 

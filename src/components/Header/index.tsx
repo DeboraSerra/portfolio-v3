@@ -115,13 +115,13 @@ const Header = ({
                   <Link className='header__link medium' href={`/projects`}>
                     All categories
                   </Link>
-                  {routes.map((route, i) => (
+                  {routes.map(({ route, name }, i) => (
                     <Link
                       className='header__link medium'
                       key={i}
                       href={`/projects/${route}`}
                     >
-                      {names[route]}
+                      {name}
                     </Link>
                   ))}
                 </div>

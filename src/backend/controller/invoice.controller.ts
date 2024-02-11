@@ -46,7 +46,7 @@ const InvoiceController = {
     const { user_id } = req.query;
     const { id } = req.body;
     const { error, message, invoice } = await InvoiceService.deleteInvoice(
-      id,
+      Number(id),
       Number(user_id)
     );
     if (error) {

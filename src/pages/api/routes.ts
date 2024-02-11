@@ -5,10 +5,10 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<string[]>
+  res: NextApiResponse<ProjectsPaths[]>
 ) {
   if (req.method === "GET") {
     const routes = await ProjectModel.getPaths();
-    return res.status(200).json(routes);
+    return res.status(200).json(routes as ProjectsPaths[]);
   }
 }
