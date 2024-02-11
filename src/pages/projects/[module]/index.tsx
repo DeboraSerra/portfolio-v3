@@ -1,4 +1,5 @@
 import Projects from "@/backend/controller/projects.controller";
+import ProjectModel from "@/backend/model/projects.model";
 import ProjectModule from "@/components/pages/Projects/Module";
 import { Modules, Project } from "@/helpers/interfaces";
 import { GetStaticPropsContext } from "next";
@@ -12,8 +13,8 @@ export default function Module({ projects }: { projects: Project[] }) {
 }
 
 export async function getStaticPaths() {
-  const routes = await Projects.getPaths();
-  const paths = routes.map((route) => ({
+  const routes = await ProjectModel.getPaths();
+  const paths = routes.map(({ route }) => ({
     params: { module: route },
   }));
   return {
