@@ -3,13 +3,7 @@ import fs from "fs/promises";
 import { Invoice, InvoiceWithId } from "../interfaces/invoices";
 
 const validateUser = async (user_id: number) => {
-  const users = JSON.parse(
-    await fs.readFile("src/backend/db/login.json", {
-      encoding: "utf-8",
-      flag: "r",
-    })
-  );
-  const user = users.find((user: { id: number }) => user.id === user_id);
+  const { rows: [user] } = await sql`SELECT * FROM users WHERE id = ${user_id}`;
   if (!user) {
     return { error: true, message: "User not found", invoice: {} };
   }
