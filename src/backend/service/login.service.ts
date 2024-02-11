@@ -19,7 +19,6 @@ const LoginService = {
       | { id: number; login: string; name: string; avatarUrl: string }
       | { error: boolean; message: string }
       | null = await LoginModel.getUser(id);
-
     if (!user) {
       user = await LoginModel.createUser({ id, login, name, avatar_url });
     }
