@@ -8,7 +8,7 @@ const ProjectModel = {
       modules.map(async (module) => {
         const { route } = module;
         const query = `SELECT * FROM ${route}`;
-        const { rows: p } = await sql`${query}`;
+        const { rows: p } = await sql.query(query);
         return { [route]: p };
       })
     );

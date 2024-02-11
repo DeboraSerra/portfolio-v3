@@ -46,7 +46,7 @@ const InvoiceService = {
     });
     return updatedInvoice as ServiceReturn;
   },
-  deleteInvoice: async (id: typeof randomUUID, user_id: number) => {
+  deleteInvoice: async (id: number, user_id: number) => {
     const { user_id: userId } = invoiceSchema.parse({ user_id });
     const deletedInvoice = await InvoiceModel.deleteInvoice(id, userId);
     return deletedInvoice as ServiceReturn;
