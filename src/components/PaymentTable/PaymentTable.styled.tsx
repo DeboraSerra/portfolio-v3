@@ -157,11 +157,40 @@ export const Main = styled.ul`
       } // &__filter
 
       &__header {
-        font-size: ${({ theme }) => theme.fontSizes[2]};
+        &--column {
+          font-size: ${({ theme }) => theme.fontSizes[2]};
+
+          &.check {
+            width: 10%;
+            font-size: ${({ theme }) => theme.fontSizes[0]};
+          } // &.check, &--button
+
+          &.button {
+            width: 5%;
+          } // &.button
+        } // &--column
       } // &__header
 
       &__item {
         font-size: ${({ theme }) => theme.fontSizes[1]};
+
+        &--column {
+          &.check {
+            width: 22%;
+          } // &.check, &.button
+
+          &.button {
+            width: 8%;
+
+            &:last-of-type {
+              margin-left: 4px;
+            }// &:last-of-type
+
+            & .icon {
+              font-size: ${({ theme }) => theme.fontSizes[3]};
+            } // & .icon
+          } // &.button
+        } // &--column
       } // &__item
     } // .payment
   } // @media only screen and (max-width : 768px)

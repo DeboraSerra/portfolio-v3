@@ -9,6 +9,7 @@ import {
   BiRefresh,
   BiTrash,
 } from "react-icons/bi";
+import { useWindowSize } from "usehooks-ts";
 import * as S from "./PaymentTable.styled";
 
 enum Months {
@@ -39,6 +40,8 @@ const PaymentTable = () => {
   const [sortByDate, setSortByDate] = useState(false);
   const [sortByValue, setSortByValue] = useState(false);
   const [sortByPayed, setSortByPayed] = useState(false);
+
+  const { width } = useWindowSize();
 
   useEffect(() => {
     id && getPayments();
@@ -174,8 +177,12 @@ const PaymentTable = () => {
         <h2 className='payment__header--column' onClick={handleSortByPayed}>
           Payed {sortByPayed ? <BiChevronUp /> : <BiChevronDown />}
         </h2>
-        <h2 className='payment__header--column button'>Edit</h2>
-        <h2 className='payment__header--column button'>Delete</h2>
+        <h2 className='payment__header--column button'>
+          {width >= 768 ? "Edit" : ""}
+        </h2>
+        <h2 className='payment__header--column button'>
+          {width >= 768 ? "Delete" : ""}
+        </h2>
       </li>
       {filteredPayments?.map(
         (payment: {
@@ -219,7 +226,7 @@ const PaymentTable = () => {
               className='payment__item--column button'
               onClick={() => handleDelete(payment.id)}
             >
-              <BiTrash />
+              <BiTrash className='icon' />
             </button>
           </li>
         )

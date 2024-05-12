@@ -49,6 +49,7 @@ const defaultTheme = {
     '26px', // 4
     '32px', // 5
     '40px', // 6
+    '12px', // 7
   ],
   fontWeights: {
     body: 300,
