@@ -160,12 +160,8 @@ const PaymentTable = () => {
         >
           Clear filters
         </button>
-        <button
-          className='btn'
-          title='Refresh table'
-          onClick={getPayments}
-        >
-          <BiRefresh className="refresh-icon" />
+        <button className='btn' title='Refresh table' onClick={getPayments}>
+          <BiRefresh className='refresh-icon' />
         </button>
       </div>
       <li className='payment__header'>
@@ -234,6 +230,7 @@ const PaymentTable = () => {
           {filteredPayments
             ? transformValue(
                 filteredPayments
+                  .filter(({ payed }) => Boolean(payed))
                   .reduce(
                     (acc: number, curr: any) => acc + parseFloat(curr.value),
                     0
