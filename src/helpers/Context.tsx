@@ -41,8 +41,8 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
     setInvoices(
       data.invoice.sort(
         (a: any, b: any) =>
-          new Date(a.date_received).getTime() -
-          new Date(b.date_received).getTime()
+          new Date(b.date_received).getTime() -
+          new Date(a.date_received).getTime()
       )
     );
   };

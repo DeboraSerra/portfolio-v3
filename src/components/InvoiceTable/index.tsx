@@ -19,7 +19,12 @@ enum Months {
 }
 
 const InvoiceTable = () => {
-  const { invoices, setInvoices, getInvoices, user: { id } } = useContext(ProjectsContext);
+  const {
+    invoices,
+    setInvoices,
+    getInvoices,
+    user: { id },
+  } = useContext(ProjectsContext);
   const [filteredInvoices, setFilteredInvoices] = useState(invoices);
   const [sortByDate, setSortByDate] = useState(false);
   const [sortByValue, setSortByValue] = useState(false);
@@ -29,8 +34,18 @@ const InvoiceTable = () => {
     id && getInvoices();
   }, [id]);
 
+  const clearInvoices = () => {
+    setFilteredInvoices(
+      invoices.filter((it: any) => {
+        const currYear = new Date().getFullYear();
+        const invoiceYear = new Date(it.date_received).getFullYear();
+        return currYear === invoiceYear;
+      })
+    );
+  };
+
   useEffect(() => {
-    setFilteredInvoices(invoices);
+    clearInvoices();
   }, [invoices]);
 
   const transformValue = (value: string) => {
@@ -96,15 +111,21 @@ const InvoiceTable = () => {
     const filtered = invoices.filter((invoice: any) => {
       const date = new Date(invoice.date_received);
       if (period === "year") {
-        return date.getFullYear() === new Date().getFullYear();
+        return true;
       }
       if (period === "last-year") {
         return date.getFullYear() === new Date().getFullYear() - 1;
       }
       if (period === "last-month") {
-        return date.getMonth() === new Date().getMonth() - 1 && date.getFullYear() === new Date().getFullYear();
+        return (
+          date.getMonth() === new Date().getMonth() - 1 &&
+          date.getFullYear() === new Date().getFullYear()
+        );
       }
-      return date.getMonth() === new Date().getMonth() && date.getFullYear() === new Date().getFullYear();
+      return (
+        date.getMonth() === new Date().getMonth() &&
+        date.getFullYear() === new Date().getFullYear()
+      );
     });
     setFilteredInvoices(filtered);
   };
@@ -117,7 +138,7 @@ const InvoiceTable = () => {
           className='invoice__filter--btn'
           onClick={() => handleFilterBtn("year")}
         >
-          {new Date().getFullYear()}
+          All invoices
         </button>
         <button
           className='invoice__filter--btn'
@@ -131,16 +152,15 @@ const InvoiceTable = () => {
         >
           {Months[new Date().getMonth()]}
         </button>
-        {Months[new Date().getMonth() - 1] && (<button
-          className='invoice__filter--btn'
-          onClick={() => handleFilterBtn("last-month")}
-        >
-          {Months[new Date().getMonth() - 1]}
-        </button>)}
-        <button
-          className='invoice__filter--btn'
-          onClick={() => setFilteredInvoices(invoices)}
-        >
+        {Months[new Date().getMonth() - 1] && (
+          <button
+            className='invoice__filter--btn'
+            onClick={() => handleFilterBtn("last-month")}
+          >
+            {Months[new Date().getMonth() - 1]}
+          </button>
+        )}
+        <button className='invoice__filter--btn' onClick={clearInvoices}>
           Clear filters
         </button>
       </div>
