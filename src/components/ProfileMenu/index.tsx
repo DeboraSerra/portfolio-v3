@@ -18,9 +18,17 @@ const ProfileMenu = () => {
       >
         Invoices control
       </Link>
+      <Link
+        className='header__link medium'
+        href={`/profile/${id}/trybe-payments-control`}
+      >
+        Trybe payments control
+      </Link>
       <a
         className='header__link medium'
         href='https://recipes-blush-psi.vercel.app/'
+        target='_blank'
+        rel='noreferrer'
       >
         Recipes book
       </a>

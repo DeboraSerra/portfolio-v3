@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import { NextPage } from "next";
@@ -18,6 +19,22 @@ export const ProjectsContext = createContext({
   invoices: [],
   setInvoices: (invoices: any) => {},
   getInvoices: () => {},
+  payments: [],
+  setPayments: (payments: any) => {},
+  getPayments: () => {},
+  editPayment: ({
+    payed,
+    value,
+    date,
+    id,
+  }: {
+    payed?: boolean;
+    value: string;
+    date?: string;
+    id: number;
+  }) => {},
+  paymentToEdit: null,
+  setPaymentToEdit: (payment: any) => {},
 });
 
 interface Props {
@@ -28,6 +45,8 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
   const [routes, setRoutes] = useState([]);
   const [token, setToken] = useState("");
   const [invoices, setInvoices] = useState([]);
+  const [payments, setPayments] = useState([]);
+  const [paymentToEdit, setPaymentToEdit] = useState<any>(null);
   const [user, setUser] = useState({
     login: "",
     name: "",
@@ -45,6 +64,46 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
           new Date(a.date_received).getTime()
       )
     );
+  };
+
+  const getPayments = async () => {
+    const { data } = await axios(`/api/payments?user_id=${user.id}`);
+    setPayments(
+      data.payment?.sort(
+        (a: any, b: any) =>
+          new Date(a.date).getTime() - new Date(b.date).getTime()
+      ) || []
+    );
+  };
+
+  const editPayment = async ({
+    payed = false,
+    value,
+    date = undefined,
+    id,
+  }: {
+    payed?: boolean;
+    value: string;
+    date?: string;
+    id: number;
+  }) => {
+    const body = {
+      id,
+      payed,
+      value,
+      date,
+      user_id: user.id,
+    };
+    const { data } = await axios.put(`/api/payments?user_id=${user.id}`, body);
+    if ("error" in data) {
+      console.error(data.error);
+    } else {
+      const newPayments = payments.map((payment) =>
+        (payment as any).id === id ? data.payment : payment
+      );
+      setPayments(newPayments as any);
+      setPaymentToEdit(null);
+    }
   };
 
   useEffect(() => {
@@ -85,6 +144,12 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
     invoices,
     setInvoices,
     getInvoices,
+    getPayments,
+    payments,
+    setPayments,
+    editPayment,
+    paymentToEdit,
+    setPaymentToEdit,
   };
 
   return (

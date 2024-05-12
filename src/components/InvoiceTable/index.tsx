@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ProjectsContext } from "@/helpers/Context";
 import { useContext, useEffect, useState } from "react";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
