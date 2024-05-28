@@ -1,15 +1,16 @@
+import { InvoiceWithId } from "@/backend/interfaces/invoices";
 import { ProjectsContext } from "@/helpers/Context";
 import axios from "axios";
-import { use, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import * as S from "./InvoiceForm.styled";
-
-// const HOME_URL = process.env.NEXT_PUBLIC_HOME_URL ?? "http://localhost:3000";
 
 const InvoiceForm = () => {
   const {
     user: { id },
     setInvoices,
     invoices,
+    invoiceToEdit,
+    setInvoiceToEdit,
   } = useContext(ProjectsContext);
   const [form, setForm] = useState({
     client: "",
@@ -21,7 +22,23 @@ const InvoiceForm = () => {
 
   useEffect(() => {
     setHost(window.location.origin);
-  },[])
+  }, []);
+
+  useEffect(() => {
+    if (invoiceToEdit) {
+      setForm({
+        client: (invoiceToEdit as any).client,
+        value: +(invoiceToEdit as any).value_received,
+        date: (invoiceToEdit as any).date_received,
+      });
+    } else {
+      setForm({
+        client: "",
+        value: 0.0,
+        date: "",
+      });
+    }
+  }, [invoiceToEdit]);
 
   const validateValue = (value: string) => {
     value = value.replace(/[^0-9]/g, "");
@@ -62,9 +79,20 @@ const InvoiceForm = () => {
       date_received: new Date(date).toISOString().split("T")[0],
       user_id: id,
     };
-    const url = `${host}/api/invoice?user_id=${id}`
-    const { data } = await axios.post(url, info);
-    setInvoices([...invoices, data.invoice]);
+    if (invoiceToEdit) {
+      (info as InvoiceWithId).id = (invoiceToEdit as InvoiceWithId).id;
+    }
+    const url = `${host}/api/invoice?user_id=${id}`;
+    const { data } = await (invoiceToEdit
+      ? axios.put(url, info)
+      : axios.post(url, info));
+    !invoiceToEdit && setInvoices([...invoices, data.invoice]);
+    setInvoiceToEdit(null);
+    setForm({
+      client: "",
+      value: 0.0,
+      date: "",
+    });
   };
 
   return (

@@ -33,40 +33,4 @@ const ProjectModel = {
   },
 };
 
-// const ProjectModel = {
-//   getAll: async () => {
-//     const files = (await fs.readdir(dbPath)).filter(
-//       (file) => file !== "login.json" && file.endsWith(".json")
-//     );
-//     const modules = files.map((file) => file.replace(".json", ""));
-//     const projects = await Promise.all(
-//       files.map(async (file, i) => {
-//         const data = JSON.parse(await fs.readFile(join(dbPath, file), "utf-8"));
-//         return { [modules[i]]: data };
-//       })
-//     );
-//     const returned = projects.reduce((acc, p) => ({ ...acc, ...p }), {});
-//     return returned;
-//   },
-//   getOne: async (id: number, module: Modules) => {
-//     const data = JSON.parse(
-//       await fs.readFile(join(dbPath, `${module}.json`), "utf-8")
-//     );
-//     const result = data.find((item: { id: number }) => item.id === id);
-//     return result;
-//   },
-//   getByModule: async (module: Modules) => {
-//     const data = JSON.parse(
-//       await fs.readFile(join(dbPath, `${module}.json`), "utf-8")
-//     );
-//     return data;
-//   },
-//   getPaths: async () => {
-//     const files = (await fs.readdir(dbPath))
-//       .filter((file) => file !== "login.json" && file.endsWith(".json"))
-//       .map((file) => file.replace(".json", ""));
-//     return files;
-//   },
-// };
-
 export default ProjectModel;

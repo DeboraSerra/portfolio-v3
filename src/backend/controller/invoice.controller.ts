@@ -43,8 +43,7 @@ const InvoiceController = {
     return res.status(200).json({ invoice });
   },
   deleteInvoice: async (req: NextApiRequest, res: NextApiResponse) => {
-    const { user_id } = req.query;
-    const { id } = req.body;
+    const { user_id, id } = req.query;
     const { error, message, invoice } = await InvoiceService.deleteInvoice(
       Number(id),
       Number(user_id)

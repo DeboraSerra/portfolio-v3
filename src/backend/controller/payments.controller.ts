@@ -44,7 +44,6 @@ const PaymentController = {
   },
   deletePayment: async (req: NextApiRequest, res: NextApiResponse) => {
     const { user_id, id } = req.query;
-    console.log({ user_id, id })
     const { error, message, payment } = await PaymentService.deletePayment(
       Number(id),
       Number(user_id)

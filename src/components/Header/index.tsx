@@ -14,15 +14,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import ProfileMenu from "../ProfileMenu";
 import * as S from "./Header.styled";
 
-const names = {
-  fundaments: "Fundaments",
-  frontend: "Frontend",
-  backend: "Backend",
-  computer_science: "Computer Science",
-  personal: "Personal",
-  uol: "UOL",
-};
-
 const Header = ({
   isDarkMode,
   toggleDarkMode,

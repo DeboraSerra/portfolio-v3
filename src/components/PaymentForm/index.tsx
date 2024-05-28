@@ -4,8 +4,6 @@ import { useContext, useEffect, useState } from "react";
 import * as S from "./PaymentForm.styled";
 import { Payment, PaymentWithId } from "@/backend/interfaces/payments";
 
-// const HOME_URL = process.env.NEXT_PUBLIC_HOME_URL ?? "http://localhost:3000";
-
 const PaymentForm = () => {
   const {
     user: { id },
