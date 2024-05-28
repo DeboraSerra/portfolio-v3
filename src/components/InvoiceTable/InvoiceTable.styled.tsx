@@ -39,6 +39,11 @@ export const Main = styled.ul`
           );
         } // &:hover
       } // &--btn
+
+      & .refresh-icon {
+        font-size: ${(props) => props.theme.fontSizes[4]};
+        color: ${(props) => props.theme.text.primary};
+      } // & .refresh-icon
     } // &__filter
 
     &__header {
@@ -51,6 +56,8 @@ export const Main = styled.ul`
 
       & h2 {
         cursor: pointer;
+
+        font-size: ${({ theme }) => theme.fontSizes[4]};
       } // & h2
 
       &--client {
@@ -58,12 +65,18 @@ export const Main = styled.ul`
       }
 
       &--date {
-        width: 30%;
+        width: 22%;
       }
 
       &--value {
-        width: 30%;
+        width: 22%;
       }
+
+      &--column {
+        width: 15%;
+
+        text-align: center;
+      } // &--column
     } // &__header
 
     &__item {
@@ -80,15 +93,45 @@ export const Main = styled.ul`
 
       &--client {
         width: 40%;
+
+        font-size: ${({ theme }) => theme.fontSizes[3]};
       }
 
       &--date {
-        width: 30%;
+        width: 22%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       &--value {
-        width: 30%;
+        width: 22%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
+
+      &--column {
+        width: 15%;
+
+        &.button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          transition: background 0.3s;
+
+          color: ${({ theme }) => theme.text.primary};
+          font-size: ${({ theme }) => theme.fontSizes[4]};
+
+          &:hover {
+            color: ${({ theme }) => theme.bg.contrast[3]};
+          } // &:hover
+        } // &.button
+      } // &--column
     } // &__item]
 
     &__total {
@@ -103,24 +146,24 @@ export const Main = styled.ul`
       &--label {
         font-weight: bold;
       }
-    }// &__total
+    } // &__total
   } // .invoice
 
-  @media only screen and (max-width : 768px) {
+  @media only screen and (max-width: 768px) {
     .invoice {
       &__filter {
         &--btn {
           font-size: ${({ theme }) => theme.fontSizes[0]};
-        }// &--btn
-      }// &__filter
+        } // &--btn
+      } // &__filter
 
       &__header {
         font-size: ${({ theme }) => theme.fontSizes[2]};
-      }// &__header
+      } // &__header
 
       &__item {
         font-size: ${({ theme }) => theme.fontSizes[1]};
-      }// &__item
-    }// .invoice
-  }// @media only screen and (max-width : 768px)
+      } // &__item
+    } // .invoice
+  } // @media only screen and (max-width : 768px)
 `;

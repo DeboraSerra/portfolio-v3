@@ -14,6 +14,11 @@ const invoiceSchema = z.object({
     }),
 });
 
+const deleteSchema = z.object({
+  user_id: z.number({ required_error: "User id is required" }),
+  id: z.number({ required_error: "Invoice id is required" }),
+});
+
 const InvoiceService = {
   createInvoice: async (invoice: Invoice) => {
     const { user_id, client, value_received, date_received } =
@@ -47,8 +52,8 @@ const InvoiceService = {
     return updatedInvoice as ServiceReturn;
   },
   deleteInvoice: async (id: number, user_id: number) => {
-    const { user_id: userId } = invoiceSchema.parse({ user_id });
-    const deletedInvoice = await InvoiceModel.deleteInvoice(id, userId);
+    const { user_id: userId, id: invoiceId } = deleteSchema.parse({ user_id, id });
+    const deletedInvoice = await InvoiceModel.deleteInvoice(invoiceId, userId);
     return deletedInvoice as ServiceReturn;
   },
 };

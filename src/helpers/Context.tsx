@@ -35,6 +35,8 @@ export const ProjectsContext = createContext({
   }) => {},
   paymentToEdit: null,
   setPaymentToEdit: (payment: any) => {},
+  invoiceToEdit: null,
+  setInvoiceToEdit: (invoice: any) => {},
 });
 
 interface Props {
@@ -47,6 +49,7 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
   const [invoices, setInvoices] = useState([]);
   const [payments, setPayments] = useState([]);
   const [paymentToEdit, setPaymentToEdit] = useState<any>(null);
+  const [invoiceToEdit, setInvoiceToEdit] = useState<any>(null);
   const [user, setUser] = useState({
     login: "",
     name: "",
@@ -150,6 +153,8 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
     editPayment,
     paymentToEdit,
     setPaymentToEdit,
+    invoiceToEdit,
+    setInvoiceToEdit,
   };
 
   return (

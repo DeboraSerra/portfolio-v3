@@ -1,8 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { ProjectsContext } from "@/helpers/Context";
 import { useContext, useEffect, useState } from "react";
-import { BiChevronDown, BiChevronUp } from "react-icons/bi";
+import {
+  BiChevronDown,
+  BiChevronUp,
+  BiEdit,
+  BiRefresh,
+  BiTrash,
+} from "react-icons/bi";
+import { useWindowSize } from "usehooks-ts";
 import * as S from "./InvoiceTable.styled";
+import axios from "axios";
 
 enum Months {
   January = 0,
@@ -24,12 +32,14 @@ const InvoiceTable = () => {
     invoices,
     setInvoices,
     getInvoices,
+    setInvoiceToEdit,
     user: { id },
   } = useContext(ProjectsContext);
   const [filteredInvoices, setFilteredInvoices] = useState(invoices);
   const [sortByDate, setSortByDate] = useState(false);
   const [sortByValue, setSortByValue] = useState(false);
   const [sortByClient, setSortByClient] = useState(false);
+  const { width } = useWindowSize();
 
   useEffect(() => {
     id && getInvoices();
@@ -131,6 +141,20 @@ const InvoiceTable = () => {
     setFilteredInvoices(filtered);
   };
 
+  const handleDelete = async (invoiceId: number) => {
+    const { data } = await axios.delete(
+      `/api/invoice?user_id=${id}&id=${invoiceId}`
+    );
+    if ("error" in data) {
+      console.error(data.error);
+    } else {
+      const newInvoices = invoices.filter(
+        (invoice) => (invoice as any).id !== invoiceId
+      );
+      setInvoices(newInvoices as any);
+    }
+  };
+
   return (
     <S.Main>
       <h2 className='subtitle'>Filters</h2>
@@ -164,6 +188,9 @@ const InvoiceTable = () => {
         <button className='invoice__filter--btn' onClick={clearInvoices}>
           Clear filters
         </button>
+        <button className='btn' title='Refresh table' onClick={getInvoices}>
+          <BiRefresh className='refresh-icon' />
+        </button>
       </div>
       <li className='invoice__header'>
         <h2 className='invoice__header--client' onClick={handleSortByClient}>
@@ -174,6 +201,12 @@ const InvoiceTable = () => {
         </h2>
         <h2 className='invoice__header--value' onClick={handleSortByValue}>
           Value {sortByValue ? <BiChevronUp /> : <BiChevronDown />}
+        </h2>
+        <h2 className='invoice__header--column button'>
+          {width >= 768 ? "Edit" : ""}
+        </h2>
+        <h2 className='invoice__header--column button'>
+          {width >= 768 ? "Delete" : ""}
         </h2>
       </li>
       {filteredInvoices?.map(
@@ -191,6 +224,18 @@ const InvoiceTable = () => {
             <p className='invoice__item--value'>
               {transformValue(invoice.value_received)}
             </p>
+            <button
+              className='invoice__item--column button'
+              onClick={() => setInvoiceToEdit({ ...invoice, user_id: id })}
+            >
+              <BiEdit className='icon' />
+            </button>
+            <button
+              className='invoice__item--column button'
+              onClick={() => handleDelete(invoice.id)}
+            >
+              <BiTrash className='icon' />
+            </button>
           </li>
         )
       )}

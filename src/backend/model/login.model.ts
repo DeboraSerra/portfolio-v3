@@ -32,43 +32,4 @@ const LoginModel = {
   },
 };
 
-// const LoginModel = {
-//   getUser: async (id: number) => {
-//     try {
-//       const users = JSON.parse(
-//         await fs.readFile(join(dbPath, 'login.json'), "utf-8")
-//       );
-//       let user = users.find((user: User) => user.id === id);
-//       if (!user) return null;
-//       return { ...user, avatarUrl: user.avatar_url };
-//     } catch (error) {
-//       console.log(error);
-//       return { error: true, message: "Error getting user" };
-//     }
-//   },
-//   createUser: async ({
-//     id,
-//     login,
-//     name,
-//     avatar_url,
-//   }: {
-//     id: number;
-//     login: string;
-//     name: string;
-//     avatar_url: string;
-//   }) => {
-//     try {
-//       const users = JSON.parse(
-//         await fs.readFile(join(dbPath, 'login.json'), "utf-8")
-//       );
-//       users.push({ id, login, name, avatar_url });
-//       await fs.writeFile(join(dbPath, 'login.json'), JSON.stringify(users));
-//       return { id, login, name, avatarUrl: avatar_url };
-//     } catch (error) {
-//       console.log(error);
-//       return { error: true, message: "Error creating user" };
-//     }
-//   },
-// };
-
 export default LoginModel;
