@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { ProjectsContext } from "@/helpers/Context";
+import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import {
   BiChevronDown,
@@ -10,7 +11,6 @@ import {
 } from "react-icons/bi";
 import { useWindowSize } from "usehooks-ts";
 import * as S from "./InvoiceTable.styled";
-import axios from "axios";
 
 enum Months {
   January = 0,
@@ -219,7 +219,13 @@ const InvoiceTable = () => {
           <li className='invoice__item' key={invoice.id}>
             <h3 className='invoice__item--client'>{invoice.client}</h3>
             <p className='invoice__item--date'>
-              {new Date(invoice.date_received).toLocaleDateString()}
+              {width < 500
+                ? new Date(invoice.date_received).toLocaleDateString("pt-BR", {
+                    month: "2-digit",
+                    day: "numeric",
+                    year: "2-digit",
+                  })
+                : new Date(invoice.date_received).toLocaleDateString()}
             </p>
             <p className='invoice__item--value'>
               {transformValue(invoice.value_received)}
