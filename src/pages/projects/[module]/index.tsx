@@ -3,13 +3,21 @@ import ProjectModel from "@/backend/model/projects.model";
 import ProjectModule from "@/components/pages/Projects/Module";
 import { Modules, Project } from "@/helpers/interfaces";
 import { GetStaticPropsContext } from "next";
+import Head from "next/head";
 import { useRouter } from "next/router";
 
 export default function Module({ projects }: { projects: Project[] }) {
   const {
     query: { module },
   } = useRouter();
-  return <ProjectModule projects={projects} module={module as Modules} />;
+  return (
+    <>
+      <Head>
+        <title>Projects {module} - Débora Serra</title>
+      </Head>
+      <ProjectModule projects={projects} module={module as Modules} />
+    </>
+  );
 }
 
 export async function getStaticPaths() {
