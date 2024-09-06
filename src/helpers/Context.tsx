@@ -5,6 +5,10 @@ import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { createContext, useEffect, useState } from "react";
 
+export const PHONE = "+1 604 417 1593";
+export const WHATS_LINK =
+  "https://wa.me/" + PHONE.replace("+", "").replace(/\s/g, "");
+
 export const ProjectsContext = createContext({
   routes: [],
   user: { login: "", name: "", avatarUrl: "", id: 0 },

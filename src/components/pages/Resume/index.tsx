@@ -1,3 +1,4 @@
+import { PHONE } from "@/helpers/Context";
 import { Subtitle, Text, Title } from "@/styles/styled";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FiMail, FiPhone } from "react-icons/fi";
@@ -20,7 +21,7 @@ const Resume = () => {
                   <FaWhatsapp className='resume-icon' />
                   <FiPhone className='resume-icon' />
                 </span>
-                +55 61 98231 1582
+                {PHONE}
               </Text>
               <Text className='small resume__contact--info'>
                 <FiMail className='resume-icon' />
@@ -39,6 +40,15 @@ const Resume = () => {
             <div className='resume__graduation'>
               <Subtitle className='medium center'>Academic graduation</Subtitle>
 
+              <div className='resume__graduation--item'>
+                <Text className='small resume__graduation--item-year'>
+                  2024 - current
+                </Text>
+                <Text className='small resume__graduation--item-school'>
+                  Web development with Co-Op - Canadian College of Technology
+                  and Business
+                </Text>
+              </div>
               <div className='resume__graduation--item'>
                 <Text className='small resume__graduation--item-year'>
                   2021 - 2022
@@ -87,10 +97,18 @@ const Resume = () => {
               </Subtitle>
               <div className='resume__profession--item'>
                 <Text className='small resume__profession--item-year'>
-                  09/2022 - Current
+                  09/2023 - current
                 </Text>
                 <Text className='small resume__profession--item-place'>
-                  Front End Developer at UOL Host, São Paulo/SP
+                  Freelancer at Guarde Aqui
+                </Text>
+              </div>
+              <div className='resume__profession--item'>
+                <Text className='small resume__profession--item-year'>
+                  09/2022 - 08/2024
+                </Text>
+                <Text className='small resume__profession--item-place'>
+                  Web Developer at UOL Host, São Paulo/SP
                 </Text>
               </div>
               <div className='resume__profession--item'>

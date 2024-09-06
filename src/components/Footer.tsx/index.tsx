@@ -1,5 +1,6 @@
+import { PHONE, WHATS_LINK } from "@/helpers/Context";
 import { AnchorText, Text, Title } from "@/styles/styled";
-import { BsWhatsapp, BsGithub, BsLinkedin } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsWhatsapp } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
 import * as S from "./Footer.styled";
 
@@ -13,11 +14,11 @@ const Footer = () => {
           <AnchorText
             target='__blank'
             rel='noreferrer'
-            href='https://wa.me/5561982311582'
+            href={WHATS_LINK}
             className='smallest'
           >
             <BsWhatsapp className='footer__icon' />
-            +55 61 98231-1589
+            {PHONE}
           </AnchorText>
           <AnchorText
             target='__blank'
