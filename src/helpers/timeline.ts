@@ -1,7 +1,9 @@
 import { TimelineInterface } from "./";
 import {
   andradas,
+  cctb,
   comunhao,
+  guardeAqui,
   ipupo,
   lasLenas,
   pucRs,
@@ -13,12 +15,32 @@ import {
 
 export const timeline: TimelineInterface[] = [
   {
+    img: cctb.src,
+    from: 2024,
+    to: undefined,
+    title: "Full Stack Web Developer Course with Co-Op",
+    content:
+      "Started a course to become a full stack web developer.",
+    width: 128,
+    height: 128,
+  },
+  {
+    img: guardeAqui.src,
+    from: 2023,
+    to: undefined,
+    title: "Freelancer",
+    content:
+      "Develop E-mail Marketing pieces",
+    width: 128,
+    height: 14,
+  },
+  {
     img: uol.src,
     from: 2022,
-    to: undefined,
+    to: 2024,
     title: "Front end developer",
     content:
-      "Currently working as a front end developer in the growth team dedicated to the development of landing pages.",
+      "Web developer in the Growth team dedicated to the development of landing pages and solutions to increase company sales.",
     width: 128,
     height: 46,
   },
@@ -90,6 +112,15 @@ export const timeline: TimelineInterface[] = [
       "As my final project I did a bakery dedicated to diabetic people only with sweets they could eat.",
     width: 128,
     height: 34,
+  },
+  {
+    img: comunhao.src,
+    from: 2018,
+    to: 2018,
+    title: "Volunteer sales assistant at Comunhão Espírita de Brasília",
+    content: "Left to try and get my degree as a baker.",
+    width: 128,
+    height: 128,
   },
   {
     img: comunhao.src,

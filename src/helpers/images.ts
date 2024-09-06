@@ -1,7 +1,9 @@
 import check from "../../assets/images/about/check-mark-icon.svg";
 import fred from "../../assets/images/about/fred.jpg";
 import scadiweb from "../../assets/images/home/Scandiweb.webp";
+import cctb from "../../assets/images/home/cctb.jpg";
 import comunhao from "../../assets/images/home/comunhao.webp";
+import guardeAqui from "../../assets/images/home/ga.png";
 import ipupo from "../../assets/images/home/ipupo.webp";
 import andradas from "../../assets/images/home/logo-andradas.webp";
 import lasLenas from "../../assets/images/home/logo-las-lenas.webp";
@@ -21,12 +23,14 @@ import frontend from "../../assets/images/projects/react.svg";
 export {
   andradas,
   backend,
+  cctb,
   check,
   comunhao,
   cs,
   fred,
   frontend,
   fundaments,
+  guardeAqui,
   ipupo,
   laptop,
   lasLenas,
