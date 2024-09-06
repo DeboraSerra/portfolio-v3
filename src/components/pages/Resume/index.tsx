@@ -1,3 +1,4 @@
+import { PHONE } from "@/helpers/Context";
 import { Subtitle, Text, Title } from "@/styles/styled";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FiMail, FiPhone } from "react-icons/fi";
@@ -20,7 +21,7 @@ const Resume = () => {
                   <FaWhatsapp className='resume-icon' />
                   <FiPhone className='resume-icon' />
                 </span>
-                +1 604 417 1593
+                {PHONE}
               </Text>
               <Text className='small resume__contact--info'>
                 <FiMail className='resume-icon' />
@@ -44,7 +45,8 @@ const Resume = () => {
                   2024 - current
                 </Text>
                 <Text className='small resume__graduation--item-school'>
-                  Web development with Co-Op - Canadian College of Technology and Business
+                  Web development with Co-Op - Canadian College of Technology
+                  and Business
                 </Text>
               </div>
               <div className='resume__graduation--item'>
