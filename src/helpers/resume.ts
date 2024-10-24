@@ -24,26 +24,6 @@ const professionHistory = [
     end: "09/2022",
     title: "Summer Job Tutor in Trybe, Belo Horizonte/MG",
   },
-  {
-    start: "05/2021",
-    end: "10/2021",
-    title: "Health agent in Andradas/MG",
-  },
-  {
-    start: "02/2020",
-    end: "12/2020",
-    title: "Chemistry technitian in Andradas/MG",
-  },
-  {
-    start: "01/2018",
-    end: "08/2018",
-    title: "Sales assistant in Comunhão Espírita de Brasília, Brasília/DF",
-  },
-  {
-    start: "10/2014",
-    end: "10/2016",
-    title: "Intern in EMBRAPA - Agroenergy, Brasília/DF",
-  },
 ];
 
 const graduations = [
