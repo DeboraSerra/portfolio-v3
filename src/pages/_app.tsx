@@ -39,9 +39,9 @@ export default function App({ Component, pageProps }: Props) {
       <ProjectsProvider>
         <Head>
           <title>Portfolio - Débora Serra</title>
-          <meta property='og:image' content="/profile.jpg" />
-          <meta property="og:image:alt" content="Portfolio - Débora Serra" />
-          <meta property="og:title" content="Portfolio - Débora Serra" />
+          <meta property='og:image' content='/profile.jpg' />
+          <meta property='og:image:alt' content='Portfolio - Débora Serra' />
+          <meta property='og:title' content='Portfolio - Débora Serra' />
         </Head>
         <Header isDarkMode={dark} toggleDarkMode={toggleDarkMode} />
         <Component {...pageProps} />

@@ -1,6 +1,7 @@
 import { TimelineInterface } from "./";
 import {
   andradas,
+  blueWave,
   cctb,
   comunhao,
   guardeAqui,
@@ -15,6 +16,16 @@ import {
 
 export const timeline: TimelineInterface[] = [
   {
+    img: blueWave.src,
+    from: 2024,
+    to: undefined,
+    title: "Full Stack Web Developer",
+    content:
+      "Web Developer in the Onboarding team",
+    width: 128,
+    height: 128,
+  },
+  {
     img: cctb.src,
     from: 2024,
     to: undefined,
@@ -27,7 +38,7 @@ export const timeline: TimelineInterface[] = [
   {
     img: guardeAqui.src,
     from: 2023,
-    to: undefined,
+    to: 2024,
     title: "Freelancer",
     content:
       "Develop E-mail Marketing pieces",
