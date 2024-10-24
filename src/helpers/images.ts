@@ -1,6 +1,7 @@
 import check from "../../assets/images/about/check-mark-icon.svg";
 import fred from "../../assets/images/about/fred.jpg";
 import scadiweb from "../../assets/images/home/Scandiweb.webp";
+import blueWave from "../../assets/images/home/blue-wave.png";
 import cctb from "../../assets/images/home/cctb.jpg";
 import comunhao from "../../assets/images/home/comunhao.webp";
 import guardeAqui from "../../assets/images/home/ga.png";
@@ -23,6 +24,7 @@ import frontend from "../../assets/images/projects/react.svg";
 export {
   andradas,
   backend,
+  blueWave,
   cctb,
   check,
   comunhao,
