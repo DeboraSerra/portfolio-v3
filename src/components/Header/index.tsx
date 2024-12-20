@@ -2,7 +2,7 @@ import { ProjectsContext } from "@/helpers/Context";
 import { useContext, useEffect, useRef, useState } from "react";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { BsMoonFill, BsSun } from "react-icons/bs";
-import { useOnClickOutside, useWindowSize } from "usehooks-ts";
+import { useOnClickOutside } from "usehooks-ts";
 
 import logo from "../../../assets/images/laptop.png";
 
@@ -11,8 +11,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { GiHamburgerMenu } from "react-icons/gi";
-import ProfileMenu from "../ProfileMenu";
 import * as S from "./Header.styled";
+import LogInMenu from "./LogInMenu";
+import SubMenu from "./SubMenu";
 
 const Header = ({
   isDarkMode,
@@ -21,20 +22,22 @@ const Header = ({
   isDarkMode: boolean;
   toggleDarkMode: () => void;
 }) => {
-  const { width } = useWindowSize();
   const header = useRef(null);
   const [showSubMenu, setShowSubMenu] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+
   useOnClickOutside(header, () => {
     setShowMenu(false);
   });
+
   const {
-    routes,
-    user: { login, avatarUrl },
+    user: { avatarUrl },
     setUser,
     setToken,
+    width,
   } = useContext(ProjectsContext);
+
   const router = useRouter();
 
   const handleRouteChange = () => {
@@ -101,51 +104,15 @@ const Header = ({
                 Projects
                 {showSubMenu ? <BiChevronUp /> : <BiChevronDown />}
               </Link>
-              {showSubMenu ? (
-                <div className='header__menu--abs flex column'>
-                  <Link className='header__link medium' href={`/projects`}>
-                    All categories
-                  </Link>
-                  {routes.map(({ route, name }, i) => (
-                    <Link
-                      className='header__link medium'
-                      key={i}
-                      href={`/projects/${route}`}
-                    >
-                      {name}
-                    </Link>
-                  ))}
-                </div>
-              ) : null}
+              {showSubMenu ? <SubMenu /> : null}
             </div>
             <Link className='header__link medium' href='/contact'>
               Contact
             </Link>
-            <div
-              className='header__menu'
-              onMouseEnter={() => login !== "" && setShowProfileMenu(true)}
-              onMouseLeave={() => login !== "" && setShowProfileMenu(false)}
-            >
-              <a
-                className='header__link medium'
-                href={
-                  login
-                    ? ""
-                    : `https://github.com/login/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID}`
-                }
-                title={!login ? "Login with Github" : ""}
-              >
-                {login !== "" ? login : "Login"}
-                {login !== "" ? (
-                  showProfileMenu ? (
-                    <BiChevronUp />
-                  ) : (
-                    <BiChevronDown />
-                  )
-                ) : null}
-              </a>
-              {showProfileMenu ? <ProfileMenu /> : null}
-            </div>
+            <LogInMenu
+              setShowProfileMenu={setShowProfileMenu}
+              showProfileMenu={showProfileMenu}
+            />
           </nav>
         ) : (
           showMenu && (
@@ -168,55 +135,15 @@ const Header = ({
                   Projects
                   {showSubMenu ? <BiChevronUp /> : <BiChevronDown />}
                 </Link>
-                {showSubMenu ? (
-                  <>
-                    <div className='header__menu--abs'>
-                      <Link className='header__link small' href={`/projects`}>
-                        All categories
-                      </Link>
-                      {routes.map(({ id, name, route }) => (
-                        <Link
-                          className='header__link small'
-                          key={id}
-                          href={`/projects/${route}`}
-                        >
-                          {name}
-                        </Link>
-                      ))}
-                    </div>
-                  </>
-                ) : null}
+                {showSubMenu ? <SubMenu /> : null}
               </div>
               <Link className='header__link small' href='/contact'>
                 Contact
               </Link>
-              <div
-                className='header__menu'
-                onClick={() =>
-                  login !== "" && setShowProfileMenu(!showProfileMenu)
-                }
-              >
-                <a
-                  className='header__link small'
-                  href={
-                    login
-                      ? ""
-                      : `https://github.com/login/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID}`
-                  }
-                  onClick={(e) => login && e.preventDefault()}
-                  title={!login ? "Login with Github" : ""}
-                >
-                  {login !== "" ? login : "Login"}
-                  {login !== "" ? (
-                    showProfileMenu ? (
-                      <BiChevronUp />
-                    ) : (
-                      <BiChevronDown />
-                    )
-                  ) : null}
-                </a>
-                {showProfileMenu ? <ProfileMenu /> : null}
-              </div>
+              <LogInMenu
+                setShowProfileMenu={setShowProfileMenu}
+                showProfileMenu={showProfileMenu}
+              />
             </nav>
           )
         )}

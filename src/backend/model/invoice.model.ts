@@ -1,9 +1,10 @@
 import { sql } from "@vercel/postgres";
-import fs from "fs/promises";
 import { Invoice, InvoiceWithId } from "../interfaces/invoices";
 
 const validateUser = async (user_id: number) => {
-  const { rows: [user] } = await sql`SELECT * FROM users WHERE id = ${user_id}`;
+  const {
+    rows: [user],
+  } = await sql`SELECT * FROM users WHERE id = ${user_id}`;
   if (!user) {
     return { error: true, message: "User not found", invoice: {} };
   }

@@ -4,6 +4,7 @@ export interface Project {
   name: string;
   repository: string;
   image: string;
+  term?: number;
 }
 
 export interface ProjectArrays {
@@ -13,6 +14,7 @@ export interface ProjectArrays {
   computer_science: Project[];
   personal: Project[];
   uol_host?: Project[];
+  cctb?: Project[];
 }
 
 export type Modules =
@@ -21,7 +23,8 @@ export type Modules =
   | "back_end"
   | "personal"
   | "computer_science"
-  | "uol_host";
+  | "uol_host"
+  | "cctb";
 
 export interface Data {
   data: Project | ProjectArrays[];

@@ -3,14 +3,17 @@ import axios from "axios";
 import jwtDecode from "jwt-decode";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useMemo, useState } from "react";
+import { FaSpinner } from "react-icons/fa";
+import { useWindowSize } from "usehooks-ts";
+import { ProjectsPaths } from "./interfaces";
 
 export const PHONE = "+1 604 417 1593";
 export const WHATS_LINK =
   "https://wa.me/" + PHONE.replace("+", "").replace(/\s/g, "");
 
 export const ProjectsContext = createContext({
-  routes: [],
+  routes: [] as ProjectsPaths[],
   user: { login: "", name: "", avatarUrl: "", id: 0 },
   setUser: (user: {
     login: string;
@@ -41,6 +44,7 @@ export const ProjectsContext = createContext({
   setPaymentToEdit: (payment: any) => {},
   invoiceToEdit: null,
   setInvoiceToEdit: (invoice: any) => {},
+  width: 0,
 });
 
 interface Props {
@@ -60,6 +64,7 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
     avatarUrl: "",
     id: 0,
   });
+  const { width } = useWindowSize();
   const router = useRouter();
 
   const getInvoices = async () => {
@@ -142,24 +147,43 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
     }
   }, [token]);
 
-  const value = {
-    routes,
-    user,
-    setUser,
-    token,
-    setToken,
-    invoices,
-    setInvoices,
-    getInvoices,
-    getPayments,
-    payments,
-    setPayments,
-    editPayment,
-    paymentToEdit,
-    setPaymentToEdit,
-    invoiceToEdit,
-    setInvoiceToEdit,
-  };
+  const value = useMemo(
+    () => ({
+      routes,
+      user,
+      setUser,
+      token,
+      setToken,
+      invoices,
+      setInvoices,
+      getInvoices,
+      getPayments,
+      payments,
+      setPayments,
+      editPayment,
+      paymentToEdit,
+      setPaymentToEdit,
+      invoiceToEdit,
+      setInvoiceToEdit,
+      width,
+    }),
+    [routes, user, token, invoices, payments, paymentToEdit, invoiceToEdit]
+  );
+
+  if (!width) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <FaSpinner size={50} />
+      </div>
+    );
+  }
 
   return (
     <ProjectsContext.Provider value={value}>

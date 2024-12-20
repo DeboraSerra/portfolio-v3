@@ -7,11 +7,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import { useWindowSize } from "usehooks-ts";
 
 interface Props extends AppProps {}
 
 export default function App({ Component, pageProps }: Props) {
   const [dark, setDark] = useState(false);
+  const { width } = useWindowSize();
 
   const getMatchMedia = () => {
     if (window.matchMedia) {
@@ -43,7 +45,9 @@ export default function App({ Component, pageProps }: Props) {
           <meta property='og:image:alt' content='Portfolio - Débora Serra' />
           <meta property='og:title' content='Portfolio - Débora Serra' />
         </Head>
-        <Header isDarkMode={dark} toggleDarkMode={toggleDarkMode} />
+        {width !== 0 && (
+          <Header isDarkMode={dark} toggleDarkMode={toggleDarkMode} />
+        )}
         <Component {...pageProps} />
         <Footer />
       </ProjectsProvider>
