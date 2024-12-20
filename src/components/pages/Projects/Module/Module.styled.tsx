@@ -48,7 +48,7 @@ export const Main = styled.main`
     } // &-img
 
     &__modal {
-      position: absolute;
+      position: fixed;
       width: 100vw;
       height: 100vh;
       top: 0;
@@ -71,6 +71,22 @@ export const Main = styled.main`
         position: relative;
         border-radius: 8px;
         box-shadow: 0 0 48px ${(props) => props.theme.text.placeholder};
+        max-height: 90%;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+          width: 8px;
+        } // &::-webkit-scrollbar
+        
+        &::-webkit-scrollbar-thumb {
+          background-color: ${(props) => props.theme.bg.contrast[3]};
+          border-radius: 8px;
+        } // &::-webkit-scrollbar-thumb
+        
+        &::-webkit-scrollbar-track {
+          border-radius: 0 8px 8px 0;
+          background-color: ${(props) => props.theme.bg.quaternary};
+        } // &::-webkit-scrollbar-track
 
         & a {
           color: ${props => props.theme.text.tertiary};
