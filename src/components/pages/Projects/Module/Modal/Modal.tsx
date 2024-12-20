@@ -13,7 +13,7 @@ interface Props {
 
 const Modal = ({
   project: { description, image, name, repository },
-  setOpenModal,
+  setOpenModal, 
 }: Props) => {
   const modal = useRef(null);
   useOnClickOutside(modal, () => setOpenModal(false));
