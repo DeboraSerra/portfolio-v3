@@ -9,7 +9,6 @@ import {
   BiRefresh,
   BiTrash,
 } from "react-icons/bi";
-import { useWindowSize } from "usehooks-ts";
 import * as S from "./InvoiceTable.styled";
 
 enum Months {
@@ -34,12 +33,12 @@ const InvoiceTable = () => {
     getInvoices,
     setInvoiceToEdit,
     user: { id },
+    width,
   } = useContext(ProjectsContext);
   const [filteredInvoices, setFilteredInvoices] = useState(invoices);
   const [sortByDate, setSortByDate] = useState(false);
   const [sortByValue, setSortByValue] = useState(false);
   const [sortByClient, setSortByClient] = useState(false);
-  const { width } = useWindowSize();
 
   useEffect(() => {
     id && getInvoices();

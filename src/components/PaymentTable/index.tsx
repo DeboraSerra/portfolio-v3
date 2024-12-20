@@ -9,7 +9,6 @@ import {
   BiRefresh,
   BiTrash,
 } from "react-icons/bi";
-import { useWindowSize } from "usehooks-ts";
 import * as S from "./PaymentTable.styled";
 
 const PaymentTable = () => {
@@ -20,13 +19,12 @@ const PaymentTable = () => {
     editPayment,
     setPaymentToEdit,
     setPayments,
+    width,
   } = useContext(ProjectsContext);
   const [filteredPayments, setFilteredPayments] = useState(payments);
   const [sortByDate, setSortByDate] = useState(false);
   const [sortByValue, setSortByValue] = useState(false);
   const [sortByPayed, setSortByPayed] = useState(false);
-
-  const { width } = useWindowSize();
 
   useEffect(() => {
     id && getPayments();

@@ -1,4 +1,4 @@
-import { Modules, Project } from "@/helpers";
+import { cctb, Modules, Project } from "@/helpers";
 import { Title } from "@/styles/styled";
 import Card from "./Card/Card";
 import * as S from "./Module.styled";
@@ -12,6 +12,7 @@ const titles = {
   computer_science: "Computer Science",
   fundaments: "Fundaments",
   uol_host: "UOL Host",
+  cctb: "CCTB",
 };
 
 interface Props {
