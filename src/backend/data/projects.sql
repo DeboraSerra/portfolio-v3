@@ -121,6 +121,22 @@ LOCK TABLES `personal` WRITE;
 /*!40000 ALTER TABLE `personal` DISABLE KEYS */;
 INSERT INTO `personal` VALUES (1,'Clock','It was developed as a challenge from one of Trybe\'s instructors. It is a dynamic clock with responsive design.','https://deboraserra.github.io/Clock/index.html','blob:https://deboraserra.github.io/f6ea564d-e445-4c44-aa19-b37eaae2aeb4'),(2,'Project Stopwatch','It was a developed as a challenge from one of Trybe\'s specialists. Since in class we needed timers to mark the interval, we were challenged to develop a timer with the following requirements: It must be developed in React, the timer must work properly, It must have something to signal that the time is over.','https://deboraserra.github.io/stopwatch/','blob:https://deboraserra.github.io/49d7ebd1-af38-4f4a-8afb-9d0512f5a1d4'),(3,'Password Generator','It was developed as a challenge from one of Trybe\'s specialists. The goal was to create a password generator with mobile first design where the user can select the length of the password and if it must include uppercase letters, lowercase letters, numbers and/or symbols.','https://deboraserra.github.io/password-generator/','blob:https://deboraserra.github.io/8901e2c1-612c-4b84-a2e7-2e640b88811a'),(4,'Project Escritório do seu Zé','It was developed as a challenge from one of Trybe\'s instructors. For this project we were given a \'database\' of people and were asked to develop an API to create, read, update and delete (CRUD) the data in this \'database\'. After creating the API, we were asked to create a front end to use this API. Next, we were oriented to develop the unit tests to the backend and frontend. And, at last, to dockerize the application. In this application, the person must first \'login\' with a valid email and a password that has at least one letter, one number and one symbol. If the person isn\'t registered, they can click on the button to register and then login. After that the user is free to see the people, delete, update or add new people to the database.','https://github.com/DeboraSerra/Escritorio-do-seu-ze','blob:https://deboraserra.github.io/a91a5942-ef35-49b1-8a7c-6ed52f6d22f5');
 /*!40000 ALTER TABLE `personal` ENABLE KEYS */;
+
+CREATE TABLE blue_wave (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  description VARCHAR(5000),
+  repository VARCHAR(300) NOT NULL,
+  image VARCHAR(300)
+);
+
+CREATE TABLE cctb (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  description VARCHAR(5000),
+  repository VARCHAR(300) NOT NULL,
+  image VARCHAR(300)
+);
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

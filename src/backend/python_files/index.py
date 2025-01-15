@@ -11,6 +11,7 @@ def get_list(path):
     text_personal = ''
     text_uol = ''
     text_cctb = ''
+    text_blue_wave = ''
     for item in content:
       if item['name'] not in text_back:
         module = item['module']
@@ -32,6 +33,8 @@ def get_list(path):
           text_uol += f', ("{name}", "{description}", "{link}", "{src}")'
         elif 'CCTB' in module:
           text_cctb += f', ("{name}", "{description}", "{link}", "{src}")'
+        elif 'BlueWave Labs':
+          text_blue_wave += f', ("{name}", "{description}", "{link}", "{src}")'
   with open('back_query.txt', 'w') as file:
     file.write(text_back)
   with open('cs_query.txt', 'w') as file:
@@ -46,5 +49,7 @@ def get_list(path):
     file.write(text_uol)
   with open('cctb_query.txt', 'w') as file:
     file.write(text_cctb)
+  with open('blue_wave_query.txt', 'w') as file:
+    file.write(text_blue_wave)
 
 get_list('./list.json')
