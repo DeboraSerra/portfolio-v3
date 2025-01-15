@@ -77,39 +77,37 @@ export const Main = styled.main`
         &::-webkit-scrollbar {
           width: 8px;
         } // &::-webkit-scrollbar
-        
+
         &::-webkit-scrollbar-thumb {
           background-color: ${(props) => props.theme.bg.contrast[3]};
           border-radius: 8px;
         } // &::-webkit-scrollbar-thumb
-        
+
         &::-webkit-scrollbar-track {
           border-radius: 0 8px 8px 0;
           background-color: ${(props) => props.theme.bg.quaternary};
         } // &::-webkit-scrollbar-track
 
         & a {
-          color: ${props => props.theme.text.tertiary};
+          color: ${(props) => props.theme.text.tertiary};
 
           &:hover {
             text-decoration: underline;
-          }// &:hover
-        }// & a
+          } // &:hover
+        } // & a
 
-        @media only screen and (max-width : 768px) {
+        @media only screen and (max-width: 768px) {
           width: 90%;
 
           & a {
             text-decoration: underline;
-          }// & a
-        }// @media only screen and (max-width : 768px)
+          } // & a
+        } // @media only screen and (max-width : 768px)
 
-        @media only screen and (max-width : 350px) {
+        @media only screen and (max-width: 350px) {
           max-width: 100%;
           margin: 68px auto;
-        }// @media only screen and (max-width : 350px)
-
-        
+        } // @media only screen and (max-width : 350px)
       } // &-box
 
       &-img {
@@ -133,6 +131,10 @@ export const Main = styled.main`
         flex-grow: 1;
         text-align: center;
         max-width: 700px;
+
+        & a {
+          text-decoration: underline;
+        }
       } // &-text
 
       &-close {
@@ -143,7 +145,7 @@ export const Main = styled.main`
         background-color: transparent;
         border: none;
 
-        color: ${props => props.theme.text.tertiary};
+        color: ${(props) => props.theme.text.tertiary};
         font-size: ${(props) => props.theme.fontSizes[4]};
       } // &-close
     } // &__modal
