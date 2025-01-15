@@ -1,4 +1,4 @@
-import { backend, cs, frontend, fundaments, uol, cctb } from "@/helpers";
+import { backend, cs, frontend, fundaments, uol, cctb, blueWave } from "@/helpers";
 import { ProjectsContext } from "@/helpers/Context";
 import { Subtitle } from "@/styles/styled";
 import Link from "next/link";
@@ -9,7 +9,7 @@ import * as S from "./Project.styled";
 const Project = () => {
   const { routes } = useContext(ProjectsContext);
   const trybe = ["fundaments", "front_end", "back_end", "cs"];
-  const professional = ["uol"];
+  const professional = ["uol", "blue_wave"];
   const cctb_route = ["cctb"];
 
   const getImage = (name: string) => {
@@ -26,6 +26,8 @@ const Project = () => {
         return uol;
       case "cctb":
         return cctb;
+      case "blue_wave":
+        return blueWave;
       default:
         return { src: "" };
     }

@@ -19,7 +19,7 @@ const Card = ({ href, src, width, height, alt, title, text }: Props) => {
         <Image src={src} alt={alt} width={width} height={height} />
       </div>
       <Subtitle className="small">{title}</Subtitle>
-      <Text>{text}</Text>
+      <Text dangerouslySetInnerHTML={{ __html: text as string }} />
     </Link>
   );
 };
