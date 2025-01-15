@@ -31,7 +31,7 @@ const Modal = ({
         <div className='project__modal-img'>
           <Image src={image} alt={name} width={600} height={360} />
         </div>
-        <Text className='project__modal-text'>{description}</Text>
+        <Text className='project__modal-text' dangerouslySetInnerHTML={{ __html: description }} />
         <Link href={repository}>See more</Link>
       </div>
     </div>
