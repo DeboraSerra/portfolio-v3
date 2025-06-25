@@ -39,6 +39,7 @@ const InvoiceTable = () => {
   const [sortByDate, setSortByDate] = useState(false);
   const [sortByValue, setSortByValue] = useState(false);
   const [sortByClient, setSortByClient] = useState(false);
+  const [filterByCurrency, setFilterByCurrency] = useState(false);
   const [selectedCurrency, setSelectedCurrency] = useState<"BRL" | "CAD">(
     () => {
       const lastInvoice = invoices[0];
@@ -58,6 +59,11 @@ const InvoiceTable = () => {
         return currYear === invoiceYear;
       })
     );
+    setFilterByCurrency(false);
+    setSortByDate(false);
+    setSortByValue(false);
+    setSortByClient(false);
+    setSelectedCurrency("BRL");
   };
 
   useEffect(() => {
@@ -124,21 +130,22 @@ const InvoiceTable = () => {
     );
   };
 
-  const filterByCurrency = (currency: "BRL" | "CAD") => {
-    const filtered = invoices.filter(
-      (invoice: any) => invoice.currency === currency
-    );
-    setFilteredInvoices(filtered);
+  const handleFilterByCurrency = (currency: "BRL" | "CAD") => {
+    setFilterByCurrency(true);
     setSelectedCurrency(currency);
   };
 
   const handleFilterBtn = (
-    period: "year" | "month" | "last-year" | "last-month"
+    period: "year" | "month" | "last-year" | "last-month" | "curr-year"
   ) => {
+    setFilterByCurrency(false);
     const filtered = invoices.filter((invoice: any) => {
       const date = new Date(invoice.date_received);
       if (period === "year") {
         return true;
+      }
+      if (period === "curr-year") {
+        return date.getFullYear() === new Date().getFullYear();
       }
       if (period === "last-year") {
         return date.getFullYear() === new Date().getFullYear() - 1;
@@ -183,6 +190,12 @@ const InvoiceTable = () => {
         </button>
         <button
           className='invoice__filter--btn'
+          onClick={() => handleFilterBtn("curr-year")}
+        >
+          {new Date().getFullYear()}
+        </button>
+        <button
+          className='invoice__filter--btn'
           onClick={() => handleFilterBtn("last-year")}
         >
           {new Date().getFullYear() - 1}
@@ -203,13 +216,13 @@ const InvoiceTable = () => {
         )}
         <button
           className='invoice__filter--btn'
-          onClick={() => filterByCurrency("BRL")}
+          onClick={() => handleFilterByCurrency("BRL")}
         >
           BRL
         </button>
         <button
           className='invoice__filter--btn'
-          onClick={() => filterByCurrency("CAD")}
+          onClick={() => handleFilterByCurrency("CAD")}
         >
           CAD
         </button>
@@ -237,8 +250,14 @@ const InvoiceTable = () => {
           {width >= 768 ? "Delete" : ""}
         </h2>
       </li>
-      {filteredInvoices?.map(
-        (invoice) => (
+      {filteredInvoices
+        ?.filter((inv) => {
+          if (filterByCurrency) {
+            return inv.currency === selectedCurrency;
+          }
+          return true;
+        })
+        .map((invoice) => (
           <li className='invoice__item' key={invoice.id}>
             <h3 className='invoice__item--client'>{invoice.client}</h3>
             <p className='invoice__item--date'>
@@ -266,8 +285,7 @@ const InvoiceTable = () => {
               <BiTrash className='icon' />
             </button>
           </li>
-        )
-      )}
+        ))}
       <li className='invoice__total'>
         <p className='invoice__total--label'>Total</p>
         <p className='invoice__total--value'>
@@ -275,7 +293,10 @@ const InvoiceTable = () => {
             filteredInvoices
               .reduce(
                 (acc: number, curr: any) =>
-                  acc + (curr.currency !== selectedCurrency ? parseFloat(curr.value_received) : 0),
+                  acc +
+                  (curr.currency !== selectedCurrency
+                    ? parseFloat(curr.value_received)
+                    : 0),
                 0
               )
               .toString(),
@@ -287,7 +308,10 @@ const InvoiceTable = () => {
             filteredInvoices
               .reduce(
                 (acc: number, curr: any) =>
-                  acc + (curr.currency === selectedCurrency ? parseFloat(curr.value_received) : 0),
+                  acc +
+                  (curr.currency === selectedCurrency
+                    ? parseFloat(curr.value_received)
+                    : 0),
                 0
               )
               .toString(),

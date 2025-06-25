@@ -124,32 +124,34 @@ const InvoiceForm = () => {
             className='control__form--input'
           />
         </label>
-        <div className='control__form--currency'>
+        <div>
           <p className='control__form--label'>Currency</p>
-          <label htmlFor='real' className='control__form--currency-label'>
-            <input
-              type='radio'
-              name='currency'
-              id='real'
-              value='BRL'
-              checked={form.currency === "BRL"}
-              className='control__form--currency-input'
-              onChange={handleChange}
-            />
-            R$
-          </label>
-          <label htmlFor='dollar' className='control__form--currency-label'>
-            <input
-              type='radio'
-              name='currency'
-              id='dollar'
-              value='CAD'
-              className='control__form--currency-input'
-              onChange={handleChange}
-              checked={form.currency === "CAD"}
-            />
-            $
-          </label>
+          <div className='control__form--currency'>
+            <label htmlFor='real' className='control__form--currency-label'>
+              <input
+                type='radio'
+                name='currency'
+                id='real'
+                value='BRL'
+                checked={form.currency === "BRL"}
+                className='control__form--radio'
+                onChange={handleChange}
+              />
+              R$
+            </label>
+            <label htmlFor='dollar' className='control__form--currency-label'>
+              <input
+                type='radio'
+                name='currency'
+                id='dollar'
+                value='CAD'
+                className='control__form--radio'
+                onChange={handleChange}
+                checked={form.currency === "CAD"}
+              />
+              $
+            </label>
+          </div>
         </div>
         <label htmlFor='value' className='control__form--label'>
           Value received
