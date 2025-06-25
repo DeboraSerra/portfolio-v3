@@ -12,6 +12,7 @@ const invoiceSchema = z.object({
     .refine((date) => new Date(date).getTime() <= Date.now(), {
       message: "Date can't be in the future",
     }),
+  currency: z.enum(["BRL", "CAD"]),
 });
 
 const deleteSchema = z.object({
@@ -21,13 +22,14 @@ const deleteSchema = z.object({
 
 const InvoiceService = {
   createInvoice: async (invoice: Invoice) => {
-    const { user_id, client, value_received, date_received } =
+    const { user_id, client, value_received, date_received, currency } =
       invoiceSchema.parse(invoice);
     const addedInvoice = await InvoiceModel.createInvoice({
       user_id,
       client,
       value_received,
       date_received,
+      currency: currency ?? "BRL",
     });
     return addedInvoice as ServiceReturn;
   },
@@ -40,7 +42,7 @@ const InvoiceService = {
     return invoice as ServiceReturn;
   },
   updateInvoice: async (invoice: InvoiceWithId) => {
-    const { user_id, client, value_received, date_received } =
+    const { user_id, client, value_received, date_received, currency } =
       invoiceSchema.parse(invoice);
     const updatedInvoice = await InvoiceModel.updateInvoice({
       id: invoice.id,
@@ -48,6 +50,7 @@ const InvoiceService = {
       client,
       value_received,
       date_received,
+      currency: currency || "BRL",
     });
     return updatedInvoice as ServiceReturn;
   },

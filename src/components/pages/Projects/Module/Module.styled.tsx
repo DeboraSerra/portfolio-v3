@@ -134,6 +134,8 @@ export const Main = styled.main`
 
         & a {
           text-decoration: underline;
+          font-size: ${(props) => props.theme.fontSizes[3]};
+          color: ${(props) => props.theme.text.tertiary};
         }
       } // &-text
 

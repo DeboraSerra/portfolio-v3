@@ -7,6 +7,7 @@ export interface Invoice {
   client: string;
   value_received: string;
   date_received: string;
+  currency: "BRL" | "CAD";
 }
 
 export interface InvoiceWithId extends Invoice, Id {}

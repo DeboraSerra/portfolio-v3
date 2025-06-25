@@ -39,6 +39,51 @@ export const Main = styled.form`
         } // &:focus
       } // &--input
 
+      &--currency {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        gap: 12px;
+
+        &-label {
+          display: flex;
+          align-items: center;
+          margin-right: 12px;
+          cursor: pointer;
+
+          &:last-of-type {
+            margin-right: 0;
+          } // &:last-of-type
+        }
+      }
+
+      &--radio {
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        border: 1px solid ${({ theme }) => theme.bg.contrast[0]};
+        border-radius: 50%;
+        margin-right: 8px;
+        cursor: pointer;
+        position: relative;
+
+        &:checked {
+          border-color: ${({ theme }) => theme.bg.contrast[3]};
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background-color: ${({ theme }) => theme.bg.contrast[3]};
+            border-radius: 50%; 
+          }// &::before
+        }
+      }
+
       &--btn {
         padding: 12px 24px;
         border: none;
