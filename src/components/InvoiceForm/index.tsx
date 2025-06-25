@@ -16,6 +16,7 @@ const InvoiceForm = () => {
     client: "",
     value: 0.0,
     date: "",
+    currency: "BRL",
   });
   const [host, setHost] = useState("");
   const { client, value, date } = form;
@@ -30,15 +31,24 @@ const InvoiceForm = () => {
         client: (invoiceToEdit as any).client,
         value: +(invoiceToEdit as any).value_received,
         date: (invoiceToEdit as any).date_received,
+        currency: (invoiceToEdit as any).currency || "BRL",
       });
     } else {
       setForm({
         client: "",
         value: 0.0,
         date: "",
+        currency: "BRL",
       });
     }
   }, [invoiceToEdit]);
+
+  const formatValue = (value: number) => {
+    return value.toLocaleString(form.currency === "BRL" ? "pt-BR" : "en-CA", {
+      style: "currency",
+      currency: form.currency,
+    });
+  };
 
   const validateValue = (value: string) => {
     value = value.replace(/[^0-9]/g, "");
@@ -46,10 +56,7 @@ const InvoiceForm = () => {
 
     if (!isNaN(numericValue)) {
       const realValue = numericValue / 100;
-      const formattedCurrency = realValue.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-      });
+      const formattedCurrency = formatValue(realValue);
 
       return formattedCurrency;
     }
@@ -69,14 +76,15 @@ const InvoiceForm = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const valueReceived = form.value.toString().replace(/[^0-9.,]/g, "");
     const info = {
       client,
-      value_received: value
-        .toString()
-        .replace(/\D\W\s{1,}/g, "")
-        .replace(".", "")
-        .replace(",", "."),
+      value_received:
+        form.currency === "BRL"
+          ? valueReceived.replace(".", "").replace(",", ".")
+          : valueReceived.replace(",", ""),
       date_received: new Date(date).toISOString().split("T")[0],
+      currency: form.currency,
       user_id: id,
     };
     if (invoiceToEdit) {
@@ -92,6 +100,7 @@ const InvoiceForm = () => {
       client: "",
       value: 0.0,
       date: "",
+      currency: "BRL",
     });
   };
 
@@ -115,14 +124,38 @@ const InvoiceForm = () => {
             className='control__form--input'
           />
         </label>
+        <div className='control__form--currency'>
+          <p className='control__form--label'>Currency</p>
+          <label htmlFor='real' className='control__form--currency-label'>
+            <input
+              type='radio'
+              name='currency'
+              id='real'
+              value='BRL'
+              checked={form.currency === "BRL"}
+              className='control__form--currency-input'
+              onChange={handleChange}
+            />
+            R$
+          </label>
+          <label htmlFor='dollar' className='control__form--currency-label'>
+            <input
+              type='radio'
+              name='currency'
+              id='dollar'
+              value='CAD'
+              className='control__form--currency-input'
+              onChange={handleChange}
+              checked={form.currency === "CAD"}
+            />
+            $
+          </label>
+        </div>
         <label htmlFor='value' className='control__form--label'>
           Value received
           <input
             onChange={handleChange}
-            value={value.toLocaleString("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            })}
+            value={formatValue(value)}
             type='text'
             name='value'
             id='value'

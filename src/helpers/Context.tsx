@@ -8,6 +8,15 @@ import { FaSpinner } from "react-icons/fa";
 import { useWindowSize } from "usehooks-ts";
 import { ProjectsPaths } from "./interfaces";
 
+type Invoice = {
+  id: number;
+  user_id: number;
+  client: string;
+  value_received: string;
+  date_received: string;
+  currency: "BRL" | "CAD";
+}
+
 export const PHONE = "+1 604 417 1593";
 export const WHATS_LINK =
   "https://wa.me/" + PHONE.replace("+", "").replace(/\s/g, "");
@@ -23,8 +32,8 @@ export const ProjectsContext = createContext({
   }) => {},
   token: "",
   setToken: (token: string) => {},
-  invoices: [],
-  setInvoices: (invoices: any) => {},
+  invoices: [] as Invoice[],
+  setInvoices: (invoices: Invoice[]) => {},
   getInvoices: () => {},
   payments: [],
   setPayments: (payments: any) => {},
@@ -54,7 +63,7 @@ interface Props {
 const ProjectsProvider: NextPage<Props> = ({ children }) => {
   const [routes, setRoutes] = useState([]);
   const [token, setToken] = useState("");
-  const [invoices, setInvoices] = useState([]);
+  const [invoices, setInvoices] = useState([] as Invoice[]);
   const [payments, setPayments] = useState([]);
   const [paymentToEdit, setPaymentToEdit] = useState<any>(null);
   const [invoiceToEdit, setInvoiceToEdit] = useState<any>(null);

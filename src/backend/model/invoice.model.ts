@@ -17,15 +17,16 @@ const InvoiceModel = {
     date_received,
     user_id,
     value_received,
+    currency = "BRL",
   }: Invoice) => {
     const user = validateUser(user_id);
     if ("error" in user) return user;
-    const query = `INSERT INTO payments (user_id, value_received, date_received, client) VALUES ('${user_id}', '${value_received}', '${date_received}', '${client}') returning id`;
+    const query = `INSERT INTO payments (user_id, value_received, date_received, client, currency) VALUES ('${user_id}', '${value_received}', '${date_received}', '${client}', '${currency}') returning id`;
     const {
       rows: [insertId],
     } = await sql.query(query);
     return {
-      invoice: { id: insertId, client, date_received, user_id, value_received },
+      invoice: { id: insertId, client, date_received, user_id, value_received, currency },
       error: false,
       message: "",
     };
@@ -59,10 +60,11 @@ const InvoiceModel = {
     id,
     user_id,
     value_received,
+    currency = "BRL",
   }: InvoiceWithId) => {
     const user = validateUser(user_id);
     if ("error" in user) return user;
-    const query = `UPDATE payments SET client = '${client}', date_received = '${date_received}', value_received = ${value_received} WHERE id = ${id} AND user_id = ${user_id} returning *`;
+    const query = `UPDATE payments SET client = '${client}', date_received = '${date_received}', value_received = ${value_received}, currency = '${currency}' WHERE id = ${id} AND user_id = ${user_id} returning *`;
     const {
       rows: [invoice],
     } = await sql.query(query);

@@ -39,6 +39,12 @@ const InvoiceTable = () => {
   const [sortByDate, setSortByDate] = useState(false);
   const [sortByValue, setSortByValue] = useState(false);
   const [sortByClient, setSortByClient] = useState(false);
+  const [selectedCurrency, setSelectedCurrency] = useState<"BRL" | "CAD">(
+    () => {
+      const lastInvoice = invoices[0];
+      return lastInvoice ? lastInvoice.currency : "BRL";
+    }
+  );
 
   useEffect(() => {
     id && getInvoices();
@@ -58,12 +64,15 @@ const InvoiceTable = () => {
     clearInvoices();
   }, [invoices]);
 
-  const transformValue = (value: string) => {
+  const transformValue = (value: string, currency: "BRL" | "CAD") => {
     const valueAsNumber = parseFloat(value);
-    const formattedValue = valueAsNumber.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    });
+    const formattedValue = valueAsNumber.toLocaleString(
+      currency === "BRL" ? "pt-BR" : "en-CA",
+      {
+        style: "currency",
+        currency,
+      }
+    );
     return formattedValue;
   };
 
@@ -113,6 +122,14 @@ const InvoiceTable = () => {
         return b.client.localeCompare(a.client);
       })
     );
+  };
+
+  const filterByCurrency = (currency: "BRL" | "CAD") => {
+    const filtered = invoices.filter(
+      (invoice: any) => invoice.currency === currency
+    );
+    setFilteredInvoices(filtered);
+    setSelectedCurrency(currency);
   };
 
   const handleFilterBtn = (
@@ -184,6 +201,18 @@ const InvoiceTable = () => {
             {Months[new Date().getMonth() - 1]}
           </button>
         )}
+        <button
+          className='invoice__filter--btn'
+          onClick={() => filterByCurrency("BRL")}
+        >
+          BRL
+        </button>
+        <button
+          className='invoice__filter--btn'
+          onClick={() => filterByCurrency("CAD")}
+        >
+          CAD
+        </button>
         <button className='invoice__filter--btn' onClick={clearInvoices}>
           Clear filters
         </button>
@@ -209,12 +238,7 @@ const InvoiceTable = () => {
         </h2>
       </li>
       {filteredInvoices?.map(
-        (invoice: {
-          id: number;
-          client: string;
-          date_received: string;
-          value_received: string;
-        }) => (
+        (invoice) => (
           <li className='invoice__item' key={invoice.id}>
             <h3 className='invoice__item--client'>{invoice.client}</h3>
             <p className='invoice__item--date'>
@@ -227,7 +251,7 @@ const InvoiceTable = () => {
                 : new Date(invoice.date_received).toLocaleDateString()}
             </p>
             <p className='invoice__item--value'>
-              {transformValue(invoice.value_received)}
+              {transformValue(invoice.value_received, invoice.currency)}
             </p>
             <button
               className='invoice__item--column button'
@@ -251,10 +275,23 @@ const InvoiceTable = () => {
             filteredInvoices
               .reduce(
                 (acc: number, curr: any) =>
-                  acc + parseFloat(curr.value_received),
+                  acc + (curr.currency !== selectedCurrency ? parseFloat(curr.value_received) : 0),
                 0
               )
-              .toString()
+              .toString(),
+            selectedCurrency === "BRL" ? "CAD" : "BRL"
+          )}
+        </p>
+        <p className='invoice__total--value'>
+          {transformValue(
+            filteredInvoices
+              .reduce(
+                (acc: number, curr: any) =>
+                  acc + (curr.currency === selectedCurrency ? parseFloat(curr.value_received) : 0),
+                0
+              )
+              .toString(),
+            selectedCurrency
           )}
         </p>
       </li>

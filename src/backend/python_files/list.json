@@ -5,7 +5,8 @@
     "module": "Fundamentos",
     "name": "Project lessons learned",
     "link": "https://deboraserra.github.io/Project-lessons-learned/project-block3.html",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/lessonsLearned.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/lessonsLearned.png?raw=true",
+    "tags": "HTML5, CSS3"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "name": "Project Playground Functions",
     "description": "Esse projeto foi desenvolvido no curso de Desenvolvimento Web na Trybe. Ele foi desenvolvido com o objetivo de aplicar os conhecimentos de JavaScript adquiridos até o momento, como condicionais (if/else, switch/case), loops for e operadores comuns e de comparação.",
     "link": "https://github.com/DeboraSerra/Trybe-exercises/tree/main/Module1_Fundaments/Block4/Project-playground-functions",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/playground.jpeg?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/playground.jpeg?raw=true",
+    "tags": "JavaScript"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "module": "Fundamentos",
     "description": "Esse projeto foi desenvolvido no curso de Desenvolvimento Web na Trybe. Foi desenvolvido com o objetivo de aplicar os conhecimentos de manipulação do DOM adquiridos até então. Esse projeto é um quadro de pintura onde a pessoa usuária pode selecionar uma cor e clicar nos 'quadradinhos' para pintar. Ela também pode redimensionar o quadro de 5 a 50 pixels.",
     "link": "https://deboraserra.github.io/Project-pixel-art/index.html",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/pixelArt.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/pixelArt.png?raw=true",
+    "tags": "JavaScript, HTML5, CSS3"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "name": "Project To Do List",
     "description": "It was developed as project to the Software Development course in Trybe. It was meant to apply the knowledge we had acquired so far using DOM. The project is a to do list were the user can add as many tasks as they like, can mark it as complete, change it's position, delete tasks and save to access the tasks later.",
     "link": "https://deboraserra.github.io/Project-to-do-list/index.html",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/ToDoList.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/ToDoList.png?raw=true",
+    "tags": "JavaScript, HTML5, CSS3, LocalStorage"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "name": "Project Mystery Letter",
     "description": "It was developed as project to the Software Development course in Trybe. It was meant to apply the knowledge we had acquired so far using DOM. The project is a sort of game where the user can type a phrase e see it turned into a message 'clipped' from magazines and newspapers.",
     "link": "https://deboraserra.github.io/Project-mystery-letter/index.html",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/MysteryLetter.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/MysteryLetter.png?raw=true",
+    "tags": "JavaScript, HTML5, CSS3"
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "name": "Project Meme Generator",
     "description": "It was developed as project to the Software Development course in Trybe. It was meant to apply the knowledge we had acquired so far using DOM. In this project the user can select a famous image or upload one and type a message to appear as a meme. They can also select three different type of border to decorate it.",
     "link": "https://deboraserra.github.io/Project-meme-generator/index.html",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/MemeGenerator.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/MemeGenerator.png?raw=true",
+    "tags": "JavaScript, HTML5, CSS3"
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "name": "Project Color Guess",
     "description": "It was developed as project to the Software Development course in Trybe. It was meant to apply the knowledge we had acquired so far using DOM. This project is a game where the user receive three different numbers between 0 and 255 and 6 colors. Then they have to guess which of the colors match the given numbers based in the rgb colors. For each right answer the user receives 3 points.",
     "link": "https://deboraserra.github.io/Project-color-guess/index.html",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/ColorGuess.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/ColorGuess.png?raw=true",
+    "tags": "JavaScript, HTML5, CSS3"
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "module": "Fundamentos",
     "name": "Project Trybewarts",
     "link": "https://deboraserra.github.io/Project-Trybewarts/index.html",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/TrybeWarts.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/TrybeWarts.png?raw=true",
+    "tags": "JavaScript, HTML5, CSS3, form, Flexbox"
   },
   {
     "id": 9,
@@ -69,7 +77,8 @@
     "module": "Personal project",
     "name": "Clock",
     "link": "https://deboraserra.github.io/Clock/index.html",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/Clock.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/Clock.png?raw=true",
+    "tags": "JavaScript, HTML5, CSS3"
   },
   {
     "id": 10,
@@ -77,7 +86,8 @@
     "module": "Fundamentos",
     "name": "Project Zoo Functions",
     "link": "https://github.com/DeboraSerra/DeboraSerra.github.io/tree/main/Project-zoo-functions",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/zoofunctions.jpeg?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/zoofunctions.jpeg?raw=true",
+    "tags": "JavaScript, ES6"
   },
   {
     "id": 11,
@@ -85,7 +95,8 @@
     "module": "Fundamentos",
     "name": "Project Shopping Cart",
     "link": "https://deboraserra.github.io/Project-shopping-cart/index.html",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/ShoppingCart.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/ShoppingCart.png?raw=true",
+    "tags": "JavaScript, HTML5, CSS3, AJAX"
   },
   {
     "id": 12,
@@ -93,7 +104,8 @@
     "module": "Front-end",
     "name": "Project Solar System",
     "link": "https://deboraserra.github.io/project-solar-system/",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/SolarSystem.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/SolarSystem.png?raw=true",
+    "tags": "React, CSS3"
   },
   {
     "id": 13,
@@ -101,7 +113,8 @@
     "module": "Front-end",
     "name": "Project Tryunfo",
     "link": "https://deboraserra.github.io/project-tryunfo/",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/Tryunfo.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/Tryunfo.png?raw=true",
+    "tags": "React, CSS3, LocalStorage"
   },
   {
     "id": 14,
@@ -109,7 +122,8 @@
     "module": "Personal project",
     "name": "Project Stopwatch",
     "link": "https://deboraserra.github.io/stopwatch/",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/Stopwatch.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/Stopwatch.png?raw=true",
+    "tags": "React, CSS3, LocalStorage"
   },
   {
     "id": 15,
@@ -117,7 +131,8 @@
     "module": "Front-end",
     "name": "Project TrybeTunes",
     "link": "https://deboraserra.github.io/project-trybe-tunes/",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/Trybetunes.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/Trybetunes.png?raw=true",
+    "tags": "React, CSS3"
   },
   {
     "id": 16,
@@ -125,7 +140,8 @@
     "module": "Front-end",
     "name": "Project Front-end Online Store",
     "link": "https://deboraserra.github.io/project-online-store/",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/OnlineStore.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/OnlineStore.png?raw=true",
+    "tags": "React, CSS3, AJAX, Redux"
   },
   {
     "id": 17,
@@ -133,7 +149,8 @@
     "module": "Front-end",
     "name": "Project Trybewallet",
     "link": "https://deboraserra.github.io/project-trybewallet/",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/trybewallet.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/trybewallet.png?raw=true",
+    "tags": "React, CSS3, Redux"
   },
   {
     "id": 18,
@@ -141,7 +158,8 @@
     "module": "Front-end",
     "name": "Project Trivia Game",
     "link": "https://deboraserra.github.io/project-trivia-game/",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/trivi-game.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/trivi-game.png?raw=true",
+    "tags": "React, CSS3, Redux, AJAX"
   },
   {
     "id": 19,
@@ -149,7 +167,8 @@
     "module": "Front-end",
     "name": "Project Star Wars Planets",
     "link": "https://deboraserra.github.io/project-starwars-planets/",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/Starwars.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/Starwars.png?raw=true",
+    "tags": "React, CSS3, ContextAPI, AJAX"
   },
   {
     "id": 20,
@@ -157,7 +176,8 @@
     "module": "Personal project",
     "name": "Password Generator",
     "link": "https://deboraserra.github.io/password-generator/",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/PasswordGenerator.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/PasswordGenerator.png?raw=true",
+    "tags": "React, CSS3, LocalStorage"
   },
   {
     "id": 21,
@@ -165,7 +185,8 @@
     "module": "Front-end",
     "name": "Project Recipes App",
     "link": "https://deboraserra.github.io/project-recipes-app/",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/RecipesApp.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/RecipesApp.png?raw=true",
+    "tags": "React, CSS3, AJAX, Redux, Jest, RTL"
   },
   {
     "id": 22,
@@ -173,7 +194,8 @@
     "module": "Back-end",
     "name": "Project Docker To-do List",
     "link": "https://github.com/DeboraSerra/project-docker-todo-list",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/docker-to-do.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/docker-to-do.png?raw=true",
+    "tags": "Docker"
   },
   {
     "id": 23,
@@ -181,7 +203,8 @@
     "module": "Back-end",
     "name": "Project All for One",
     "link": "https://github.com/DeboraSerra/project-mysql-all-for-one",
-    "src": "https://devtools.com.br/blog/wp-content/uploads/2013/06/MySQL-Logo.wine_.png"
+    "src": "https://devtools.com.br/blog/wp-content/uploads/2013/06/MySQL-Logo.wine_.png",
+    "tags": "MySQL"
   },
   {
     "id": 24,
@@ -189,7 +212,8 @@
     "module": "Back-end",
     "name": "Project One For All",
     "link": "https://github.com/DeboraSerra/project-mysql-one-for-all",
-    "src": "https://devtools.com.br/blog/wp-content/uploads/2013/06/MySQL-Logo.wine_.png"
+    "src": "https://devtools.com.br/blog/wp-content/uploads/2013/06/MySQL-Logo.wine_.png",
+    "tags": "MySQL"
   },
   {
     "id": 25,
@@ -197,7 +221,8 @@
     "module": "Back-end",
     "name": "Project Talker Manager",
     "link": "https://github.com/DeboraSerra/Project-talker-manager",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/talkerManager.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/talkerManager.png?raw=true",
+    "tags": "Node.js, Express, API, Jest"
   },
   {
     "id": 26,
@@ -205,7 +230,8 @@
     "module": "Personal project",
     "name": "Project Escritório do seu Zé",
     "link": "https://github.com/DeboraSerra/Escritorio-do-seu-ze",
-    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/excritorioSeuZe.png?raw=true"
+    "src": "https://github.com/DeboraSerra/portfolio/blob/master/frontend/src/images/excritorioSeuZe.png?raw=true",
+    "tags": "Node.js, Express, API, React, Docker, CSS3, Jest, RTL, Mocha, Chai, Sinon"
   },
   {
     "id": 27,
@@ -213,7 +239,8 @@
     "module": "Back-end",
     "name": "Project Blogs's API",
     "link": "https://github.com/DeboraSerra/project-blogs-api",
-    "src": "/images/back-end/blog.webp"
+    "src": "/images/back-end/blog.webp",
+    "tags": "Node.js, Express, Sequelize, API, JWT, MySQL"
   },
   {
     "id": 28,
@@ -221,7 +248,8 @@
     "module": "Back-end",
     "name": "Project Trybesmith",
     "link": "https://github.com/DeboraSerra/project-trybesmith",
-    "src": "/images/back-end/trybesmith.webp"
+    "src": "/images/back-end/trybesmith.webp",
+    "tags": "Node.js, Express, Typescript, API, JWT, MySQL"
   },
   {
     "id": 29,
@@ -229,7 +257,8 @@
     "module": "Back-end",
     "name": "Project Trybers and Dragons",
     "link": "https://github.com/DeboraSerra/project-trybers-and-dragons",
-    "src": "/images/back-end/trybers-and-dragons.webp"
+    "src": "/images/back-end/trybers-and-dragons.webp",
+    "tags": "Node.js, Typescript, OOP"
   },
   {
     "id": 30,
@@ -237,7 +266,8 @@
     "module": "Back-end",
     "name": "Project Commerce",
     "link": "https://github.com/DeboraSerra/project-commerce",
-    "src": "/images/back-end/commerce.webp"
+    "src": "/images/back-end/commerce.webp",
+    "tags": "MongoDB, NoSQL, Typescript"
   },
   {
     "id": 31,
@@ -245,7 +275,8 @@
     "module": "Back-end",
     "name": "Project Car Shop",
     "link": "https://github.com/DeboraSerra/project-car-shop",
-    "src": "/images/back-end/car-shop.webp"
+    "src": "/images/back-end/car-shop.webp",
+    "tags": "Node.js, Express, Typescript, MongoDB, OOP, Mocha, Chai, Sinon"
   },
   {
     "id": 32,
@@ -253,7 +284,8 @@
     "module": "Back-end/Personal Project",
     "name": "Project Delivery App",
     "link": "https://github.com/DeboraSerra/project-delivery-app",
-    "src": "/images/back-end/delivery-app.webp"
+    "src": "/images/back-end/delivery-app.webp",
+    "tags": "Node.js, Express, JWT, MySQL, React, MaterialUI, Redux"
   },
   {
     "id": 33,
@@ -261,7 +293,8 @@
     "module": "Computer Science",
     "name": "Project Job Insights",
     "link": "https://github.com/DeboraSerra/project-job-insights",
-    "src": "/images/cs/job-insights.webp"
+    "src": "/images/cs/job-insights.webp",
+    "tags": "Python, Flask, PyTest"
   },
   {
     "id": 34,
@@ -269,7 +302,8 @@
     "module": "Computer Science",
     "name": "Project Inventory Report",
     "link": "https://github.com/DeboraSerra/project-inventory-report",
-    "src": "/images/cs/inventory-report.webp"
+    "src": "/images/cs/inventory-report.webp",
+    "tags": "Python, PyTest"
   },
   {
     "id": 35,
@@ -277,7 +311,8 @@
     "module": "Computer Science",
     "name": "Project Tech News",
     "link": "https://github.com/DeboraSerra/project-tech-news",
-    "src": "/images/cs/tech-news.webp"
+    "src": "/images/cs/tech-news.webp",
+    "tags": "Python, MongoDB, PyTest"
   },
   {
     "id": 36,
@@ -285,7 +320,8 @@
     "module": "Computer Science",
     "name": "Project Algorithms",
     "link": "https://github.com/DeboraSerra/project-algorithms",
-    "src": "/images/cs/algorithms.webp"
+    "src": "/images/cs/algorithms.webp",
+    "tags": "Python"
   },
   {
     "id": 37,
@@ -293,7 +329,8 @@
     "module": "Computer Science",
     "name": "Project Algorithms",
     "link": "https://github.com/DeboraSerra/project-ting",
-    "src": "/images/cs/ting.webp"
+    "src": "/images/cs/ting.webp",
+    "tags": "Python"
   },
   {
     "id": 38,
@@ -301,7 +338,8 @@
     "module": "Computer Science",
     "name": "Project Restaurant Orders",
     "link": "https://github.com/DeboraSerra/project-restaurant-orders",
-    "src": "/images/cs/restaurant-orders.webp"
+    "src": "/images/cs/restaurant-orders.webp",
+    "tags": "Python"
   },
   {
     "id": 39,
@@ -309,7 +347,8 @@
     "module": "UOL Host",
     "name": "Registro de Domínio",
     "link": "https://uolhost.uol.com.br/registro-de-dominio",
-    "src": "/images/uol/dominio.webp"
+    "src": "/images/uol/dominio.webp",
+    "tags": "Next.js, Styled Components, AJAX, ContextAPI"
   },
   {
     "id": 40,
@@ -317,7 +356,8 @@
     "module": "UOL Host",
     "name": "Hospedagem de Sites",
     "link": "https://uolhost.uol.com.br/hospedagem-de-sites",
-    "src": "/images/uol/hospedagem.webp"
+    "src": "/images/uol/hospedagem.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 41,
@@ -325,7 +365,8 @@
     "module": "UOL Host",
     "name": "Microsoft Office 365",
     "link": "https://uolhost.uol.com.br/microsoft-office-365",
-    "src": "/images/uol/office.webp"
+    "src": "/images/uol/office.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 42,
@@ -333,7 +374,8 @@
     "module": "UOL Host",
     "name": "E-mail Profissional",
     "link": "https://uolhost.uol.com.br/e-mail",
-    "src": "/images/uol/ePro.webp"
+    "src": "/images/uol/ePro.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 43,
@@ -341,7 +383,8 @@
     "module": "UOL Host",
     "name": "Transferência de domínio",
     "link": "https://uolhost.uol.com.br/transferencia-de-dominio",
-    "src": "/images/uol/transferencia.webp"
+    "src": "/images/uol/transferencia.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 44,
@@ -349,7 +392,8 @@
     "module": "UOL Host",
     "name": "Revenda de hospedagem",
     "link": "https://uolhost.uol.com.br/revenda-de-hospedagem",
-    "src": "/images/uol/revenda_hospedagem.webp"
+    "src": "/images/uol/revenda_hospedagem.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 45,
@@ -357,7 +401,8 @@
     "module": "UOL Host",
     "name": "Banco de dados",
     "link": "https://uolhost.uol.com.br/banco-de-dados",
-    "src": "/images/uol/db.webp"
+    "src": "/images/uol/db.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 46,
@@ -365,7 +410,8 @@
     "module": "UOL Host",
     "name": "Banco de dados MySQL",
     "link": "https://uolhost.uol.com.br/banco-de-dados/mysql",
-    "src": "/images/uol/db_mysql.webp"
+    "src": "/images/uol/db_mysql.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 47,
@@ -373,7 +419,8 @@
     "module": "UOL Host",
     "name": "Banco de dados MongoDB",
     "link": "https://uolhost.uol.com.br/banco-de-dados/mongodb",
-    "src": "/images/uol/db_mongo.webp"
+    "src": "/images/uol/db_mongo.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 48,
@@ -381,7 +428,8 @@
     "module": "UOL Host",
     "name": "Banco de dados Postgres SQL",
     "link": "https://uolhost.uol.com.br/banco-de-dados/postgresql",
-    "src": "/images/uol/db_postgresql.webp"
+    "src": "/images/uol/db_postgresql.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 49,
@@ -389,7 +437,8 @@
     "module": "UOL Host",
     "name": "Certificado SSL",
     "link": "https://uolhost.uol.com.br/certificado-ssl",
-    "src": "/images/uol/ssl.webp"
+    "src": "/images/uol/ssl.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 50,
@@ -397,7 +446,8 @@
     "module": "UOL Host",
     "name": "E-mail Marketing",
     "link": "https://uolhost.uol.com.br/e-mail-marketing",
-    "src": "/images/uol/eMkt.webp"
+    "src": "/images/uol/eMkt.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 51,
@@ -405,7 +455,8 @@
     "module": "UOL Host",
     "name": "UOL Anúncios",
     "link": "https://uolhost.uol.com.br/uol-anuncios",
-    "src": "/images/uol/uol_ads.webp"
+    "src": "/images/uol/uol_ads.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 52,
@@ -413,7 +464,8 @@
     "module": "UOL Host",
     "name": "Google Ads",
     "link": "https://uolhost.uol.com.br/google-ads",
-    "src": "/images/uol/google_ads.webp"
+    "src": "/images/uol/google_ads.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 53,
@@ -421,7 +473,8 @@
     "module": "UOL Host",
     "name": "Facebook Ads e Instagram Ads",
     "link": "https://uolhost.uol.com.br/facebook-ads",
-    "src": "/images/uol/face_ads.webp"
+    "src": "/images/uol/face_ads.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 54,
@@ -429,7 +482,8 @@
     "module": "UOL Host",
     "name": "Google Workspace",
     "link": "https://uolhost.uol.com.br/google-workspace",
-    "src": "/images/uol/workspace.webp"
+    "src": "/images/uol/workspace.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 55,
@@ -437,7 +491,8 @@
     "module": "UOL Host",
     "name": "E-mail Microsoft Exchange",
     "link": "https://uolhost.uol.com.br/microsoft-office-365/exchange/",
-    "src": "/images/uol/exchange.webp"
+    "src": "/images/uol/exchange.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 56,
@@ -445,7 +500,8 @@
     "module": "UOL Host",
     "name": "Parceiros UOL Host",
     "link": "https://uolhost.uol.com.br/parceiros-uol-host",
-    "src": "/images/uol/parceiros.webp"
+    "src": "/images/uol/parceiros.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 57,
@@ -453,7 +509,8 @@
     "module": "UOL Host",
     "name": "Afiliados UOL Host",
     "link": "https://uolhost.uol.com.br/afiliados-uol-host",
-    "src": "/images/uol/afiliados.webp"
+    "src": "/images/uol/afiliados.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 58,
@@ -461,7 +518,8 @@
     "module": "UOL Host",
     "name": "Linguagem de Programação PHP ASP NET",
     "link": "https://uolhost.uol.com.br/hospedagem-de-sites/linguagem-programacao/php-asp-net",
-    "src": "/images/uol/php.webp"
+    "src": "/images/uol/php.webp",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 59,
@@ -469,7 +527,8 @@
     "module": "Personal project",
     "name": "1st Hackathon Questrade and DevOps BootCamp",
     "link": "https://github.com/DeboraSerra/Hackathon-questrade",
-    "src": "/images/personal/questrade.webp"
+    "src": "/images/personal/questrade.webp",
+    "tags": "Node.js, Express, API, Jest, Typescript, JWT, MySQL, Next.js, TailwindCSS"
   },
   {
     "id": 60,
@@ -477,7 +536,8 @@
     "name": "Mid Term - Web Development",
     "description": "This project was developed as a mid term exam for the Web Development course in CCTB. It was meant to practice the use of HTML, CSS and JavaScript. The project is a simple page with a form to register a user and after registering the user is redirected to the cultural connections page, where I was supposed to describe my initial experience in Canada, including the top two cultural shocks I experienced when moving to Vancouver, Canada, the top two things I miss most from my home country, the most amazing new things I love about Vancouver or Canada in general and share my top personal goal or objective at this stage in my life. Then the page was published on Firebase and can be accessed in the link below.",
     "link": "https://ist105midtermexam-deboraserra.web.app/",
-    "src": "/images/cctb/midterm-web-dev.png"
+    "src": "/images/cctb/midterm-web-dev.png",
+    "tags": "Next.js, Styled Components"
   },
   {
     "id": 61,
