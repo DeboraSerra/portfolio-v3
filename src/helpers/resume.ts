@@ -1,8 +1,13 @@
 const professionHistory = [
+  // {
+  //   start: "04/2025",
+  //   end: undefined,
+  //   title: "Full Stack Web Developer at Amooora, São Paulo/SP",
+  // },
   {
     start: "10/2024",
     end: undefined,
-    title: "Full Stack Web Developer at BlueWave, Canada",
+    title: "Full Stack Web Developer at VerifyWise (former BlueWave Labs), Canada",
   },
   {
     start: "09/2023",
@@ -29,9 +34,9 @@ const professionHistory = [
 const graduations = [
   {
     start: "2024",
-    end: "2027",
+    end: "2028",
     title:
-      "Web development with Co-Op - Canadian College of Technology and Business",
+      "Cybersecurity and Risk Management with Co-Op - Canadian College of Technology and Business",
   },
   {
     start: "2021",
@@ -68,6 +73,10 @@ const languages = [
   {
     name: "Portuguese",
     level: "Native",
+  },
+  {
+    name: "Spanish",
+    level: "Beginner",
   },
 ];
 

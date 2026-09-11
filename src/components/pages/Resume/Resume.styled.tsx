@@ -29,11 +29,12 @@ export const Main = styled.main`
       &--item {
         display: flex;
         gap: 8px;
-        align-items: center;
-
+        align-items: flex-start;
+        
         &-year,
         &-lang {
           font-weight: ${(props) => props.theme.fontWeights.link};
+          min-width: 98px;
         } // &-year
       } // &--item
     } // &__graduation, &__profession

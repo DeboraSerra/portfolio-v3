@@ -12,16 +12,17 @@ import {
   trybe,
   unb,
   uol,
+  verifywise,
 } from "./images";
 
 export const timeline: TimelineInterface[] = [
   {
-    img: blueWave.src,
+    img: verifywise.src,
     from: 2024,
     to: undefined,
     title: "Full Stack Web Developer",
     content:
-      "Web Developer in the Onboarding team",
+      "Former BlueWave Labs",
     width: 128,
     height: 128,
   },

@@ -1,4 +1,4 @@
-import { backend, cs, frontend, fundaments, uol, cctb, blueWave } from "@/helpers";
+import { backend, cs, frontend, fundaments, uol, cctb, blueWave, verifywise } from "@/helpers";
 import { ProjectsContext } from "@/helpers/Context";
 import { Subtitle } from "@/styles/styled";
 import Link from "next/link";
@@ -27,7 +27,7 @@ const Project = () => {
       case "cctb":
         return cctb;
       case "blue_wave":
-        return blueWave;
+        return verifywise;
       default:
         return { src: "" };
     }
