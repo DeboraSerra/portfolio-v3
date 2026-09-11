@@ -136,7 +136,13 @@ const ProjectsProvider: NextPage<Props> = ({ children }) => {
   useEffect(() => {
     fetch("/api/routes")
       .then((data) => data.json())
-      .then((info) => setRoutes(info));
+      .then((info) => {
+        const newRoutes = info.map((route: ProjectsPaths) => ({
+          ...route,
+          name: route.route === "blue_wave" ? "VerifyWise" : route.name,
+        }))
+        setRoutes(newRoutes)
+      });
     const cookieToken = document.cookie.match(/token=/);
     setToken(cookieToken ? cookieToken[1] : "");
   }, []);

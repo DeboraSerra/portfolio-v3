@@ -15,6 +15,7 @@ import trybe from "../../assets/images/home/trybe.webp";
 import unb from "../../assets/images/home/unb.webp";
 import uol from "../../assets/images/home/uol.webp";
 import laptop from "../../assets/images/laptop.png";
+import verifywise from "../../assets/images/home/verifywise-logo.png";
 
 import fundaments from "../../assets/images/projects/fundaments.svg";
 import backend from "../../assets/images/projects/logo-nodejs.svg";
@@ -43,4 +44,5 @@ export {
   trybe,
   unb,
   uol,
+  verifywise,
 };
